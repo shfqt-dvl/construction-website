@@ -1,5 +1,5 @@
 import "./PipesGallery.css";
-import pipesBanner from "../../assets/pipes-banner.jpg";
+import pipesBanner from "../../assets/Pipes-banner.jpg";
 
 function PipesGallery() {
   return (
