@@ -1,0 +1,440 @@
+/* =================================
+   HARDWARE GALLERY PAGE
+================================= */
+
+.hardware-gallery-page {
+  background: #f8fafc;
+  color: #1f2937;
+  min-height: 100vh;
+}
+
+/* =================================
+   HERO
+================================= */
+
+.hardware-gallery-hero {
+  position: relative;
+  width: 100%;
+  height: 560px;
+
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+
+.hardware-gallery-hero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.78),
+    rgba(0, 0, 0, 0.42),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
+.hardware-gallery-overlay {
+  position: relative;
+  z-index: 2;
+
+  max-width: 680px;
+  margin-left: 8%;
+  padding: 30px;
+
+  color: white;
+}
+
+.hardware-gallery-overlay span,
+.hardware-gallery-label {
+  display: inline-block;
+
+  color: #f97316;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 12px;
+}
+
+.hardware-gallery-overlay h1 {
+  margin: 0 0 20px;
+
+  font-size: 52px;
+  line-height: 1.1;
+
+  font-weight: 800;
+}
+
+.hardware-gallery-overlay p {
+  margin: 0;
+
+  max-width: 580px;
+
+  color: #f3f4f6;
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* =================================
+   ARTICLE
+================================= */
+
+.hardware-gallery-article {
+  max-width: 1050px;
+
+  margin: auto;
+
+  padding: 90px 25px;
+}
+
+.hardware-gallery-article h2 {
+  margin: 0 0 30px;
+
+  color: #111827;
+
+  font-size: 40px;
+  line-height: 1.25;
+}
+
+.hardware-gallery-article p {
+  margin: 0 0 22px;
+
+  color: #4b5563;
+
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* =================================
+   KEY POINTS
+================================= */
+
+.hardware-gallery-points {
+  padding: 80px 25px;
+
+  background: white;
+
+  text-align: center;
+}
+
+.hardware-gallery-points h2 {
+  margin: 0 0 45px;
+
+  color: #111827;
+
+  font-size: 36px;
+}
+
+.hardware-gallery-grid {
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 22px;
+}
+
+.hardware-gallery-card {
+  padding: 30px 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  transition: 0.3s ease;
+}
+
+.hardware-gallery-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #fed7aa;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.hardware-gallery-card span {
+  display: block;
+
+  font-size: 38px;
+
+  margin-bottom: 15px;
+}
+
+.hardware-gallery-card h3 {
+  margin: 0 0 10px;
+
+  color: #111827;
+
+  font-size: 19px;
+}
+
+.hardware-gallery-card p {
+  margin: 0;
+
+  color: #6b7280;
+
+  line-height: 1.6;
+}
+
+/* =================================
+   APPLICATIONS
+================================= */
+
+.hardware-gallery-applications {
+  max-width: 1100px;
+
+  margin: auto;
+
+  padding: 90px 25px;
+}
+
+.hardware-gallery-applications h2 {
+  margin: 0 0 40px;
+
+  color: #111827;
+
+  font-size: 36px;
+}
+
+.hardware-application-list {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.hardware-application-list div {
+  padding: 24px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+
+  color: #374151;
+
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.hardware-application-list div:hover {
+  transform: translateY(-4px);
+
+  border-color: #f97316;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* =================================
+   HARDWARE SOLUTIONS
+================================= */
+
+.hardware-gallery-solutions {
+  padding: 80px 25px;
+
+  background: #111827;
+
+  text-align: center;
+}
+
+.hardware-gallery-solutions h2 {
+  margin: 0 0 35px;
+
+  color: white;
+
+  font-size: 36px;
+}
+
+.hardware-type-list {
+  max-width: 900px;
+
+  margin: auto;
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 15px;
+}
+
+.hardware-type-list span {
+  padding: 14px 22px;
+
+  background: #1f2937;
+
+  border: 1px solid #374151;
+
+  border-radius: 30px;
+
+  color: white;
+
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.hardware-type-list span:hover {
+  background: #f97316;
+
+  border-color: #f97316;
+
+  transform: translateY(-3px);
+}
+
+.hardware-gallery-solutions p {
+  margin: 25px 0 0;
+
+  color: #9ca3af;
+
+  font-size: 14px;
+}
+
+/* =================================
+   SLOGAN
+================================= */
+
+.hardware-gallery-slogan {
+  padding: 75px 25px;
+
+  background: #fff7ed;
+
+  text-align: center;
+}
+
+.hardware-gallery-slogan h2 {
+  max-width: 850px;
+
+  margin: auto;
+
+  color: #111827;
+
+  font-size: 34px;
+}
+
+.hardware-gallery-slogan p {
+  max-width: 700px;
+
+  margin: 18px auto 0;
+
+  color: #6b7280;
+
+  line-height: 1.7;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+  .hardware-gallery-overlay {
+    margin-left: 4%;
+  }
+
+  .hardware-gallery-overlay h1 {
+    font-size: 43px;
+  }
+
+  .hardware-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hardware-application-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+  .hardware-gallery-hero {
+    height: 480px;
+  }
+
+  .hardware-gallery-overlay {
+    margin-left: 0;
+
+    padding: 25px;
+  }
+
+  .hardware-gallery-overlay h1 {
+    font-size: 34px;
+  }
+
+  .hardware-gallery-overlay p {
+    font-size: 16px;
+  }
+
+  .hardware-gallery-article {
+    padding: 60px 20px;
+  }
+
+  .hardware-gallery-article h2 {
+    font-size: 30px;
+  }
+
+  .hardware-gallery-article p {
+    font-size: 16px;
+  }
+
+  .hardware-gallery-points {
+    padding: 60px 20px;
+  }
+
+  .hardware-gallery-points h2 {
+    font-size: 30px;
+  }
+
+  .hardware-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hardware-gallery-applications {
+    padding: 60px 20px;
+  }
+
+  .hardware-gallery-applications h2 {
+    font-size: 30px;
+  }
+
+  .hardware-application-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hardware-gallery-solutions {
+    padding: 60px 20px;
+  }
+
+  .hardware-gallery-solutions h2 {
+    font-size: 30px;
+  }
+
+  .hardware-gallery-slogan {
+    padding: 60px 20px;
+  }
+
+  .hardware-gallery-slogan h2 {
+    font-size: 27px;
+  }
+}

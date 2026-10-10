@@ -1,0 +1,155 @@
+.stats-section {
+    width: 100%;
+    padding: 90px 20px;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.stats-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.stats-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 55px;
+}
+
+.stats-heading span {
+    color: #f97316;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.stats-heading h2 {
+    margin: 10px 0 15px;
+    color: #111827;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.stats-heading h2 strong {
+    color: #f97316;
+}
+
+.stats-heading p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.stat-card {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 280px;
+
+    border-radius: 10px;
+
+    background: #111827;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition: 0.35s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.16);
+}
+
+.stat-image {
+    position: absolute;
+    inset: 0;
+}
+
+.stat-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    opacity: 0.45;
+
+    transition: 0.4s ease;
+}
+
+.stat-card:hover .stat-image img {
+    transform: scale(1.08);
+    opacity: 0.35;
+}
+
+.stat-content {
+    position: relative;
+    z-index: 2;
+
+    height: 100%;
+    min-height: 280px;
+
+    padding: 30px 22px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    box-sizing: border-box;
+
+    background: linear-gradient(transparent,
+            rgba(15, 23, 42, 0.95));
+}
+
+.stat-content h3 {
+    margin: 0;
+
+    color: #f97316;
+
+    font-size: 38px;
+    font-weight: 900;
+}
+
+.stat-content h4 {
+    margin: 5px 0 8px;
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: 750;
+}
+
+.stat-content p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .stats-section {
+        padding: 65px 15px;
+    }
+
+    .stats-heading h2 {
+        font-size: 32px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}

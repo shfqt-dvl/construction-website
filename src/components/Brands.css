@@ -1,0 +1,392 @@
+/* ================================
+   BRANDS SECTION
+================================ */
+
+.brands-section {
+    width: 100%;
+    padding: 90px 20px;
+    background: #f8fafc;
+    box-sizing: border-box;
+}
+
+.brands-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ================================
+   HEADING
+================================ */
+
+.brands-heading {
+    max-width: 750px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.brands-heading>span {
+    display: inline-block;
+    margin-bottom: 10px;
+
+    color: #f97316;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.brands-heading h2 {
+    margin: 0 0 15px;
+
+    color: #111827;
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.brands-heading h2 strong {
+    color: #f97316;
+}
+
+.brands-heading p {
+    margin: 0;
+
+    color: #6b7280;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* ================================
+   BRAND GRID
+================================ */
+
+.brands-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+/* ================================
+   BRAND CARD
+================================ */
+
+.brand-card {
+    position: relative;
+
+    padding: 30px 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    text-decoration: none;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.brand-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #f97316;
+
+    transform: scaleX(0);
+
+    transition: transform 0.35s ease;
+}
+
+.brand-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #f97316;
+
+    box-shadow:
+        0 18px 40px rgba(249, 115, 22, 0.14);
+}
+
+.brand-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* ================================
+   ICON
+================================ */
+
+.brand-icon {
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #fff7ed;
+
+    font-size: 28px;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease;
+}
+
+.brand-card:hover .brand-icon {
+    background: #f97316;
+
+    transform: scale(1.08) rotate(-3deg);
+}
+
+/* ================================
+   CATEGORY
+================================ */
+
+.brand-card h3 {
+    margin: 0 0 10px;
+
+    color: #111827;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    transition: color 0.3s ease;
+}
+
+.brand-card:hover h3 {
+    color: #f97316;
+}
+
+/* ================================
+   DESCRIPTION
+================================ */
+
+.brand-description {
+    margin: 0 0 18px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+/* ================================
+   BRAND NAMES
+================================ */
+
+.brand-names {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-bottom: 20px;
+}
+
+.brand-names span {
+    padding: 6px 9px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 5px;
+
+    color: #374151;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.brand-card:hover .brand-names span {
+    background: #fff7ed;
+    border-color: #fed7aa;
+    color: #ea580c;
+}
+
+/* ================================
+   VIEW PRODUCTS
+================================ */
+
+.brand-link {
+    display: inline-block;
+
+    color: #f97316;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.brand-card:hover .brand-link {
+    color: #ea580c;
+
+    transform: translateX(4px);
+}
+
+/* ================================
+   BOTTOM CTA
+================================ */
+
+.brands-cta {
+    margin-top: 45px;
+
+    padding: 28px 32px;
+
+    background: #111827;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.brands-cta>div>span {
+    color: #fb923c;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.brands-cta h3 {
+    margin: 7px 0 0;
+
+    color: #ffffff;
+
+    font-size: 20px;
+}
+
+/* ================================
+   WHATSAPP BUTTON
+================================ */
+
+.brands-whatsapp-btn {
+    flex-shrink: 0;
+
+    padding: 13px 20px;
+
+    border-radius: 8px;
+
+    background: #16a34a;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.brands-whatsapp-btn:hover {
+    background: #15803d;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.3);
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 950px) {
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brands-cta {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+    .brands-section {
+        padding: 65px 15px;
+    }
+
+    .brands-container {
+        width: 100%;
+    }
+
+    .brands-heading h2 {
+        font-size: 32px;
+    }
+
+    .brands-heading p {
+        font-size: 15px;
+    }
+
+    .brands-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .brand-card {
+        padding: 25px 20px;
+    }
+
+    .brands-cta {
+        padding: 25px 20px;
+    }
+
+    .brands-cta h3 {
+        font-size: 18px;
+    }
+
+    .brands-whatsapp-btn {
+        width: 100%;
+
+        text-align: center;
+
+        box-sizing: border-box;
+    }
+}

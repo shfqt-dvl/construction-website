@@ -1,0 +1,260 @@
+.hardware-products-page {
+  min-height: 100vh;
+  padding: 80px 20px;
+  background: #f8fafc;
+}
+
+.hardware-products-header {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.hardware-products-header span {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #f97316;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hardware-products-header h1 {
+  margin: 0 0 18px;
+  color: #111827;
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.hardware-products-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hardware-products-list {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.hardware-product-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+
+  min-height: 260px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+  transition: 0.3s ease;
+}
+
+.hardware-product-card:hover {
+  transform: translateY(-5px);
+  border-color: #f97316;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.hardware-product-image {
+  width: 100%;
+  min-height: 260px;
+
+  background: #f3f4f6;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hardware-product-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  padding: 25px;
+
+  box-sizing: border-box;
+}
+
+.hardware-product-info {
+  padding: 35px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hardware-product-brand {
+  display: inline-block;
+  width: fit-content;
+
+  margin-bottom: 10px;
+  padding: 5px 10px;
+
+  background: #fff7ed;
+  color: #ea580c;
+
+  border-radius: 5px;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.hardware-product-info h2 {
+  margin: 0 0 12px;
+
+  color: #111827;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.hardware-product-info p {
+  max-width: 650px;
+
+  margin: 0 0 25px;
+
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.hardware-product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.hardware-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.hardware-price small {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.hardware-price strong {
+  margin-top: 3px;
+  color: #111827;
+  font-size: 20px;
+}
+
+.hardware-enquiry-btn {
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #16a34a;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.hardware-enquiry-btn:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+}
+
+.hardware-products-note {
+  width: 90%;
+  max-width: 900px;
+
+  margin: 60px auto 0;
+  padding: 35px 25px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+}
+
+.hardware-products-note h2 {
+  margin: 0 0 10px;
+
+  color: #111827;
+  font-size: 24px;
+}
+
+.hardware-products-note p {
+  margin: 0;
+
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+  .hardware-product-card {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .hardware-product-info {
+    padding: 25px;
+  }
+
+  .hardware-product-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .hardware-products-page {
+    padding: 60px 15px;
+  }
+
+  .hardware-products-header h1 {
+    font-size: 32px;
+  }
+
+  .hardware-products-header p {
+    font-size: 15px;
+  }
+
+  .hardware-products-list {
+    width: 100%;
+  }
+
+  .hardware-product-card {
+    display: block;
+  }
+
+  .hardware-product-image {
+    height: 230px;
+    min-height: 230px;
+  }
+
+  .hardware-product-info {
+    padding: 25px 20px;
+  }
+
+  .hardware-product-info h2 {
+    font-size: 23px;
+  }
+
+  .hardware-enquiry-btn {
+    width: 100%;
+  }
+}

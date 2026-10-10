@@ -1,0 +1,260 @@
+.cement-products-page {
+  min-height: 100vh;
+  padding: 80px 20px;
+  background: #f8fafc;
+}
+
+.cement-products-header {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.cement-products-header span {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #f97316;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.cement-products-header h1 {
+  margin: 0 0 18px;
+  color: #111827;
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.cement-products-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.cement-products-list {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.cement-product-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+
+  min-height: 260px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+  transition: 0.3s ease;
+}
+
+.cement-product-card:hover {
+  transform: translateY(-5px);
+  border-color: #f97316;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.cement-product-image {
+  width: 100%;
+  min-height: 260px;
+
+  background: #f3f4f6;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cement-product-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  padding: 25px;
+
+  box-sizing: border-box;
+}
+
+.cement-product-info {
+  padding: 35px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cement-product-brand {
+  display: inline-block;
+  width: fit-content;
+
+  margin-bottom: 10px;
+  padding: 5px 10px;
+
+  background: #fff7ed;
+  color: #ea580c;
+
+  border-radius: 5px;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.cement-product-info h2 {
+  margin: 0 0 12px;
+
+  color: #111827;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.cement-product-info p {
+  max-width: 650px;
+
+  margin: 0 0 25px;
+
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.cement-product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cement-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.cement-price small {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.cement-price strong {
+  margin-top: 3px;
+  color: #111827;
+  font-size: 20px;
+}
+
+.cement-enquiry-btn {
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #16a34a;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.cement-enquiry-btn:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+}
+
+.cement-products-note {
+  width: 90%;
+  max-width: 900px;
+
+  margin: 60px auto 0;
+  padding: 35px 25px;
+
+  text-align: center;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+}
+
+.cement-products-note h2 {
+  margin: 0 0 10px;
+
+  color: #111827;
+  font-size: 24px;
+}
+
+.cement-products-note p {
+  margin: 0;
+
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+  .cement-product-card {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .cement-product-info {
+    padding: 25px;
+  }
+
+  .cement-product-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .cement-products-page {
+    padding: 60px 15px;
+  }
+
+  .cement-products-header h1 {
+    font-size: 32px;
+  }
+
+  .cement-products-header p {
+    font-size: 15px;
+  }
+
+  .cement-products-list {
+    width: 100%;
+  }
+
+  .cement-product-card {
+    display: block;
+  }
+
+  .cement-product-image {
+    height: 230px;
+    min-height: 230px;
+  }
+
+  .cement-product-info {
+    padding: 25px 20px;
+  }
+
+  .cement-product-info h2 {
+    font-size: 23px;
+  }
+
+  .cement-enquiry-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,58 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2000;
+}
+
+.modal-box {
+  width: 90%;
+  max-width: 500px;
+
+  background: white;
+
+  border-radius: 12px;
+
+  padding: 30px;
+
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  border: none;
+  background: none;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+.modal-contact-btn {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  background: #f97316;
+
+  color: white;
+
+  padding: 12px 25px;
+
+  text-decoration: none;
+
+  border-radius: 25px;
+}
+
+.modal-contact-btn:hover {
+  background: #ea580c;
+}
