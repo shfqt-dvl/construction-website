@@ -42,14 +42,14 @@ import HardwareProducts from "./pages/products/HardwareProducts";
 // GALLERY PAGES
 // ================================
 
-import CementGallery from "./pages/gallery/CementGallery";
-import ChemicalGallery from "./pages/gallery/ChemicalGallery";
-import PaintGallery from "./pages/gallery/PaintGallery";
-import PipesGallery from "./pages/gallery/PipesGallery";
-import HardwareGallery from "./pages/gallery/HardwareGallery";
-import SanitaryGallery from "./pages/gallery/SanitaryGallery";
-import SteelGallery from "./pages/gallery/SteelGallery";
-import WatertankGallery from "./pages/gallery/WatertankGallery";
+import CementGallery from "./pages/gallery/CementGallery.jsx";
+import ChemicalGallery from "./pages/gallery/ChemicalGallery.jsx";
+import PaintGallery from "./pages/gallery/PaintGallery.jsx";
+import PipesGallery from "./pages/gallery/PipesGallery.jsx";
+import HardwareGallery from "./pages/gallery/HardwareGallery.jsx";
+import SanitaryGallery from "./pages/gallery/SanitaryGallery.jsx";
+import SteelGallery from "./pages/gallery/SteelGallery.jsx";
+import WatertankGallery from "./pages/gallery/WatertankGallery.jsx";
 
 // ================================
 // APP
