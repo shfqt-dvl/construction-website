@@ -9,7 +9,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Products from "./components/Products";
 import BackToTop from "./components/BackToTop";
-import WhatsAppButton from "./components/WhatsAppButton";
+import WhatsAppButton from "./components/WhatsappButton.jsx";
 import CallButton from "./components/CallButton";
 import ScrollToTop from "./components/ScrollToTop";
 
