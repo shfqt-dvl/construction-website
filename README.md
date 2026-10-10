@@ -1,16 +1,30 @@
-# React + Vite
+# Mushad Construction & Hardware Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A construction and hardware store website built using React, Vite, Node.js, Express, and MongoDB.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Home page with store information
+- Product categories and product details
+- Product galleries for different construction materials
+- Contact section for customer enquiries
+- Customer account and profile management
+- User authentication using Clerk
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React, Vite, JavaScript, CSS
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **Authentication:** Clerk
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository.
+2. Install the frontend dependencies using `npm install`.
+3. Configure the environment variables required by the application.
+4. Start the frontend and backend using their respective development commands.
+
+## Note
+
+Keep secret keys, database credentials, and `.env` files private. Never upload them to GitHub.
