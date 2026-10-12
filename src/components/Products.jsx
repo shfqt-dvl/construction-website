@@ -20,15 +20,17 @@ const categories = [
     path: "/products/steel",
     linkText: "Explore Steel →",
   },
-  {
-    id: 3,
-    name: "Paints",
-    icon: "🎨",
-    description:
-      "Quality paints for beautiful and long-lasting finishes.",
-    path: "/products/paints",
-    linkText: "Explore Paints →",
-  },
+  
+{
+  id: 3,
+  name: "Paints",
+  icon: "🎨",
+  description:
+    "Explore trusted paint brands for beautiful and long-lasting finishes.",
+  path: "/products/paints",
+  linkText: "Explore Paint Brands →",
+},
+
   {
     id: 4,
     name: "Sanitary",

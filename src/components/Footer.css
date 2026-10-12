@@ -1,7 +1,7 @@
 .footer {
   background: #111827;
   color: white;
-  padding: 60px 10% 20px;
+  padding: 50px 10% 20px;
 }
 
 .footer-container {
@@ -16,7 +16,7 @@
 }
 
 .footer-section p {
-  line-height: 1.8;
+  line-height: 1.5;
   color: #d1d5db;
 }
 

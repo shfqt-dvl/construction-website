@@ -1,3 +1,23 @@
+```javascript
+import birlaCement from "../assets/products/birla-cem.jpeg";
+import kamdhenuSteel from "../assets/kamdhenu-tmt-bar.jpg";
+
+import nerolacPaint from "../assets/products/nerolac.jpeg";
+import asianPaints from "../assets/products/paints.jpeg";
+import birlaOpusPaint from "../assets/products/birla-opus.jpeg";
+
+import pipes from "../assets/products/pipes.jpeg";
+import pipes2 from "../assets/products/pipes2.jpeg";
+import waterTank from "../assets/products/wtr-tank.jpeg";
+
+import sanitary from "../assets/products/sanitary.jpeg";
+import sanitary2 from "../assets/products/sanitary2.jpeg";
+import sanitary3 from "../assets/products/sanitary3.jpeg";
+
+import conchem from "../assets/products/conchem-chem.jpeg";
+import chemical from "../assets/products/chemical.jpeg";
+import hardwareTools from "../assets/products/hrd-tools.jpeg";
+
 const products = [
   // ================= CEMENT =================
   {
@@ -7,7 +27,7 @@ const products = [
     brand: "ACC",
     price: 400,
     unit: "Bag",
-    image: "/products/birla-cem.jpeg",
+    image: birlaCement,
   },
   {
     id: "cement-ambuja",
@@ -16,7 +36,7 @@ const products = [
     brand: "Ambuja",
     price: 400,
     unit: "Bag",
-    image: "/products/birla-cem.jpeg",
+    image: birlaCement,
   },
   {
     id: "cement-birla",
@@ -25,7 +45,7 @@ const products = [
     brand: "Birla",
     price: 400,
     unit: "Bag",
-    image: "/products/birla-cem.jpeg",
+    image: birlaCement,
   },
   {
     id: "cement-jsw",
@@ -34,7 +54,7 @@ const products = [
     brand: "JSW",
     price: 400,
     unit: "Bag",
-    image: "/products/birla-cem.jpeg",
+    image: birlaCement,
   },
   {
     id: "cement-nuvoco",
@@ -43,7 +63,7 @@ const products = [
     brand: "Nuvoco",
     price: 400,
     unit: "Bag",
-    image: "/products/birla-cem.jpeg",
+    image: birlaCement,
   },
 
   // ================= STEEL =================
@@ -54,7 +74,7 @@ const products = [
     brand: "Mahavir",
     price: 65,
     unit: "Kg",
-    image: "/products/tmt-bars.jpg",
+    image: kamdhenuSteel,
   },
   {
     id: "steel-vijay",
@@ -63,7 +83,7 @@ const products = [
     brand: "Vijay",
     price: 65,
     unit: "Kg",
-    image: "/products/tmt-bars.jpg",
+    image: kamdhenuSteel,
   },
   {
     id: "steel-kamdhenu",
@@ -72,7 +92,7 @@ const products = [
     brand: "Kamdhenu",
     price: 65,
     unit: "Kg",
-    image: "/products/tmt-bars.jpg",
+    image: kamdhenuSteel,
   },
 
   // ================= PAINTS =================
@@ -83,7 +103,7 @@ const products = [
     brand: "Nerolac",
     price: 850,
     unit: "Pack",
-    image: "/products/nerolac.jpeg",
+    image: nerolacPaint,
   },
   {
     id: "paint-asian",
@@ -92,7 +112,7 @@ const products = [
     brand: "Asian Paints",
     price: 850,
     unit: "Pack",
-    image: "/products/paints.jpeg",
+    image: asianPaints,
   },
   {
     id: "paint-birla-opus",
@@ -101,7 +121,7 @@ const products = [
     brand: "Birla Opus",
     price: 850,
     unit: "Pack",
-    image: "/products/birla-opus.jpeg",
+    image: birlaOpusPaint,
   },
 
   // ================= PIPES =================
@@ -112,7 +132,7 @@ const products = [
     brand: "Astral",
     price: 500,
     unit: "Piece",
-    image: "/products/pipes.jpeg",
+    image: pipes,
   },
   {
     id: "pipe-filomax",
@@ -121,7 +141,7 @@ const products = [
     brand: "Filomax",
     price: 450,
     unit: "Piece",
-    image: "/products/pipes2.jpeg",
+    image: pipes2,
   },
   {
     id: "pipe-idol",
@@ -130,7 +150,7 @@ const products = [
     brand: "Idol",
     price: 450,
     unit: "Piece",
-    image: "/products/pipes.jpeg",
+    image: pipes,
   },
   {
     id: "pipe-prince",
@@ -139,7 +159,7 @@ const products = [
     brand: "Prince",
     price: 500,
     unit: "Piece",
-    image: "/products/pipes2.jpeg",
+    image: pipes2,
   },
 
   // ================= WATER TANKS =================
@@ -150,7 +170,7 @@ const products = [
     brand: "Balaji",
     price: 5500,
     unit: "Piece",
-    image: "/products/wtr-tank.jpeg",
+    image: waterTank,
   },
   {
     id: "tank-prince",
@@ -159,7 +179,7 @@ const products = [
     brand: "Prince",
     price: 6000,
     unit: "Piece",
-    image: "/products/wtr-tank.jpeg",
+    image: waterTank,
   },
   {
     id: "tank-astral",
@@ -168,7 +188,7 @@ const products = [
     brand: "Astral",
     price: 6000,
     unit: "Piece",
-    image: "/products/wtr-tank.jpeg",
+    image: waterTank,
   },
 
   // ================= SANITARY =================
@@ -179,7 +199,7 @@ const products = [
     brand: "Glocera",
     price: 2500,
     unit: "Piece",
-    image: "/products/saniatry.jpeg",
+    image: sanitary,
   },
   {
     id: "sanitary-parryware",
@@ -188,7 +208,7 @@ const products = [
     brand: "Parryware",
     price: 3000,
     unit: "Piece",
-    image: "/products/sanitary2.jpeg",
+    image: sanitary2,
   },
   {
     id: "sanitary-hindware",
@@ -197,7 +217,7 @@ const products = [
     brand: "Hindware",
     price: 3000,
     unit: "Piece",
-    image: "/products/sanitary3.jpeg",
+    image: sanitary3,
   },
   {
     id: "sanitary-cera",
@@ -206,7 +226,7 @@ const products = [
     brand: "Cera",
     price: 3000,
     unit: "Piece",
-    image: "/products/sanitary2.jpeg",
+    image: sanitary2,
   },
 
   // ================= CHEMICALS =================
@@ -217,7 +237,7 @@ const products = [
     brand: "Conchem",
     price: 500,
     unit: "Pack",
-    image: "/products/conchem-chem.jpeg",
+    image: conchem,
   },
   {
     id: "chemical-dr-fixit",
@@ -226,7 +246,7 @@ const products = [
     brand: "DR Fixit",
     price: 500,
     unit: "Pack",
-    image: "/products/chemical.jpeg",
+    image: chemical,
   },
 
   // ================= HARDWARE =================
@@ -237,8 +257,9 @@ const products = [
     brand: "Mushad",
     price: 300,
     unit: "Set",
-    image: "/products/hrd-tools.jpeg",
+    image: hardwareTools,
   },
 ];
 
 export default products;
+```

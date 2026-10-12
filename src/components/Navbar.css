@@ -289,3 +289,10 @@
         padding: 7px 12px;
     }
 }
+css
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}

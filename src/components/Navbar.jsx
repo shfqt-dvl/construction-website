@@ -25,18 +25,17 @@ function Navbar() {
             LOGO
         ================================= */}
 
-        <NavLink to="/" className="brand-logo">
+      <NavLink to="/" className="brand-logo">
 
-          <span className="brand-main">
-            MUSHAD
-          </span>
+  <span className="brand-main">
+    MUSHAD
+  </span>
 
-          <span className="brand-sub">
-            Construction & Hardware Store
-          </span>
+  <span className="brand-sub">
+    Construction & Hardware Store
+  </span>
 
-        </NavLink>
-
+</NavLink>
         {/* ================================
             NAVIGATION
         ================================= */}
