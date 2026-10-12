@@ -1,11 +1,14 @@
 import "./ChemicalsProducts.css";
 
+import conchemImage from "../../assets/products/conchem-chem.jpeg";
+import drFixitImage from "../../assets/16191739476082a23b4efc6.webp";
+
 const chemicalProducts = [
   {
     id: 1,
     name: "Conchem Construction Chemicals",
     brand: "Conchem",
-    image: "/src/assets/chemicals-banner.jpg",
+    image: conchemImage,
     price: "Contact for current price",
     description:
       "Construction chemical solutions suitable for different building, repair and construction applications.",
@@ -14,7 +17,7 @@ const chemicalProducts = [
     id: 2,
     name: "Dr. Fixit",
     brand: "Dr. Fixit",
-    image: "/src/assets/16191739476082a23b4efc6.webp",
+    image: drFixitImage,
     price: "Contact for current price",
     description:
       "Construction chemical products for waterproofing, protection and maintenance requirements.",
@@ -31,12 +34,11 @@ function ChemicalsProducts() {
       `https://wa.me/${whatsappNumber}?text=` +
       encodeURIComponent(message);
 
-    window.open(whatsappURL, "_blank");
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
   };
 
   return (
     <main className="chemicals-products-page">
-
       <section className="chemicals-products-header">
         <span>OUR CONSTRUCTION CHEMICALS</span>
 
@@ -50,22 +52,20 @@ function ChemicalsProducts() {
       </section>
 
       <section className="chemicals-products-list">
-
         {chemicalProducts.map((product) => (
           <div
             className="chemicals-product-card"
             key={product.id}
           >
-
             <div className="chemicals-product-image">
               <img
                 src={product.image}
                 alt={product.name}
+                loading="lazy"
               />
             </div>
 
             <div className="chemicals-product-info">
-
               <span className="chemicals-product-brand">
                 {product.brand}
               </span>
@@ -75,30 +75,25 @@ function ChemicalsProducts() {
               <p>{product.description}</p>
 
               <div className="chemicals-product-bottom">
-
                 <div className="chemicals-price">
                   <small>Price</small>
                   <strong>{product.price}</strong>
                 </div>
 
                 <button
+                  type="button"
                   className="chemicals-enquiry-btn"
                   onClick={() => handleEnquiry(product)}
                 >
                   💬 Enquire on WhatsApp
                 </button>
-
               </div>
-
             </div>
-
           </div>
         ))}
-
       </section>
 
       <section className="chemicals-products-note">
-
         <h2>Need Current Price or Stock Information?</h2>
 
         <p>
@@ -106,9 +101,7 @@ function ChemicalsProducts() {
           Mushad Construction & Hardware Store for the
           latest information.
         </p>
-
       </section>
-
     </main>
   );
 }

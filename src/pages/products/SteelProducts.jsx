@@ -1,11 +1,16 @@
+
 import "./SteelProducts.css";
+
+import steelBanner from "../../assets/steel-banner.jpg";
+import vijayTmt from "../../assets/pr-tmt1.jpg";
+import kamdhenuTmt from "../../assets/kamdhenu-tmt-bar.jpg";
 
 const steelProducts = [
   {
     id: 1,
     name: "Mahavir TMT",
     brand: "Mahavir TMT",
-    image: "/src/assets/steel-banner.jpg",
+    image: steelBanner,
     price: "Contact for current price",
     description:
       "Reliable TMT steel suitable for residential, commercial and general construction applications.",
@@ -14,7 +19,7 @@ const steelProducts = [
     id: 2,
     name: "Vijay TMT",
     brand: "Vijay TMT",
-    image: "/src/assets/pr-tmt1.jpg",
+    image: vijayTmt,
     price: "Contact for current price",
     description:
       "Quality TMT steel for reinforced concrete structures and construction projects.",
@@ -23,7 +28,7 @@ const steelProducts = [
     id: 3,
     name: "Kamdhenu TMT",
     brand: "Kamdhenu",
-    image: "/src/assets/kamdhenu-tmt-bar.jpg",
+    image: kamdhenuTmt,
     price: "Contact for current price",
     description:
       "TMT reinforcement steel suitable for various residential and commercial construction needs.",
@@ -40,12 +45,11 @@ function SteelProducts() {
       `https://wa.me/${whatsappNumber}?text=` +
       encodeURIComponent(message);
 
-    window.open(whatsappURL, "_blank");
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
   };
 
   return (
     <main className="steel-products-page">
-
       <section className="steel-products-header">
         <span>OUR STEEL PRODUCTS</span>
 
@@ -59,22 +63,20 @@ function SteelProducts() {
       </section>
 
       <section className="steel-products-list">
-
         {steelProducts.map((product) => (
           <div
             className="steel-product-card"
             key={product.id}
           >
-
             <div className="steel-product-image">
               <img
                 src={product.image}
                 alt={product.name}
+                loading="lazy"
               />
             </div>
 
             <div className="steel-product-info">
-
               <span className="steel-product-brand">
                 {product.brand}
               </span>
@@ -84,26 +86,22 @@ function SteelProducts() {
               <p>{product.description}</p>
 
               <div className="steel-product-bottom">
-
                 <div className="steel-price">
                   <small>Price</small>
                   <strong>{product.price}</strong>
                 </div>
 
                 <button
+                  type="button"
                   className="steel-enquiry-btn"
                   onClick={() => handleEnquiry(product)}
                 >
                   💬 Enquire on WhatsApp
                 </button>
-
               </div>
-
             </div>
-
           </div>
         ))}
-
       </section>
 
       <section className="steel-products-note">
@@ -115,7 +113,6 @@ function SteelProducts() {
           latest information.
         </p>
       </section>
-
     </main>
   );
 }

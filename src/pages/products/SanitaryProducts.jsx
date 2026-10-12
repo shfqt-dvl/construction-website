@@ -1,11 +1,16 @@
 import "./SanitaryProducts.css";
 
+import glocera from "../../assets/products/glocera.jpg";
+import parryware from "../../assets/parryware.jpg";
+import hindware from "../../assets/products/sanitary3.jpeg";
+import cera from "../../assets/products/sanitary2.jpeg";
+
 const sanitaryProducts = [
   {
     id: 1,
     name: "Glocera Sanitary",
     brand: "Glocera",
-    image: "/src/assets/products/glocera.jpg",
+    image: glocera,
     price: "Contact for current price",
     description:
       "Quality sanitary products and bathroom solutions suitable for modern residential and commercial spaces.",
@@ -14,7 +19,7 @@ const sanitaryProducts = [
     id: 2,
     name: "Parryware Sanitary",
     brand: "Parryware",
-    image: "/src/assets/parryware.jpg",
+    image: parryware,
     price: "Contact for current price",
     description:
       "Reliable bathroom and sanitary products for residential and commercial requirements.",
@@ -23,7 +28,7 @@ const sanitaryProducts = [
     id: 3,
     name: "Hindware Sanitary",
     brand: "Hindware",
-    image: "/src/assets/products/sanitary3.jpeg",
+    image: hindware,
     price: "Contact for current price",
     description:
       "Sanitaryware and bathroom solutions suitable for modern bathrooms and building projects.",
@@ -32,7 +37,7 @@ const sanitaryProducts = [
     id: 4,
     name: "Cera Sanitary",
     brand: "Cera",
-    image: "/src/assets/products/sanitary2.jpeg",
+    image: cera,
     price: "Contact for current price",
     description:
       "Quality sanitaryware and bathroom products for residential and commercial applications.",
@@ -49,12 +54,11 @@ function SanitaryProducts() {
       `https://wa.me/${whatsappNumber}?text=` +
       encodeURIComponent(message);
 
-    window.open(whatsappURL, "_blank");
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
   };
 
   return (
     <main className="sanitary-products-page">
-
       <section className="sanitary-products-header">
         <span>OUR SANITARY PRODUCTS</span>
 
@@ -68,22 +72,20 @@ function SanitaryProducts() {
       </section>
 
       <section className="sanitary-products-list">
-
         {sanitaryProducts.map((product) => (
           <div
             className="sanitary-product-card"
             key={product.id}
           >
-
             <div className="sanitary-product-image">
               <img
                 src={product.image}
                 alt={product.name}
+                loading="lazy"
               />
             </div>
 
             <div className="sanitary-product-info">
-
               <span className="sanitary-product-brand">
                 {product.brand}
               </span>
@@ -93,30 +95,25 @@ function SanitaryProducts() {
               <p>{product.description}</p>
 
               <div className="sanitary-product-bottom">
-
                 <div className="sanitary-price">
                   <small>Price</small>
                   <strong>{product.price}</strong>
                 </div>
 
                 <button
+                  type="button"
                   className="sanitary-enquiry-btn"
                   onClick={() => handleEnquiry(product)}
                 >
                   💬 Enquire on WhatsApp
                 </button>
-
               </div>
-
             </div>
-
           </div>
         ))}
-
       </section>
 
       <section className="sanitary-products-note">
-
         <h2>Need Current Price or Stock Information?</h2>
 
         <p>
@@ -124,9 +121,7 @@ function SanitaryProducts() {
           Mushad Construction & Hardware Store for the
           latest information.
         </p>
-
       </section>
-
     </main>
   );
 }

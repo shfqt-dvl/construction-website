@@ -1,12 +1,16 @@
 import "./PipesProducts.css";
 
-const pipesProducts = [
+import princePipes from "../../assets/Pvc-Prince-Pipe-Fitting (1).jpg";
+import astralPipes from "../../assets/astral-pipes-fittings-distributors.jpg";
+import filomaxPipes from "../../assets/flexible_pvc_transparent_tubes.jpg";
+import idolPipes from "../../assets/products/1754117518.webp";
 
+const pipesProducts = [
   {
     id: 1,
-  name: "Prince Pipes & Fittings",
+    name: "Prince Pipes & Fittings",
     brand: "Prince",
-    image: "/src/assets/Pvc-Prince-Pipe-Fitting (1).jpg",
+    image: princePipes,
     price: "Contact for current price",
     description:
       "Plumbing products designed for reliable water distribution and construction requirements.",
@@ -15,7 +19,7 @@ const pipesProducts = [
     id: 2,
     name: "Astral Pipes & Fittings",
     brand: "Astral",
-    image: "/src/assets/astral-pipes-fittings-distributors.jpg",
+    image: astralPipes,
     price: "Contact for current price",
     description:
       "Reliable plumbing pipes and fittings suitable for residential, commercial and construction plumbing systems.",
@@ -24,7 +28,7 @@ const pipesProducts = [
     id: 3,
     name: "Filomax Pipes & Fittings",
     brand: "Filomax",
-    image: "/src/assets/flexible_pvc_transparent_tubes.jpg",
+    image: filomaxPipes,
     price: "Contact for current price",
     description:
       "Quality plumbing solutions for dependable water supply and drainage requirements.",
@@ -33,12 +37,11 @@ const pipesProducts = [
     id: 4,
     name: "Idol Pipes & Fittings",
     brand: "Idol",
-    image: "/src/assets/products/1754117518.webp",
+    image: idolPipes,
     price: "Contact for current price",
     description:
       "Pipes and fittings suitable for various plumbing and building applications.",
   },
-  
 ];
 
 function PipesProducts() {
@@ -51,12 +54,11 @@ function PipesProducts() {
       `https://wa.me/${whatsappNumber}?text=` +
       encodeURIComponent(message);
 
-    window.open(whatsappURL, "_blank");
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
   };
 
   return (
     <main className="pipes-products-page">
-
       <section className="pipes-products-header">
         <span>OUR PIPES & FITTINGS</span>
 
@@ -70,22 +72,20 @@ function PipesProducts() {
       </section>
 
       <section className="pipes-products-list">
-
         {pipesProducts.map((product) => (
           <div
             className="pipes-product-card"
             key={product.id}
           >
-
             <div className="pipes-product-image">
               <img
                 src={product.image}
                 alt={product.name}
+                loading="lazy"
               />
             </div>
 
             <div className="pipes-product-info">
-
               <span className="pipes-product-brand">
                 {product.brand}
               </span>
@@ -95,30 +95,25 @@ function PipesProducts() {
               <p>{product.description}</p>
 
               <div className="pipes-product-bottom">
-
                 <div className="pipes-price">
                   <small>Price</small>
                   <strong>{product.price}</strong>
                 </div>
 
                 <button
+                  type="button"
                   className="pipes-enquiry-btn"
                   onClick={() => handleEnquiry(product)}
                 >
                   💬 Enquire on WhatsApp
                 </button>
-
               </div>
-
             </div>
-
           </div>
         ))}
-
       </section>
 
       <section className="pipes-products-note">
-
         <h2>Need Current Price or Stock Information?</h2>
 
         <p>
@@ -126,9 +121,7 @@ function PipesProducts() {
           Mushad Construction & Hardware Store for the
           latest information.
         </p>
-
       </section>
-
     </main>
   );
 }
