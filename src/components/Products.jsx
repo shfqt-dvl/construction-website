@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
 import "./Products.css";
 
 const categories = [
@@ -20,17 +21,15 @@ const categories = [
     path: "/products/steel",
     linkText: "Explore Steel →",
   },
-  
-{
-  id: 3,
-  name: "Paints",
-  icon: "🎨",
-  description:
-    "Explore trusted paint brands for beautiful and long-lasting finishes.",
-  path: "/products/paints",
-  linkText: "Explore Paint Brands →",
-},
-
+  {
+    id: 3,
+    name: "Paints",
+    icon: "🎨",
+    description:
+      "Explore trusted paint brands for beautiful and long-lasting finishes.",
+    path: "/products/paints",
+    linkText: "Explore Paint Brands →",
+  },
   {
     id: 4,
     name: "Sanitary",
@@ -79,11 +78,27 @@ const categories = [
 ];
 
 function Products() {
+  const navigate = useNavigate();
+
   return (
     <section className="products-section" id="products">
 
-      <div className="products-heading">
+      {/* Back Button */}
+      <button
+        type="button"
+        className="products-back-button"
+        onClick={() => {
+          if (window.history.length > 1) {
+            navigate(-1);
+          } else {
+            navigate("/");
+          }
+        }}
+      >
+        ← Back
+      </button>
 
+      <div className="products-heading">
         <span>OUR PRODUCTS</span>
 
         <h2>
@@ -94,37 +109,28 @@ function Products() {
           Explore our range of quality construction materials
           and hardware products.
         </p>
-
       </div>
 
       <div className="product-category-grid">
-
         {categories.map((category) => (
           <Link
             key={category.id}
             to={category.path}
             className="product-category-card"
           >
-
             <div className="product-category-icon">
               {category.icon}
             </div>
 
-            <h3>
-              {category.name}
-            </h3>
+            <h3>{category.name}</h3>
 
-            <p>
-              {category.description}
-            </p>
+            <p>{category.description}</p>
 
             <span className="category-link">
               {category.linkText}
             </span>
-
           </Link>
         ))}
-
       </div>
 
     </section>

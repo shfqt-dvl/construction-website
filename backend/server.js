@@ -1,7 +1,13 @@
+
+const dns = require("node:dns");
+
+// DNS workaround for the MongoDB Atlas SRV lookup issue
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
+
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const path = require("path");
+const path = require("node:path");
 const cors = require("cors");
 
 const {
@@ -12,59 +18,51 @@ const {
 
 const Customer = require("./models/Customer");
 
-// ================================
+// ======================================
 // LOAD ENVIRONMENT VARIABLES
-// ================================
+// ======================================
 
 dotenv.config({
   path: path.join(__dirname, ".env"),
 });
 
-console.log(
-  "MongoDB URI loaded:",
-  !!process.env.MONGO_URI
-);
-
-// ================================
-// APP
-// ================================
-
-const app = express();
-const PORT = 5000;
-
-// ================================
-// ADMIN
-// ================================
-
+const PORT = process.env.PORT || 5000;
 const ADMIN_EMAIL = "shafkatamanullah@gmail.com";
 
-// ================================
-// MIDDLEWARE
-// ================================
+if (!process.env.MONGO_URI) {
+  console.error(
+    "ERROR: MONGO_URI is missing from backend/.env"
+  );
+  process.exit(1);
+}
+
+// ======================================
+// CREATE EXPRESS APP
+// ======================================
+
+const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(clerkMiddleware());
 
-// ================================
+// ======================================
 // TEST ROUTE
-// ================================
+// ======================================
 
 app.get("/", (req, res) => {
-  res.json({
-    message:
-      "Mushad Construction backend is running successfully!",
+  res.status(200).json({
+    message: "Mushad Construction backend is running successfully!",
   });
 });
 
-// ================================
-// GET LOGGED-IN CUSTOMER
-// ================================
+// ======================================
+// GET LOGGED-IN CUSTOMER PROFILE
+// ======================================
 
 app.get("/api/customers", async (req, res) => {
   const { userId } = getAuth(req);
 
-  // Check Clerk login
   if (!userId) {
     return res.status(401).json({
       message: "Unauthorized. Please login.",
@@ -72,32 +70,27 @@ app.get("/api/customers", async (req, res) => {
   }
 
   try {
-    // Only return the logged-in user's profile
     const customers = await Customer.find({
       clerkUserId: userId,
     });
 
-    res.json(customers);
+    return res.status(200).json(customers);
   } catch (error) {
-    console.error(
-      "Customer fetch error:",
-      error
-    );
+    console.error("Customer fetch error:", error);
 
-    res.status(500).json({
-      message: "Failed to fetch customers",
+    return res.status(500).json({
+      message: "Failed to fetch customer profile.",
     });
   }
 });
 
-// ================================
-// CREATE / UPDATE CUSTOMER
-// ================================
+// ======================================
+// CREATE OR UPDATE CUSTOMER PROFILE
+// ======================================
 
 app.post("/api/customers", async (req, res) => {
   const { userId } = getAuth(req);
 
-  // Check Clerk login
   if (!userId) {
     return res.status(401).json({
       message: "Unauthorized. Please login.",
@@ -115,161 +108,101 @@ app.post("/api/customers", async (req, res) => {
       pincode,
     } = req.body;
 
-    // Email required
-    if (!email) {
+    if (!email || typeof email !== "string") {
       return res.status(400).json({
-        message: "Email is required",
+        message: "A valid email is required.",
       });
     }
 
-    // ================================
-    // FIND EXISTING CUSTOMER
-    // ================================
-
-    const existingCustomer =
-      await Customer.findOne({
-        clerkUserId: userId,
-      });
-
-    // ================================
-    // UPDATE EXISTING CUSTOMER
-    // ================================
-
-    if (existingCustomer) {
-      existingCustomer.name = name || "";
-      existingCustomer.email = email;
-      existingCustomer.phone = phone || "";
-      existingCustomer.address = address || "";
-      existingCustomer.city = city || "";
-      existingCustomer.state = state || "";
-      existingCustomer.pincode = pincode || "";
-
-      const updatedCustomer =
-        await existingCustomer.save();
-
-      return res.status(200).json(
-        updatedCustomer
-      );
-    }
-
-    // ================================
-    // CREATE NEW CUSTOMER
-    // ================================
-
-    const customer = new Customer({
+    let customer = await Customer.findOne({
       clerkUserId: userId,
+    });
+
+    const profileData = {
       name: name || "",
-      email,
+      email: email.trim(),
       phone: phone || "",
       address: address || "",
       city: city || "",
       state: state || "",
       pincode: pincode || "",
-    });
+    };
 
-    const savedCustomer =
+    if (customer) {
+      Object.assign(customer, profileData);
       await customer.save();
 
-    return res.status(201).json(
-      savedCustomer
-    );
+      return res.status(200).json(customer);
+    }
+
+    customer = new Customer({
+      clerkUserId: userId,
+      ...profileData,
+    });
+
+    await customer.save();
+
+    return res.status(201).json(customer);
   } catch (error) {
-    console.error(
-      "Customer save error:",
-      error
-    );
+    console.error("Customer save error:", error);
 
     return res.status(500).json({
-      message: "Failed to save customer",
+      message: "Failed to save customer profile.",
     });
   }
 });
 
-// ================================
-// ADMIN - GET ALL CUSTOMERS
-// ================================
+// ======================================
+// ADMIN: GET ALL CUSTOMERS
+// ======================================
 
-app.get(
-  "/api/admin/customers",
-  async (req, res) => {
-    const { userId } = getAuth(req);
+app.get("/api/admin/customers", async (req, res) => {
+  const { userId } = getAuth(req);
 
-    // ================================
-    // CHECK CLERK LOGIN
-    // ================================
-
-    if (!userId) {
-      return res.status(401).json({
-        message:
-          "Unauthorized. Please login.",
-      });
-    }
-
-    try {
-      // ================================
-      // GET CLERK USER INFORMATION
-      // ================================
-
-      const clerkUser =
-        await clerkClient.users.getUser(userId);
-
-      // ================================
-      // GET PRIMARY EMAIL
-      // ================================
-
-      const primaryEmail =
-        clerkUser.primaryEmailAddress
-          ?.emailAddress;
-
-      // ================================
-      // ADMIN EMAIL CHECK
-      // ================================
-
-      if (
-        primaryEmail?.toLowerCase() !==
-        ADMIN_EMAIL.toLowerCase()
-      ) {
-        return res.status(403).json({
-          message:
-            "Access denied. Administrator only.",
-        });
-      }
-
-      // ================================
-      // GET ALL CUSTOMERS
-      // ================================
-
-      const customers =
-        await Customer.find()
-          .sort({ createdAt: -1 });
-
-      return res.status(200).json(
-        customers
-      );
-    } catch (error) {
-      console.error(
-        "Admin customer fetch error:",
-        error
-      );
-
-      return res.status(500).json({
-        message:
-          "Failed to fetch customers",
-      });
-    }
+  if (!userId) {
+    return res.status(401).json({
+      message: "Unauthorized. Please login.",
+    });
   }
-);
 
-// ==========================================
-// ADMIN - DELETE CUSTOMER
-// ==========================================
+  try {
+    const clerkUser = await clerkClient.users.getUser(userId);
+
+    const primaryEmail =
+      clerkUser.primaryEmailAddress?.emailAddress;
+
+    if (
+      !primaryEmail ||
+      primaryEmail.toLowerCase() !== ADMIN_EMAIL.toLowerCase()
+    ) {
+      return res.status(403).json({
+        message: "Access denied. Administrator only.",
+      });
+    }
+
+    const customers = await Customer.find().sort({
+      createdAt: -1,
+    });
+
+    return res.status(200).json(customers);
+  } catch (error) {
+    console.error("Admin customer fetch error:", error);
+
+    return res.status(500).json({
+      message: "Failed to fetch customers.",
+    });
+  }
+});
+
+// ======================================
+// ADMIN: DELETE CUSTOMER
+// ======================================
 
 app.delete(
   "/api/admin/customers/:id",
   async (req, res) => {
     const { userId } = getAuth(req);
 
-    // Check Clerk login
     if (!userId) {
       return res.status(401).json({
         message: "Unauthorized. Please login.",
@@ -277,83 +210,78 @@ app.delete(
     }
 
     try {
-      // Get logged-in Clerk user
-      const clerkUser =
-        await clerkClient.users.getUser(userId);
+      const clerkUser = await clerkClient.users.getUser(userId);
 
-      // Get admin email
       const primaryEmail =
-        clerkUser.primaryEmailAddress
-          ?.emailAddress;
+        clerkUser.primaryEmailAddress?.emailAddress;
 
-      // Check admin
       if (
-        primaryEmail?.toLowerCase() !==
-        ADMIN_EMAIL.toLowerCase()
+        !primaryEmail ||
+        primaryEmail.toLowerCase() !== ADMIN_EMAIL.toLowerCase()
       ) {
         return res.status(403).json({
-          message:
-            "Access denied. Administrator only.",
+          message: "Access denied. Administrator only.",
         });
       }
 
-      // Find customer
-      const customer =
-        await Customer.findById(
-          req.params.id
-        );
-
-      if (!customer) {
-        return res.status(404).json({
-          message:
-            "Customer not found.",
+      if (!mongoose.isValidObjectId(req.params.id)) {
+        return res.status(400).json({
+          message: "Invalid customer ID.",
         });
       }
 
-      // Delete customer
-      await Customer.findByIdAndDelete(
+      const customer = await Customer.findByIdAndDelete(
         req.params.id
       );
 
+      if (!customer) {
+        return res.status(404).json({
+          message: "Customer not found.",
+        });
+      }
+
       return res.status(200).json({
-        message:
-          "Customer deleted successfully.",
+        message: "Customer deleted successfully.",
       });
     } catch (error) {
-      console.error(
-        "Admin customer delete error:",
-        error
-      );
+      console.error("Admin customer delete error:", error);
 
       return res.status(500).json({
-        message:
-          "Failed to delete customer.",
+        message: "Failed to delete customer.",
       });
     }
   }
 );
 
-// ================================
-// MONGODB CONNECTION
-// ================================
+// ======================================
+// CONNECT TO MONGODB AND START SERVER
+// ======================================
 
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => {
+async function startServer() {
+  try {
     console.log(
-      "MongoDB connected successfully!"
+      "MongoDB URI loaded:",
+      Boolean(process.env.MONGO_URI)
     );
+
+    await mongoose.connect(process.env.MONGO_URI, {
+      serverSelectionTimeoutMS: 15000,
+    });
+
+    console.log("MongoDB connected successfully!");
 
     app.listen(PORT, () => {
       console.log(
         `Backend server running on http://localhost:${PORT}`
       );
     });
-  })
-  .catch((error) => {
+  } catch (error) {
+    console.error("MongoDB connection failed:");
+    console.error(error);
     console.error(
-      "MongoDB connection failed:"
+      "Check your MongoDB URI, Atlas network access, and DNS/network settings."
     );
+  }
+}
 
-    console.error(error.message);
-  });
+startServer();

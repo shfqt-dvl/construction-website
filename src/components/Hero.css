@@ -1,304 +1,435 @@
+
+/* =========================
+   RESPONSIVE HOMEPAGE HERO
+========================= */
+
 .hero {
-    min-height: calc(100vh - 76px);
-    width: 100%;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  width: 100%;
+  min-height: 620px;
+  min-height: clamp(620px, calc(100svh - 76px), 900px);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  padding: 0;
+  box-sizing: border-box;
 
-    position: relative;
-    overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 
-    transition: background-image 1s ease-in-out;
+  overflow: hidden;
+  transition: background-image 0.5s ease-in-out;
 }
 
 .hero-overlay {
-    width: 100%;
-    min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  min-height: inherit;
+  padding: clamp(36px, 5vw, 64px) 24px;
 
-    padding: 60px 20px;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .hero-content {
-    width: 90%;
-    max-width: 900px;
-    text-align: center;
-    color: white;
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1100px;
+  margin-inline: auto;
+
+  text-align: center;
+  color: #fff;
+
+  animation: heroFadeUp 0.8s ease-out both;
 }
 
-.hero-content h1 {
-    font-size: 55px;
-    line-height: 1.15;
-    margin: 0 0 22px;
-    font-weight: 800;
-    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-}
-
-.hero-content p {
-    font-size: 20px;
-    line-height: 1.7;
-    margin: 0 auto 30px;
-    max-width: 800px;
-    color: #f8fafc;
-}
-
-.hero-points {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 35px;
-    flex-wrap: wrap;
-}
-
-.hero-points span {
-    background: rgba(255, 255, 255, 0.14);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(5px);
-    padding: 10px 18px;
-    border-radius: 30px;
-    font-size: 15px;
-    font-weight: 600;
-    transition: 0.3s ease;
-}
-
-.hero-points span:hover {
-    background: rgba(249, 115, 22, 0.85);
-    transform: translateY(-3px);
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    flex-wrap: wrap;
-}
-
-.hero-btn {
-    display: inline-block;
-    padding: 14px 30px;
-    background: #f97316;
-    color: white;
-    text-decoration: none;
-    border: 2px solid #f97316;
-    border-radius: 8px;
-    font-size: 17px;
-    font-weight: 700;
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.hero-btn:hover {
-    background: #ea580c;
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
-}
-
-.hero-btn.secondary {
-    background: white;
-    color: #111827;
-    border-color: white;
-}
-
-.hero-btn.secondary:hover {
-    background: #f1f5f9;
-    color: #111827;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
-
-.hero-animation {
-    animation: heroFadeUp 0.9s ease-out;
-}
-
-@keyframes heroFadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 1000px) {
-    .hero-content h1 {
-        font-size: 45px;
-    }
-
-    .hero-content p {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        min-height: calc(100vh - 65px);
-    }
-
-    .hero-overlay {
-        min-height: calc(100vh - 65px);
-        padding: 50px 20px;
-    }
-
-    .hero-content {
-        width: 100%;
-    }
-
-    .hero-content h1 {
-        font-size: 35px;
-        line-height: 1.2;
-    }
-
-    .hero-content p {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
-    .hero-points {
-        gap: 10px;
-    }
-
-    .hero-points span {
-        font-size: 14px;
-        padding: 8px 13px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .hero-btn {
-        width: 80%;
-        max-width: 300px;
-        text-align: center;
-        box-sizing: border-box;
-    }
-}
-
-@media (max-width: 400px) {
-    .hero-content h1 {
-        font-size: 29px;
-    }
-
-    .hero-content p {
-        font-size: 15px;
-    }
-
-    .hero-btn {
-        width: 90%;
-    }
-}
-
-/* =========================
-   HERO BRAND
-========================= */
+/* Brand name */
 
 .hero-brand {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    margin-bottom: 20px;
+  margin: 0 0 clamp(22px, 3vw, 32px);
 }
 
 .hero-brand-main {
-    font-size: 58px;
-    font-weight: 900;
-    letter-spacing: 4px;
-    line-height: 1;
-    color: white;
+  max-width: 100%;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 900;
+  letter-spacing: clamp(2px, 0.7vw, 5px);
+  line-height: 1.12;
+  overflow-wrap: anywhere;
 
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-shadow: 0 4px 15px rgb(0 0 0 / 55%);
 }
 
 .hero-brand-sub {
-    margin-top: 7px;
+  margin-top: 9px;
 
-    font-size: 16px;
-    font-weight: 500;
+  font-size: clamp(12px, 1.5vw, 17px);
+  font-weight: 600;
+  letter-spacing: clamp(0.3px, 0.2vw, 1px);
+  line-height: 1.5;
 
-    letter-spacing: 1px;
-
-    color: rgba(255, 255, 255, 0.72);
+  color: #f4eee9;
 }
 
+/* Main heading */
 
-/* =========================
-   SLIDER DOTS
-========================= */
+.hero-content h1 {
+  max-width: 1000px;
+  margin: 0 auto 22px;
+
+  font-size: clamp(30px, 4.2vw, 58px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+
+  text-shadow: 0 3px 12px rgb(0 0 0 / 55%);
+}
+
+.hero-description {
+  max-width: 850px;
+  margin: 0 auto 30px;
+
+  font-size: clamp(15px, 1.5vw, 20px);
+  line-height: 1.75;
+  color: #f8fafc;
+  overflow-wrap: break-word;
+}
+
+/* Highlight badges */
+
+.hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+  margin: 0 auto 32px;
+}
+
+.hero-points span {
+  max-width: 100%;
+  padding: 10px 17px;
+
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 30px;
+
+  background: rgb(255 255 255 / 14%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  font-size: clamp(12px, 1.15vw, 15px);
+  font-weight: 600;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+@media (hover: hover) {
+  .hero-points span:hover {
+    background: rgb(249 115 22 / 85%);
+    transform: translateY(-3px);
+  }
+}
+
+/* Buttons */
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hero-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 50px;
+  max-width: 100%;
+  padding: 14px 28px;
+  box-sizing: border-box;
+
+  border: 2px solid #f97316;
+  border-radius: 9px;
+
+  background: #f97316;
+  color: #fff;
+
+  font-size: clamp(14px, 1.25vw, 17px);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: break-word;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-btn:hover {
+  background: #ea580c;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgb(249 115 22 / 35%);
+}
+
+.hero-btn.secondary {
+  border-color: #fff;
+  background: #fff;
+  color: #111827;
+}
+
+.hero-btn.secondary:hover {
+  background: #f1f5f9;
+  box-shadow: 0 8px 22px rgb(0 0 0 / 20%);
+}
+
+/* Slider dots */
 
 .hero-dots {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 
-    gap: 9px;
-
-    margin-top: 28px;
+  gap: 10px;
+  margin-top: 28px;
 }
 
 .hero-dot {
-    width: 10px;
-    height: 10px;
+  display: block;
+  flex: 0 0 auto;
 
-    padding: 0;
+  width: 10px;
+  height: 10px;
+  padding: 0;
 
-    border: none;
-    border-radius: 50%;
+  border: none;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 55%);
 
-    background: rgba(255, 255, 255, 0.5);
-
-    cursor: pointer;
-
-    transition: all 0.3s ease;
-}
-
-.hero-dot:hover {
-    background: white;
-    transform: scale(1.2);
+  cursor: pointer;
+  transition: width 0.25s ease, background 0.25s ease;
 }
 
 .hero-dot.active {
-    width: 28px;
-
-    border-radius: 10px;
-
-    background: #f97316;
+  width: 27px;
+  border-radius: 10px;
+  background: #f97316;
 }
 
+.hero-dot:focus-visible,
+.hero-btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+/* Animation */
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* =========================
-   MOBILE
+   TABLETS
 ========================= */
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: 620px;
+    min-height: max(620px, calc(100svh - 65px));
+    background-position: center center;
+  }
 
-    .hero-brand-main {
-        font-size: 40px;
-    }
+  .hero-overlay {
+    padding: 38px 22px;
+  }
 
-    .hero-brand-sub {
-        font-size: 12px;
-    }
+  .hero-brand {
+    margin-bottom: 23px;
+  }
 
-    .hero-dots {
-        margin-top: 22px;
-    }
+  .hero-brand-main {
+    font-size: clamp(40px, 8vw, 56px);
+  }
+
+  .hero-content h1 {
+    font-size: clamp(30px, 5.4vw, 42px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 23px;
+  }
+
+  .hero-points {
+    gap: 9px;
+    margin-bottom: 25px;
+  }
+
+  .hero-points span {
+    padding: 8px 12px;
+  }
+
+  .hero-buttons {
+    gap: 12px;
+  }
+
+  .hero-btn {
+    padding: 13px 22px;
+  }
+
+  .hero-dots {
+    margin-top: 24px;
+  }
+}
+
+/* =========================
+   MOBILE PHONES
+========================= */
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 0;
+    background-position: center center;
+  }
+
+  .hero-overlay {
+    min-height: 0;
+    padding: 42px 17px 32px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-brand {
+    margin-bottom: 24px;
+  }
+
+  .hero-brand-main {
+    font-size: clamp(38px, 11vw, 48px);
+    letter-spacing: 3px;
+    line-height: 1.15;
+  }
+
+  .hero-brand-sub {
+    max-width: 100%;
+    margin-top: 8px;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+  }
+
+  .hero-content h1 {
+    margin-bottom: 17px;
+    font-size: clamp(28px, 8vw, 36px);
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+
+  .hero-description {
+    margin-bottom: 22px;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .hero-points {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 9px;
+    margin-bottom: 24px;
+  }
+
+  .hero-points span {
+    width: 100%;
+    padding: 9px 12px;
+    box-sizing: border-box;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    min-height: 48px;
+    padding: 13px 16px;
+    font-size: 15px;
+  }
+
+  .hero-dots {
+    gap: 9px;
+    margin-top: 25px;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 350px) {
+  .hero-overlay {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .hero-brand-main {
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+
+  .hero-content h1 {
+    font-size: 27px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-content {
+    animation: none;
+  }
+
+  .hero-btn,
+  .hero-points span,
+  .hero-dot {
+    transition: none;
+  }
 }

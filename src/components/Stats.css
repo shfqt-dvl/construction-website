@@ -1,3 +1,6 @@
+.services-heading h2 {
+  color: red !important;
+}
 .stats-section {
     width: 100%;
     padding: 90px 20px;
