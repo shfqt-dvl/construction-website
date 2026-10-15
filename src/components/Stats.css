@@ -1,5 +1,5 @@
 .services-heading h2 {
-  color: red !important;
+  color: rgb(114, 25, 25) !important;
 }
 .stats-section {
     width: 100%;
@@ -21,7 +21,7 @@
 }
 
 .stats-heading span {
-    color: #f97316;
+    color: #1695f0;
     font-size: 14px;
     font-weight: 800;
     letter-spacing: 2px;
@@ -35,7 +35,7 @@
 }
 
 .stats-heading h2 strong {
-    color: #f97316;
+    color: #1695f0;
 }
 
 .stats-heading p {
@@ -113,7 +113,7 @@
 .stat-content h3 {
     margin: 0;
 
-    color: #f97316;
+    color: #1695f0;
 
     font-size: 38px;
     font-weight: 900;

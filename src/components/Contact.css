@@ -1,336 +1,170 @@
-
-/* ================================
-   CONTACT SECTION
-================================ */
-
-.contact-section {
-    width: 100%;
-    padding: 50px 8% 90px;
-    background: #ffffff;
-    box-sizing: border-box;
+.contact-page {
+  padding: 50px 8% 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
-.contact-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 0.9fr;
-    gap: 55px;
-    align-items: center;
+/* Centered Header */
+.contact-header {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 50px;
 }
 
-/* ================================
-   CONTACT HEADING — MATCH ABOUT
-================================ */
-
-.contact-info {
-    width: 100%;
-    min-width: 0;
-    text-align: center;
+.contact-header > span {
+  display: inline-block;
+  color: #4275f6;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
 }
 
-.contact-label {
-    display: block;
-    margin: 0;
-    color: #f97316;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 2px;
+.contact-header h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1f2937;
+  margin: 0 0 15px;
 }
 
-.contact-info h2 {
-    margin: 12px 0 15px;
-    color: #111827;
-    font-size: 46px;
-    line-height: 1.2;
-    font-weight: 800;
-    text-align: center;
+.contact-header p {
+  color: #666;
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0 auto;
 }
 
-.contact-info h2 strong {
-    display: inline;
-    color: #f97316;
-    font-weight: 800;
+/* Contact Cards */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
 }
 
-.contact-intro {
-    max-width: 700px;
-    margin: 0 auto 35px;
-    color: #6b7280;
-    font-size: 17px;
-    line-height: 1.7;
-    text-align: center;
+.contact-card {
+  padding: 30px 20px;
+  background: #f9fafb;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ================================
-   CONTACT DETAILS
-================================ */
-
-.contact-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-    text-align: left;
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
-
-.contact-info-box {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    min-width: 0;
-    padding: 18px;
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    transition: transform 0.3s ease, border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.contact-info-box:hover {
-    transform: translateY(-5px);
-    border-color: #fed7aa;
-    box-shadow: 0 12px 25px rgba(17, 24, 39, 0.08);
-}
-
-/* ICON */
 
 .contact-icon {
-    width: 45px;
-    height: 45px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff7ed;
-    border-radius: 10px;
+  font-size: 40px;
+}
+
+.contact-card h3 {
+  margin: 15px 0 10px;
+  color: #1f2937;
+}
+
+.contact-card p {
+  color: #666;
+  margin-bottom: 0;
+}
+
+.contact-card a {
+  color: #4275f6;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+/* Product Enquiry */
+.contact-enquiry {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 35px;
+  background: #f9fafb;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.contact-enquiry h2 {
+  margin: 0 0 20px;
+  font-size: 28px;
+  color: #1f2937;
+}
+
+.contact-enquiry p {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.contact-whatsapp-button {
+  display: inline-block;
+  padding: 14px 30px;
+  background: #4275f6;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 700;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-whatsapp-button:hover {
+  background: #4275f6;
+  transform: translateY(-2px);
+}
+
+/* Store Location */
+.contact-location {
+  margin-top: 50px;
+  padding: 30px;
+  background: #fff7ed;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.contact-location h2 {
+  font-size: 23px;
+  margin: 0 0 10px;
+  color: #1f2937;
+}
+
+.contact-location p {
+  color: #555;
+  margin: 0;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 35px 5% 60px;
+  }
+
+  .contact-header h1 {
+    font-size: 34px;
+  }
+
+  .contact-header p {
+    font-size: 16px;
+  }
+
+  .contact-cards {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .contact-enquiry {
+    padding: 28px 20px;
+  }
+
+  .contact-location h2 {
     font-size: 20px;
-    transition: 0.3s ease;
-}
-
-.contact-info-box:hover .contact-icon {
-    background: #f97316;
-    transform: scale(1.08);
-}
-
-/* CONTACT DETAIL TEXT */
-
-.contact-info-box h3 {
-    margin: 0 0 5px;
-    color: #111827;
-    font-size: 15px;
-    font-weight: 800;
-}
-
-.contact-info-box p {
-    margin: 0;
-    color: #6b7280;
-    font-size: 13px;
-    line-height: 1.6;
-    overflow-wrap: anywhere;
-}
-
-/* ================================
-   BUSINESS NOTE
-================================ */
-
-.contact-note {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-top: 25px;
-    padding: 18px 20px;
-    text-align: left;
-    background: #fff7ed;
-    border-left: 4px solid #f97316;
-    border-radius: 8px;
-}
-
-.contact-note > span {
-    flex-shrink: 0;
-    font-size: 25px;
-}
-
-.contact-note strong {
-    color: #111827;
-    font-size: 14px;
-}
-
-.contact-note p {
-    margin: 4px 0 0;
-    color: #6b7280;
-    font-size: 12px;
-    line-height: 1.5;
-}
-
-/* ================================
-   FORM CARD
-================================ */
-
-.contact-form-card {
-    width: 100%;
-    min-width: 0;
-    padding: 38px;
-    box-sizing: border-box;
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 18px;
-    box-shadow: 0 15px 40px rgba(17, 24, 39, 0.08);
-}
-
-.contact-form-label {
-    color: #f97316;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-.contact-form-card h2 {
-    margin: 10px 0 8px;
-    color: #111827;
-    font-size: 30px;
-    font-weight: 800;
-}
-
-.contact-form-card > p {
-    margin: 0 0 25px;
-    color: #6b7280;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-/* FORM */
-
-.contact-form-card form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-.contact-form-card input,
-.contact-form-card select,
-.contact-form-card textarea {
-    width: 100%;
-    padding: 14px 15px;
-    box-sizing: border-box;
-    background: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    outline: none;
-    color: #111827;
-    font-family: inherit;
-    font-size: 14px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease,
-        background 0.3s ease;
-}
-
-.contact-form-card input:focus,
-.contact-form-card select:focus,
-.contact-form-card textarea:focus {
-    background: #ffffff;
-    border-color: #f97316;
-    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
-}
-
-.contact-form-card textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.contact-form-card button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    background: #f97316;
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 800;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.contact-form-card button:hover {
-    background: #ea580c;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(249, 115, 22, 0.25);
-}
-
-.contact-form-card button span {
-    font-size: 20px;
-    transition: transform 0.3s ease;
-}
-
-.contact-form-card button:hover span {
-    transform: translateX(4px);
-}
-
-/* ================================
-   TABLET
-================================ */
-
-@media (max-width: 950px) {
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 45px;
-    }
-
-    .contact-info {
-        max-width: 750px;
-        margin: 0 auto;
-    }
-
-    .contact-form-card {
-        max-width: 700px;
-        margin: 0 auto;
-    }
-}
-
-/* ================================
-   MOBILE
-================================ */
-
-@media (max-width: 600px) {
-    .contact-section {
-        padding: 40px 15px 70px;
-    }
-
-    .contact-container {
-        width: 100%;
-    }
-
-    .contact-info h2 {
-        font-size: 36px;
-    }
-
-    .contact-intro {
-        font-size: 15px;
-    }
-
-    .contact-details {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-form-card {
-        padding: 25px 20px;
-    }
-
-    .contact-form-card h2 {
-        font-size: 26px;
-    }
-
-    .contact-form-row {
-        grid-template-columns: 1fr;
-    }
+  }
 }

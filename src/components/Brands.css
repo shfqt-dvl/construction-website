@@ -29,7 +29,7 @@
     display: inline-block;
     margin-bottom: 10px;
 
-    color: #f97316;
+    color: #1695f0;
     font-size: 13px;
     font-weight: 800;
     letter-spacing: 2px;
@@ -45,7 +45,7 @@
 }
 
 .brands-heading h2 strong {
-    color: #f97316;
+    color: #1695f0;
 }
 
 .brands-heading p {
@@ -105,7 +105,7 @@
     width: 100%;
     height: 3px;
 
-    background: #f97316;
+    background: #1695f0;
 
     transform: scaleX(0);
 
@@ -115,7 +115,7 @@
 .brand-card:hover {
     transform: translateY(-8px);
 
-    border-color: #f97316;
+    border-color: #1695f0;
 
     box-shadow:
         0 18px 40px rgba(249, 115, 22, 0.14);
@@ -151,7 +151,7 @@
 }
 
 .brand-card:hover .brand-icon {
-    background: #f97316;
+    background: #1695f0;
 
     transform: scale(1.08) rotate(-3deg);
 }
@@ -172,7 +172,7 @@
 }
 
 .brand-card:hover h3 {
-    color: #f97316;
+    color: #1695f0;
 }
 
 /* ================================
@@ -226,7 +226,7 @@
 .brand-card:hover .brand-names span {
     background: #fff7ed;
     border-color: #fed7aa;
-    color: #ea580c;
+    color: #4275f6;
 }
 
 /* ================================
@@ -236,7 +236,7 @@
 .brand-link {
     display: inline-block;
 
-    color: #f97316;
+    color: #1695f0;
 
     font-size: 13px;
     font-weight: 800;
@@ -247,7 +247,7 @@
 }
 
 .brand-card:hover .brand-link {
-    color: #ea580c;
+    color: #4275f6;
 
     transform: translateX(4px);
 }
@@ -275,7 +275,7 @@
 }
 
 .brands-cta>div>span {
-    color: #fb923c;
+    color: #1695f0;
 
     font-size: 11px;
 

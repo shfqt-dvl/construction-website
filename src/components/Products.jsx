@@ -1,5 +1,4 @@
-
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Products.css";
 
 const categories = [
@@ -78,26 +77,8 @@ const categories = [
 ];
 
 function Products() {
-  const navigate = useNavigate();
-
   return (
     <section className="products-section" id="products">
-
-      {/* Back Button */}
-      <button
-        type="button"
-        className="products-back-button"
-        onClick={() => {
-          if (window.history.length > 1) {
-            navigate(-1);
-          } else {
-            navigate("/");
-          }
-        }}
-      >
-        ← Back
-      </button>
-
       <div className="products-heading">
         <span>OUR PRODUCTS</span>
 
@@ -132,7 +113,6 @@ function Products() {
           </Link>
         ))}
       </div>
-
     </section>
   );
 }

@@ -15,7 +15,7 @@
     display: inline-block;
     margin-bottom: 10px;
 
-    color: #f97316;
+    color: #1695f0;
     font-size: 13px;
     font-weight: 800;
     letter-spacing: 2px;
@@ -30,7 +30,7 @@
 }
 
 .products-heading h2 strong {
-    color: #f97316;
+    color: #1695f0;
 }
 
 .products-heading p {
@@ -79,7 +79,7 @@
 .product-category-card:hover {
     transform: translateY(-7px);
 
-    border-color: #f97316;
+    border-color: #1695f0;
 
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
@@ -104,7 +104,7 @@
 }
 
 .product-category-card:hover .product-category-icon {
-    background: #f97316;
+    background: #1695f0;
     transform: scale(1.08);
 }
 
@@ -132,7 +132,7 @@
 .category-link {
     margin-top: auto;
 
-    color: #f97316;
+    color: #1695f0;
 
     font-size: 12px;
 
@@ -142,7 +142,7 @@
 }
 
 .product-category-card:hover .category-link {
-    color: #ea580c;
+    color: #4275f6;
     transform: translateX(3px);
 }
 

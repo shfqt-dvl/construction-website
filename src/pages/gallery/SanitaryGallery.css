@@ -39,7 +39,7 @@
 
 .sanitary-gallery-overlay span {
   display: inline-block;
-  color: #f97316;
+  color: #1695f0;
   font-size: 14px;
   font-weight: 800;
   letter-spacing: 3px;
@@ -70,7 +70,7 @@
 
 .sanitary-gallery-label {
   display: inline-block;
-  color: #f97316;
+  color: #1695f0;
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 2px;
@@ -173,7 +173,7 @@
 
 .sanitary-application-list div:hover {
   transform: translateY(-4px);
-  border-color: #f97316;
+  border-color: #1695f0;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
 }
 

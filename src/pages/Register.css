@@ -53,12 +53,12 @@
 .register-box input:focus,
 .register-box textarea:focus {
     outline: none;
-    border-color: #f97316;
+    border-color: #1695f0;
 }
 
 .register-btn {
     border: none;
-    background: #f97316;
+    background: #1695f0;
     color: white;
     padding: 14px;
     border-radius: 8px;
@@ -69,7 +69,7 @@
 }
 
 .register-btn:hover {
-    background: #ea580c;
+    background: #4275f6;
     transform: translateY(-2px);
 }
 
@@ -80,7 +80,7 @@
 }
 
 .login-link a {
-    color: #f97316;
+    color: #1695f0;
     font-weight: 600;
     text-decoration: none;
 }

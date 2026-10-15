@@ -24,7 +24,7 @@
   display: inline-block;
   margin-bottom: 12px;
 
-  color: #f97316;
+  color: #1695f0;
 
   font-size: 13px;
   font-weight: 800;
@@ -46,7 +46,7 @@
 }
 
 .why-content h2 strong {
-  color: #f97316;
+  color: #1695f0;
 }
 
 .why-content>p {
@@ -113,7 +113,7 @@
   width: 100%;
   height: 3px;
 
-  background: #f97316;
+  background: #1695f0;
 
   transform: scaleX(0);
 
@@ -164,7 +164,7 @@
 }
 
 .why-box:hover .why-icon {
-  background: #f97316;
+  background: #1695f0;
 
   transform: scale(1.08) rotate(-3deg);
 }
@@ -188,7 +188,7 @@
 }
 
 .why-box:hover h3 {
-  color: #f97316;
+  color: #1695f0;
 }
 
 /* =================================

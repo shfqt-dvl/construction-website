@@ -13,7 +13,7 @@
 .paint-products-header span {
   display: inline-block;
   margin-bottom: 12px;
-  color: #f97316;
+  color: #1695f0;
   font-size: 14px;
   font-weight: 800;
   letter-spacing: 2px;
@@ -63,7 +63,7 @@
 
 .paint-product-card:hover {
   transform: translateY(-5px);
-  border-color: #f97316;
+  border-color: #1695f0;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
@@ -104,7 +104,7 @@
   padding: 5px 10px;
 
   background: #fff7ed;
-  color: #ea580c;
+  color: #4275f6;
 
   border-radius: 5px;
 

@@ -56,7 +56,7 @@
 .pipes-gallery-overlay span {
     display: inline-block;
 
-    color: #f97316;
+    color: #1695f0;
 
     font-size: 14px;
     font-weight: 800;
@@ -94,7 +94,7 @@
 .pipes-gallery-label {
     display: inline-block;
 
-    color: #f97316;
+    color: #1695f0;
 
     font-size: 13px;
     font-weight: 800;
@@ -261,7 +261,7 @@
 .pipes-application-list div:hover {
     transform: translateY(-4px);
 
-    border-color: #f97316;
+    border-color: #1695f0;
 
     box-shadow:
         0 8px 25px rgba(0, 0, 0, 0.06);
@@ -319,9 +319,9 @@
 }
 
 .pipes-solution-list span:hover {
-    background: #f97316;
+    background: #1695f0;
 
-    border-color: #f97316;
+    border-color: #1695f0;
 
     transform: translateY(-3px);
 }
@@ -384,9 +384,9 @@
 }
 
 .pipes-brand-list span:hover {
-    background: #f97316;
+    background: #1695f0;
 
-    border-color: #f97316;
+    border-color: #1695f0;
 
     color: white;
 

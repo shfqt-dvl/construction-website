@@ -58,7 +58,7 @@
     height: 45px;
     margin: 0 auto;
     border: 4px solid #fed7aa;
-    border-top-color: #f97316;
+    border-top-color: #1695f0;
     border-radius: 50%;
     animation: adminSpin 0.8s linear infinite;
 }
@@ -146,7 +146,7 @@
 }
 
 .admin-label {
-    color: #fb923c;
+    color: #4275f6;
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2px;
@@ -222,7 +222,7 @@
 }
 
 .admin-welcome span {
-    color: #f97316;
+    color: #1695f0;
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 1.5px;
@@ -320,7 +320,7 @@
 }
 
 .admin-card-button:hover {
-    background: #f97316;
+    background: #1695f0;
     transform: translateY(-2px);
 }
 
@@ -402,7 +402,7 @@
 }
 
 .admin-refresh-button:hover {
-    background: #f97316;
+    background: #1695f0;
 }
 
 .admin-refresh-button:disabled {
@@ -419,13 +419,13 @@
     padding: 18px 20px;
     background: #fef2f2;
     border: 1px solid #fecaca;
-    border-left: 5px solid #ef4444;
+    border-left: 5px solid #337ebb;
     border-radius: 10px;
 }
 
 .admin-customer-error strong {
     display: block;
-    color: #b91c1c;
+    color: #3288ec;
     margin-bottom: 6px;
 }
 
@@ -439,7 +439,7 @@
     padding: 8px 14px;
     border: none;
     border-radius: 7px;
-    background: #dc2626;
+    background: #327eef;
     color: white;
     font-size: 12px;
     font-weight: 700;
@@ -544,7 +544,7 @@
 }
 
 .customer-number {
-    color: #f97316 !important;
+    color: #1695f0 !important;
     font-weight: 800;
 }
 
@@ -572,7 +572,7 @@
     align-items: center;
     justify-content: center;
     background: #fff7ed;
-    color: #c2410c;
+    color: #3a8cd8;
     border: 1px solid #fed7aa;
     border-radius: 50%;
     font-size: 14px;
@@ -618,7 +618,7 @@
     border: 1px solid #fecaca;
     border-radius: 7px;
     background: #fef2f2;
-    color: #dc2626;
+    color: #3e82d0;
     font-size: 11px;
     font-weight: 800;
     cursor: pointer;
@@ -877,7 +877,7 @@
     background: #fff7ed;
     border: 1px solid #fed7aa;
     border-radius: 8px;
-    color: #c2410c;
+    color: #3e83bc;
     font-size: 12px;
     font-weight: 700;
 }
@@ -922,8 +922,8 @@
 }
 
 .admin-actions button:hover {
-    background: #f97316;
-    border-color: #f97316;
+    background: #1695f0;
+    border-color: #1695f0;
 }
 
 /* =========================================

@@ -119,7 +119,7 @@
 }
 
 .about-content h2 strong {
-    color: #f97316;
+    color: #1695f0;
 }
 
 .about-content>p {
@@ -162,7 +162,7 @@
     border-radius: 50%;
 
     background: #fff7ed;
-    color: #f97316;
+    color: #1695f0;
 
     font-weight: 800;
 }
@@ -199,7 +199,7 @@
 }
 
 .why-us-heading h2 strong {
-    color: #f97316;
+    color: #1695f0;
 }
 
 .why-us-grid {
@@ -229,7 +229,7 @@
 
     background: #ffffff;
 
-    border-color: #f97316;
+    border-color: #1695f0;
 
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
 }
@@ -275,7 +275,7 @@
 
     border-radius: 10px;
 
-    border-left: 4px solid #f97316;
+    border-left: 4px solid #1695f0;
 }
 
 .about-location>div:first-child span {

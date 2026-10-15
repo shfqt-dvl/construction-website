@@ -19,8 +19,8 @@ import ScrollToTop from "./components/ScrollToTop";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Services from "./pages/Services";
-import Contact from "./pages/Contact";
+import Services from "./pages/Services.jsx";
+import Contact from "./components/Contact";
 import NotFound from "./pages/NotFound";
 import Account from "./pages/Account";
 import Admin from "./pages/Admin";
@@ -108,7 +108,7 @@ function App() {
         ================================= */}
 
         <Route
-          path="/contact"
+          path="/Contact"
           element={<Contact />}
         />
 
@@ -144,7 +144,7 @@ function App() {
         ================================= */}
 
         <Route
-          path="/products"
+          path="/Products"
           element={<Products />}
         />
 

@@ -59,7 +59,7 @@
 
 .checkout-form input:focus,
 .checkout-form textarea:focus {
-    border-color: #f97316;
+    border-color: #1695f0;
 }
 
 .place-order-btn {
@@ -104,7 +104,7 @@
 }
 
 .checkout-total strong {
-    color: #f97316;
+    color: #1695f0;
 }
 
 /* Mobile */
@@ -166,7 +166,7 @@
     width: 18px;
     height: 18px;
 
-    accent-color: #f97316;
+    accent-color: #1695f0;
 
     cursor: pointer;
 }

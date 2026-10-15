@@ -168,10 +168,10 @@
   padding: 14px 28px;
   box-sizing: border-box;
 
-  border: 2px solid #f97316;
+  border: 2px solid #1695f0;
   border-radius: 9px;
 
-  background: #f97316;
+  background: #1695f0;
   color: #fff;
 
   font-size: clamp(14px, 1.25vw, 17px);
@@ -188,7 +188,7 @@
 }
 
 .hero-btn:hover {
-  background: #ea580c;
+  background: #1695f0;
   transform: translateY(-3px);
   box-shadow: 0 8px 22px rgb(249 115 22 / 35%);
 }
@@ -235,7 +235,7 @@
 .hero-dot.active {
   width: 27px;
   border-radius: 10px;
-  background: #f97316;
+  background: #1695f0;
 }
 
 .hero-dot:focus-visible,
