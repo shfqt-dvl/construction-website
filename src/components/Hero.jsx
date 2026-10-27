@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import MaskedHeading from "../components/MaskedHeading";
 import "./Hero.css";
 
 import bg1 from "../assets/projects/project1.jpg";
@@ -30,73 +31,81 @@ function Hero() {
       style={{
         backgroundImage: `
           linear-gradient(
-            rgba(15, 23, 42, 0.65),
-            rgba(15, 23, 42, 0.72)
+            rgba(35, 45, 60, 0.70),
+            rgba(35, 45, 60, 0.76)
           ),
           url(${backgrounds[currentSlide]})
         `,
       }}
     >
       <div className="hero-overlay">
-
         <div className="hero-content hero-animation">
 
-          {/* Company Name */}
+          {/* BRAND NAME */}
+
           <div className="hero-brand">
-            <div className="hero-brand-main">
-              MUSHAD
-            </div>
+            <MaskedHeading
+              tag="div"
+              className="hero-brand-main"
+              text="MUSHAD"
+              duration={0.9}
+              stagger={0.08}
+              trigger="view"
+              align="center"
+              weight={900}
+              tracking={-0.02}
+              lineHeight={1.05}
+            />
 
             <div className="hero-brand-sub">
-              Construction & Hardware Store
+              Construction &amp; Hardware Store
             </div>
           </div>
 
-          {/* Main Heading */}
+          {/* MAIN HEADING */}
+
           <h1>
             Your Trusted Partner for Premium
-            Construction & Hardware Solutions
+            <br />
+            Construction &amp; Hardware Solutions
           </h1>
 
-          {/* Description */}
-          <p>
-            Mushad Construction & Hardware Store provides quality
+          {/* DESCRIPTION */}
+
+          <p className="hero-description">
+            Mushad Construction &amp; Hardware Store provides quality
             construction materials including cement, steel, paints,
             sanitary items, plumbing products, hardware tools, and
             more — all under one roof.
           </p>
 
-          {/* Highlights */}
+          {/* HIGHLIGHTS */}
+
           <div className="hero-points">
             <span>✔ Quality Materials</span>
             <span>✔ Trusted Service</span>
             <span>✔ Complete Construction Solutions</span>
           </div>
 
-          {/* Buttons */}
-          <div className="hero-buttons">
+          {/* BUTTONS */}
 
-            <Link
-              to="/products"
-              className="hero-btn"
-            >
+          <div className="hero-buttons">
+            <Link to="/products" className="hero-btn">
               Explore Products
             </Link>
 
-            <Link
-              to="/contact"
-              className="hero-btn secondary"
-            >
+            <Link to="/contact" className="hero-btn secondary">
               Contact Us
             </Link>
-
           </div>
 
-          {/* Slider Dots */}
+          {/* BACKGROUND SLIDER DOTS */}
+
           <div className="hero-dots">
             {backgrounds.map((_, index) => (
               <button
                 key={index}
+                type="button"
                 className={
                   currentSlide === index
                     ? "hero-dot active"
@@ -104,12 +113,14 @@ function Hero() {
                 }
                 onClick={() => setCurrentSlide(index)}
                 aria-label={`Go to slide ${index + 1}`}
+                aria-current={
+                  currentSlide === index ? "true" : undefined
+                }
               />
             ))}
           </div>
 
         </div>
-
       </div>
     </section>
   );

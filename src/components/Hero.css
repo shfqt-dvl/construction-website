@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
 
-/* =========================
-   RESPONSIVE HOMEPAGE HERO
-========================= */
+/* =========================================
+   HERO SECTION
+========================================= */
 
 .hero {
   position: relative;
@@ -9,146 +10,129 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 100%;
-  min-height: 620px;
-  min-height: clamp(620px, calc(100svh - 76px), 900px);
-
+  min-height: clamp(620px, 100svh, 900px);
   padding: 0;
   box-sizing: border-box;
-
   background-size: cover;
-  background-position: center center;
+  background-position: center 45%;
   background-repeat: no-repeat;
-
   overflow: hidden;
   transition: background-image 0.5s ease-in-out;
+}
+
+.hero,
+.hero * {
+  box-sizing: border-box;
 }
 
 .hero-overlay {
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 100%;
   min-height: inherit;
-  padding: clamp(36px, 5vw, 64px) 24px;
-
-  box-sizing: border-box;
+  padding: clamp(30px, 4vw, 48px) 24px;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-
   width: 100%;
   max-width: 1100px;
-  margin-inline: auto;
-
+  margin: 0 auto;
   text-align: center;
   color: #fff;
-
   animation: heroFadeUp 0.8s ease-out both;
 }
 
-/* Brand name */
+/* =========================================
+   BRAND NAME
+========================================= */
 
 .hero-brand {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  margin: 0 0 clamp(22px, 3vw, 32px);
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 24px;
+  text-align: center;
+  background: transparent !important;
 }
 
 .hero-brand-main {
+  display: block;
+  width: 100%;
   max-width: 100%;
-  font-size: clamp(42px, 6vw, 72px);
-  font-weight: 900;
-  letter-spacing: clamp(2px, 0.7vw, 5px);
-  line-height: 1.12;
-  overflow-wrap: anywhere;
+  font-family: "Montserrat", sans-serif;
 
-  color: #fff;
-  text-shadow: 0 4px 15px rgb(0 0 0 / 55%);
+  /* Reduced size for a balanced appearance */
+  font-size: clamp(48px, 6.5vw, 78px);
+
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  color: #f9f5f5 !important;
+  background: transparent !important;
+  overflow-wrap: anywhere;
+}
+
+.hero-brand-main .masked-heading__letter,
+.hero-brand-main .masked-heading__letter:nth-child(3n) {
+  color: #f9f5f5 !important;
+  -webkit-text-fill-color: #f9f5f5 !important;
 }
 
 .hero-brand-sub {
-  margin-top: 9px;
-
-  font-size: clamp(12px, 1.5vw, 17px);
-  font-weight: 600;
-  letter-spacing: clamp(0.3px, 0.2vw, 1px);
+  margin-top: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(12px, 1.6vw, 17px);
+  font-weight: 700;
+  letter-spacing: 2px;
   line-height: 1.5;
-
-  color: #f4eee9;
+  text-align: center;
+  text-transform: uppercase;
+  color: #f9f5f5 !important;
+  background: transparent !important;
 }
 
-/* Main heading */
+
+/* =========================================
+   MAIN HEADING
+========================================= */
 
 .hero-content h1 {
   max-width: 1000px;
-  margin: 0 auto 22px;
-
+  margin: 0 auto 18px;
+  font-family: "Montserrat", sans-serif;
   font-size: clamp(30px, 4.2vw, 58px);
   font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.5px;
+  line-height: 1.2;
+  letter-spacing: -0.7px;
   overflow-wrap: break-word;
   text-wrap: balance;
-
   text-shadow: 0 3px 12px rgb(0 0 0 / 55%);
 }
 
+/* =========================================
+   DESCRIPTION
+========================================= */
+
 .hero-description {
   max-width: 850px;
-  margin: 0 auto 30px;
-
+  margin: 0 auto 24px;
+  font-family: "Montserrat", sans-serif;
   font-size: clamp(15px, 1.5vw, 20px);
-  line-height: 1.75;
+  font-weight: 400;
+  line-height: 1.7;
   color: #f8fafc;
   overflow-wrap: break-word;
 }
 
-/* Highlight badges */
-
-.hero-points {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-
-  gap: 12px;
-  margin: 0 auto 32px;
-}
-
-.hero-points span {
-  max-width: 100%;
-  padding: 10px 17px;
-
-  border: 1px solid rgb(255 255 255 / 30%);
-  border-radius: 30px;
-
-  background: rgb(255 255 255 / 14%);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-
-  font-size: clamp(12px, 1.15vw, 15px);
-  font-weight: 600;
-  line-height: 1.5;
-  overflow-wrap: break-word;
-
-  transition: background 0.25s ease, transform 0.25s ease;
-}
-
-@media (hover: hover) {
-  .hero-points span:hover {
-    background: rgb(249 115 22 / 85%);
-    transform: translateY(-3px);
-  }
-}
-
-/* Buttons */
+/* =========================================
+   BUTTONS
+========================================= */
 
 .hero-buttons {
   display: flex;
@@ -162,25 +146,20 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-
   min-height: 50px;
   max-width: 100%;
   padding: 14px 28px;
-  box-sizing: border-box;
-
-  border: 2px solid #1695f0;
+  border: 2px solid #4275f6;
   border-radius: 9px;
-
-  background: #1695f0;
+  background: #4275f6;
   color: #fff;
-
+  font-family: "Montserrat", sans-serif;
   font-size: clamp(14px, 1.25vw, 17px);
   font-weight: 700;
   line-height: 1.4;
   text-align: center;
   text-decoration: none;
   overflow-wrap: break-word;
-
   transition:
     transform 0.25s ease,
     background 0.25s ease,
@@ -188,11 +167,13 @@
 }
 
 .hero-btn:hover {
-  background: #1695f0;
+  background: #4d94e4;
+  border-color: #4d94e4;
   transform: translateY(-3px);
-  box-shadow: 0 8px 22px rgb(249 115 22 / 35%);
+  box-shadow: 0 8px 22px rgb(211 47 47 / 35%);
 }
 
+/* Secondary button remains white */
 .hero-btn.secondary {
   border-color: #fff;
   background: #fff;
@@ -201,33 +182,32 @@
 
 .hero-btn.secondary:hover {
   background: #f1f5f9;
+  border-color: #f1f5f9;
   box-shadow: 0 8px 22px rgb(0 0 0 / 20%);
 }
 
-/* Slider dots */
+/* =========================================
+   SLIDER DOTS
+========================================= */
 
 .hero-dots {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-
   gap: 10px;
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 .hero-dot {
   display: block;
   flex: 0 0 auto;
-
   width: 10px;
   height: 10px;
   padding: 0;
-
   border: none;
   border-radius: 50%;
-  background: rgb(255 255 255 / 55%);
-
+  background: rgb(255 255 255 / 65%);
   cursor: pointer;
   transition: width 0.25s ease, background 0.25s ease;
 }
@@ -235,7 +215,7 @@
 .hero-dot.active {
   width: 27px;
   border-radius: 10px;
-  background: #1695f0;
+  background: #D32F2F;
 }
 
 .hero-dot:focus-visible,
@@ -244,7 +224,9 @@
   outline-offset: 4px;
 }
 
-/* Animation */
+/* =========================================
+   ENTRANCE ANIMATION
+========================================= */
 
 @keyframes heroFadeUp {
   from {
@@ -258,48 +240,55 @@
   }
 }
 
-/* =========================
+
+/* =========================================
    TABLETS
-========================= */
+========================================= */
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 620px;
-    min-height: max(620px, calc(100svh - 65px));
-    background-position: center center;
+    min-height: max(620px, 100svh);
+    background-position: center 40%;
+    background-size: cover;
   }
 
   .hero-overlay {
-    padding: 38px 22px;
+    padding: 30px 22px;
   }
 
   .hero-brand {
-    margin-bottom: 23px;
+    margin-bottom: 22px;
   }
 
   .hero-brand-main {
-    font-size: clamp(40px, 8vw, 56px);
+    font-size: clamp(40px, 7vw, 52px);
+    letter-spacing: 0;
+  }
+
+  .hero-brand-sub {
+    font-size: clamp(11px, 2vw, 15px);
+    letter-spacing: 1px;
   }
 
   .hero-content h1 {
-    font-size: clamp(30px, 5.4vw, 42px);
+    font-size: clamp(28px, 5.4vw, 42px);
     line-height: 1.2;
-    margin-bottom: 18px;
+    margin-bottom: 17px;
   }
 
   .hero-description {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.7;
-    margin-bottom: 23px;
+    margin-bottom: 22px;
   }
 
   .hero-points {
     gap: 9px;
-    margin-bottom: 25px;
+    margin-bottom: 23px;
   }
 
   .hero-points span {
-    padding: 8px 12px;
+    padding: 9px 13px;
   }
 
   .hero-buttons {
@@ -311,23 +300,25 @@
   }
 
   .hero-dots {
-    margin-top: 24px;
+    margin-top: 22px;
   }
 }
 
-/* =========================
+/* =========================================
    MOBILE PHONES
-========================= */
+========================================= */
 
 @media (max-width: 480px) {
   .hero {
-    min-height: 0;
-    background-position: center center;
+    min-height: 100svh;
+    background-size: cover;
+    background-position: center 35%;
+    background-repeat: no-repeat;
   }
 
   .hero-overlay {
-    min-height: 0;
-    padding: 42px 17px 32px;
+    min-height: inherit;
+    padding: 28px 17px 24px;
   }
 
   .hero-content {
@@ -335,70 +326,78 @@
   }
 
   .hero-brand {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
   .hero-brand-main {
-    font-size: clamp(38px, 11vw, 48px);
-    letter-spacing: 3px;
-    line-height: 1.15;
+    font-size: clamp(34px, 9vw, 42px);
+    letter-spacing: 0;
+    line-height: 1.08;
   }
 
   .hero-brand-sub {
     max-width: 100%;
     margin-top: 8px;
-    font-size: 12px;
-    letter-spacing: 0.3px;
+    font-size: clamp(10px, 2.8vw, 12px);
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
   }
 
   .hero-content h1 {
-    margin-bottom: 17px;
-    font-size: clamp(28px, 8vw, 36px);
-    line-height: 1.2;
-    letter-spacing: -0.3px;
+    margin-bottom: 16px;
+    font-size: clamp(25px, 7.2vw, 34px);
+    line-height: 1.22;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-content h1 br {
+    display: none;
   }
 
   .hero-description {
-    margin-bottom: 22px;
-    font-size: 14px;
-    line-height: 1.75;
+    margin-bottom: 19px;
+    font-size: 13px;
+    line-height: 1.7;
   }
 
   .hero-points {
     flex-direction: column;
     align-items: stretch;
     gap: 9px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
   .hero-points span {
     width: 100%;
-    padding: 9px 12px;
-    box-sizing: border-box;
-    font-size: 13px;
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.5;
     text-align: center;
   }
 
   .hero-buttons {
     flex-direction: column;
     align-items: stretch;
-    gap: 12px;
+    gap: 11px;
   }
 
   .hero-btn {
     width: 100%;
     min-height: 48px;
-    padding: 13px 16px;
-    font-size: 15px;
+    padding: 12px 16px;
+    font-size: 14px;
   }
 
   .hero-dots {
     gap: 9px;
-    margin-top: 25px;
+    margin-top: 20px;
   }
 }
 
-/* Small phones */
+/* =========================================
+   SMALL PHONES
+========================================= */
 
 @media (max-width: 350px) {
   .hero-overlay {
@@ -407,20 +406,26 @@
   }
 
   .hero-brand-main {
-    font-size: 36px;
-    letter-spacing: 2px;
+    font-size: 32px;
+  }
+
+  .hero-brand-sub {
+    font-size: 10px;
+    letter-spacing: 0;
   }
 
   .hero-content h1 {
-    font-size: 27px;
+    font-size: 25px;
   }
 
   .hero-description {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
-/* Respect reduced-motion preferences */
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
   .hero-content {

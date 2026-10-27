@@ -1,0 +1,51 @@
+.masked-heading {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: var(--mh-align, center);
+    font-weight: var(--mh-weight, 900);
+    letter-spacing: var(--mh-tracking, -0.035em);
+    line-height: var(--mh-line-height, 1.1);
+
+    /* Navy and teal text only — no orange background */
+    color: #2f4156;
+    background: transparent;
+
+    perspective: 700px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.masked-heading__letter {
+    display: inline-block;
+    color: #2f4156;
+    opacity: 0;
+    transform-origin: center bottom;
+    will-change: transform, opacity, filter;
+}
+
+.masked-heading__letter:nth-child(3n) {
+    color: #567c8d;
+}
+
+.masked-heading__accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .masked-heading__letter {
+        opacity: 1;
+        filter: none;
+        transform: none;
+    }
+}

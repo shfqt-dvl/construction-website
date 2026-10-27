@@ -136,23 +136,6 @@ function Gallery() {
 
       </div>
 
-      {/* Bottom slogan */}
-      <div className="gallery-slogan">
-
-        <div className="slogan-line"></div>
-
-        <h2>
-          Quality Materials.
-          <span> Stronger Construction.</span>
-        </h2>
-
-        <p>
-          Mushad Construction & Hardware Store —
-          Your trusted partner for building materials.
-        </p>
-
-      </div>
-
     </section>
   );
 }
