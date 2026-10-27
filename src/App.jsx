@@ -1,10 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
 
-// ================================
 // MAIN COMPONENTS
-// ================================
-
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Products from "./components/Products";
@@ -13,22 +9,15 @@ import WhatsAppButton from "./components/WhatsappButton.jsx";
 import CallButton from "./components/CallButton";
 import ScrollToTop from "./components/ScrollToTop";
 
-// ================================
 // PAGES
-// ================================
-
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services.jsx";
 import Contact from "./components/Contact";
 import NotFound from "./pages/NotFound";
-import Account from "./pages/Account";
 import Admin from "./pages/Admin";
 
-// ================================
 // PRODUCT PAGES
-// ================================
-
 import CementProducts from "./pages/products/CementProducts";
 import SteelProducts from "./pages/products/SteelProducts";
 import PaintProducts from "./pages/products/PaintProducts";
@@ -38,10 +27,7 @@ import SanitaryProducts from "./pages/products/SanitaryProducts";
 import ChemicalsProducts from "./pages/products/ChemicalsProducts";
 import HardwareProducts from "./pages/products/HardwareProducts";
 
-// ================================
 // GALLERY PAGES
-// ================================
-
 import CementGallery from "./pages/gallery/CementGallery.jsx";
 import ChemicalGallery from "./pages/gallery/ChemicalGallery.jsx";
 import PaintGallery from "./pages/gallery/PaintGallery.jsx";
@@ -51,113 +37,38 @@ import SanitaryGallery from "./pages/gallery/SanitaryGallery.jsx";
 import SteelGallery from "./pages/gallery/SteelGallery.jsx";
 import WatertankGallery from "./pages/gallery/WatertankGallery.jsx";
 
-// ================================
-// APP
-// ================================
-
 function App() {
   return (
     <>
-      {/* ================================
-          SCROLL TO TOP
-      ================================= */}
-
       <ScrollToTop />
-
-      {/* ================================
-          NAVBAR
-      ================================= */}
 
       <Navbar />
 
-      {/* ================================
-          ROUTES
-      ================================= */}
-
       <Routes>
+        {/* HOME */}
 
-        {/* ================================
-            HOME
-        ================================= */}
+        <Route path="/" element={<Home />} />
 
-        <Route
-          path="/"
-          element={<Home />}
-        />
+        {/* MAIN PAGES */}
 
-        {/* ================================
-            ABOUT
-        ================================= */}
+        <Route path="/about" element={<About />} />
 
-        <Route
-          path="/about"
-          element={<About />}
-        />
+        <Route path="/services" element={<Services />} />
 
-        {/* ================================
-            SERVICES
-        ================================= */}
+        <Route path="/contact" element={<Contact />} />
 
-        <Route
-          path="/services"
-          element={<Services />}
-        />
+        {/* ADMIN */}
 
-        {/* ================================
-            CONTACT
-        ================================= */}
+        <Route path="/admin" element={<Admin />} />
 
-        <Route
-          path="/Contact"
-          element={<Contact />}
-        />
+        {/* PRODUCTS */}
 
-        {/* ================================
-            ACCOUNT
-        ================================= */}
-
-        <Route
-          path="/account"
-          element={<Account />}
-        />
-
-        {/* ================================
-            LOGIN
-        ================================= */}
-
-        <Route
-          path="/login"
-          element={<Login />}
-        />
-
-        {/* ================================
-            ADMIN
-        ================================= */}
-
-        <Route
-          path="/admin"
-          element={<Admin />}
-        />
-
-        {/* ================================
-            PRODUCTS MAIN PAGE
-        ================================= */}
-
-        <Route
-          path="/Products"
-          element={<Products />}
-        />
-
-        {/* ================================
-            PRODUCT PAGES
-        ================================= */}
+        <Route path="/products" element={<Products />} />
 
         <Route
           path="/products/cement"
           element={<CementProducts />}
         />
-        
-
 
         <Route
           path="/products/steel"
@@ -194,9 +105,7 @@ function App() {
           element={<HardwareProducts />}
         />
 
-        {/* ================================
-            GALLERY PAGES
-        ================================= */}
+        {/* GALLERIES */}
 
         <Route
           path="/gallery/cement"
@@ -204,7 +113,7 @@ function App() {
         />
 
         <Route
-          path="/gallery/chemical"
+          path="/gallery/chemicals"
           element={<ChemicalGallery />}
         />
 
@@ -238,20 +147,12 @@ function App() {
           element={<WatertankGallery />}
         />
 
-        {/* ================================
-            404
-        ================================= */}
+        {/* 404 */}
 
-        <Route
-          path="*"
-          element={<NotFound />}
-        />
-
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
-      {/* ================================
-          GLOBAL COMPONENTS
-      ================================= */}
+      {/* GLOBAL COMPONENTS */}
 
       <Footer />
 
