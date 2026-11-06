@@ -5,7 +5,7 @@ import fasteners from "../../assets/fasteners.webp";
 import nails from "../../assets/mild-steel-coil-wire-nails-966.jpg";
 import hardwareBanner from "../../assets/hardware-banner.jpg";
 
-const hardwareProducts = [
+export const hardwareProducts = [
   {
     id: 1,
     name: "Hardware Tools",

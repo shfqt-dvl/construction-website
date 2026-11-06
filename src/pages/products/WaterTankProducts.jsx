@@ -5,7 +5,7 @@ import balajiTank from "../../assets/balaji-four-layer-storage-water-tank-781.jp
 import princeTank from "../../assets/water-tank-banner.jpg";
 import supremeTank from "../../assets/products/34f0c128-5f3c-44ec-9af1-0d63df360da5_tinywow_cfa25250-8ebf-4d04-898d-830f0c48bbf7_Three-Layer-Overhead-Water-Tank-Blue_31261860.webp";
 
-const waterTankProducts = [
+export const waterTankProducts = [
   {
     id: 1,
     name: "Sintex Water Tanks",

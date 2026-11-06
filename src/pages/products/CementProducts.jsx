@@ -8,7 +8,7 @@ import birlaCement from "../../assets/products/birla-cem.jpeg";
 import jswCement from "../../assets/jsw-cement-2.jpg";
 import nuvocoCement from "../../assets/Nuvoco-PSC-Cement.jpg";
 
-const cementProducts = [
+ export const cementProducts = [
   {
     id: 1,
     name: "ACC Cement",

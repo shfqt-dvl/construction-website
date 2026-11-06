@@ -5,7 +5,7 @@ import astralPipes from "../../assets/astral-pipes-fittings-distributors.jpg";
 import filomaxPipes from "../../assets/flexible_pvc_transparent_tubes.jpg";
 import idolPipes from "../../assets/products/1754117518.webp";
 
-const pipesProducts = [
+export const pipesProducts = [
   {
     id: 1,
     name: "Prince Pipes & Fittings",

@@ -5,7 +5,7 @@ import steelBanner from "../../assets/steel-banner.jpg";
 import vijayTmt from "../../assets/pr-tmt1.jpg";
 import kamdhenuTmt from "../../assets/kamdhenu-tmt-bar.jpg";
 
-const steelProducts = [
+export const steelProducts = [
   {
     id: 1,
     name: "Mahavir TMT",

@@ -1,188 +1,686 @@
-/* Main Page */
-.services-page {
-  padding: 55px 8% 80px;
-  background: #fff;
+
+/* =========================================
+   MUSHAD CONSTRUCTION — SERVICES
+   Clean Glass / Transparent Theme
+========================================= */
+
+/* =========================
+   PAGE BASE
+========================= */
+
+.services-page,
+.service-detail-page {
   min-height: 100vh;
-  box-sizing: border-box;
+  color: #f4f7fb;
+  font-family: var(--font-primary), sans-serif;
+  background: rgba(7, 17, 31, 0.78);
 }
 
-/* Page Header — matching About page */
-.services-header {
-  max-width: 850px;
-  margin: 0 auto 55px;
-  text-align: center;
-}
+/* =========================
+   ALL SERVICES HERO
+========================= */
 
-.services-header > span {
-  display: inline-block;
-  color: #1695f0;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-}
-
-.services-header h1 {
-  margin: 0 0 18px;
-  color: #222;
-  font-size: 42px;
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-.services-header h1 strong {
-  color: #1695f0;
-}
-
-.services-header p {
-  max-width: 800px;
-  margin: 0 auto;
-  color: #666;
-  font-size: 17px;
-  line-height: 1.8;
-}
-
-/* Services Grid */
-.services-grid {
+.services-main-hero {
+  min-height: 460px;
+  padding: 75px 8%;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 45px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 12, 25, 0.78) 0%,
+      rgba(7, 20, 41, 0.55) 48%,
+      rgba(9, 30, 60, 0.30) 100%
+    ),
+    url("https://skillwork.com/wp-content/uploads/2025/05/two-men-pointing-construction-site-2.jpg");
+
+  background-size: cover;
+  background-position: center 48%;
+  background-repeat: no-repeat;
 }
 
-.service-card {
-  padding: 30px 25px;
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 16px;
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* =========================
+   INDIVIDUAL SERVICE HERO
+========================= */
+
+.service-detail-hero {
+  min-height: 460px;
+  padding: 65px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 45px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  background: rgba(7, 17, 31, 0.60);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+/* Hero background variations */
+
+.residential-hero {
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(30, 69, 104, 0.48),
+      transparent 43%
+    ),
+    linear-gradient(
+      125deg,
+      rgba(7, 17, 31, 0.88),
+      rgba(22, 54, 83, 0.72) 60%,
+      rgba(7, 17, 31, 0.86)
+    );
 }
 
-.service-icon {
-  display: flex;
+.commercial-hero {
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(28, 69, 96, 0.46),
+      transparent 43%
+    ),
+    linear-gradient(
+      125deg,
+      rgba(7, 17, 31, 0.88),
+      rgba(16, 44, 60, 0.72) 60%,
+      rgba(7, 17, 31, 0.86)
+    );
+}
+
+.industrial-hero {
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(36, 70, 90, 0.46),
+      transparent 43%
+    ),
+    linear-gradient(
+      125deg,
+      rgba(7, 17, 31, 0.88),
+      rgba(24, 43, 58, 0.72) 60%,
+      rgba(7, 17, 31, 0.86)
+    );
+}
+
+.renovation-hero {
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(61, 49, 91, 0.44),
+      transparent 43%
+    ),
+    linear-gradient(
+      125deg,
+      rgba(7, 17, 31, 0.88),
+      rgba(40, 33, 62, 0.72) 60%,
+      rgba(7, 17, 31, 0.86)
+    );
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.services-main-content,
+.service-detail-content {
+  width: 100%;
+  max-width: 760px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Eyebrow labels */
+
+.services-eyebrow,
+.service-eyebrow {
+  display: inline-flex;
+  color: #93c5fd;
+  font-family: var(--font-accent), sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+/* Hero headings */
+
+.services-main-hero h1,
+.service-detail-hero h1 {
+  margin: 18px 0 22px;
+  color: #f4f7fb;
+  font-family: var(--font-primary), sans-serif;
+  font-size: clamp(36px, 5.2vw, 62px);
+  font-weight: 650;
+  line-height: 1.15;
+  letter-spacing: -1.2px;
+}
+
+.services-main-hero h1 span,
+.service-detail-hero h1 span {
+  color: #7db7f5;
+  font-weight: 650;
+}
+
+/* Hero descriptions */
+
+.services-main-hero p,
+.service-detail-hero p {
+  max-width: 600px;
+  margin-bottom: 28px;
+  color: #d5e0ec;
+  font-family: var(--font-secondary), var(--font-primary), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.85;
+  letter-spacing: 0.1px;
+}
+
+/* Hero buttons */
+
+.services-main-button,
+.service-detail-button {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 70px;
-  height: 70px;
-  margin-bottom: 22px;
-  background: #fff3e8;
-  border-radius: 16px;
-  font-size: 38px;
-}
+  gap: 10px;
+  padding: 14px 22px;
 
-.service-card h3 {
-  margin: 0 0 12px;
-  color: #222;
-  font-size: 21px;
-  font-weight: 750;
-  line-height: 1.4;
-}
+  border: 1px solid rgba(147, 197, 253, 0.22);
+  border-radius: 8px;
 
-.service-card p {
-  margin: 0;
-  color: #666;
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-/* WhatsApp Call to Action */
-.services-cta {
-  margin-top: 65px;
-  padding: 45px 25px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #0388e7, #c6ccdc);
   color: #fff;
+  font-family: var(--font-accent), var(--font-primary), sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.88),
+    rgba(22, 134, 201, 0.82)
+  );
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.services-main-button:hover,
+.service-detail-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.24);
+}
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.service-detail-image {
+  display: block;
+  width: 100%;
+  height: 360px;
+  min-width: 0;
+  margin: 0;
+  align-self: center;
+
+  object-fit: cover;
+  object-position: center;
+
+  border: 1px solid rgba(148, 190, 230, 0.24);
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
+}
+
+/* =========================
+   SERVICE SECTION
+========================= */
+
+.services-main-section,
+.service-detail-section {
+  padding: 55px 8%;
+  background: rgba(24, 42, 62, 0.28);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.services-section-heading,
+.service-detail-heading {
+  max-width: 760px;
+  margin: 0 auto 32px;
   text-align: center;
 }
 
-.services-cta > span {
-  display: inline-block;
-  margin-bottom: 12px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
+/* Section labels */
+
+.services-section-heading > span,
+.service-detail-heading > span {
+  color: #7db7f5;
+  font-family: var(--font-accent), sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
 }
 
-.services-cta h2 {
-  margin: 0 0 15px;
-  font-size: 30px;
-  font-weight: 800;
+/* Section headings */
+
+.services-section-heading h2,
+.service-detail-heading h2 {
+  margin: 14px 0;
+  color: #f4f7fb;
+  font-family: var(--font-primary), sans-serif;
+  font-size: clamp(27px, 3.5vw, 40px);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
 }
 
-.services-cta p {
-  max-width: 650px;
-  margin: 0 auto 25px;
-  color: #fff;
-  font-size: 16px;
+/* Section descriptions */
+
+.services-section-heading p,
+.service-detail-heading p {
+  color: #c1ccda;
+  font-family: var(--font-secondary), var(--font-primary), sans-serif;
+  font-size: 13px;
+  font-weight: 400;
   line-height: 1.8;
 }
 
-.services-cta-button {
-  display: inline-block;
-  padding: 14px 28px;
-  border-radius: 30px;
-  background: #fff;
-  color: #4275f6;
+/* =========================
+   SERVICE CARDS
+========================= */
+
+.services-category-grid,
+.service-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-category-card,
+.service-feature-card {
+  overflow: hidden;
+
+  border: 1px solid rgba(148, 190, 230, 0.18);
+  border-radius: 18px;
+
+  background: rgba(20, 40, 61, 0.42);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.services-category-card:hover,
+.service-feature-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(96, 165, 250, 0.55);
+  background: rgba(25, 48, 72, 0.52);
+}
+
+/* Category card images */
+
+.services-card-image-link {
+  display: block;
+  height: 245px;
+  overflow: hidden;
+  background: #102238;
+}
+
+.services-card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.services-category-card:hover .services-card-image {
+  transform: scale(1.06);
+}
+
+/* Card content */
+
+.services-card-body {
+  padding: 25px;
+}
+
+/* Card icon */
+
+.services-category-icon {
+  display: grid;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  place-items: center;
+
+  border: 1px solid rgba(96, 165, 250, 0.30);
+  border-radius: 16px;
+
+  color: #93c5fd;
+  background: rgba(23, 62, 105, 0.42);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.16);
+}
+
+/* Card headings */
+
+.services-category-card h3,
+.service-feature-card h3 {
+  margin: 0 0 12px;
+  color: #f5f8fc;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 19px;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+}
+
+/* Card descriptions */
+
+.services-category-card p {
+  margin-bottom: 22px;
+  color: #c1ccda;
+  font-family: var(--font-secondary), var(--font-primary), sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+/* Card links */
+
+.services-category-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #93c5fd;
+  font-family: var(--font-accent), sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
   text-decoration: none;
-  font-weight: 800;
-  transition: transform 0.3s ease, background 0.3s ease;
+
+  transition: color 0.25s ease;
 }
 
-.services-cta-button:hover {
-  background: #fff7ed;
-  transform: translateY(-3px);
+.services-category-link:hover {
+  color: #dbeafe;
 }
 
-/* Tablet */
-@media (max-width: 950px) {
-  .services-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+/* =========================
+   DETAIL FEATURE CARDS
+========================= */
+
+.service-feature-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 25px;
+}
+
+.service-feature-card > svg {
+  flex-shrink: 0;
+  color: #7db7f5;
+}
+
+.service-feature-card h3 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* =========================
+   BOTTOM CTA
+========================= */
+
+.services-summary-cta,
+.service-detail-cta {
+  max-width: 780px;
+  margin: 25px auto 35px;
+  padding: 30px 25px;
+
+  border: 1px solid rgba(148, 190, 230, 0.18);
+  border-radius: 14px;
+
+  text-align: center;
+
+  background: rgba(25, 45, 66, 0.34);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* CTA headings */
+
+.services-summary-cta h2,
+.service-detail-cta h2 {
+  margin: 0 0 10px;
+  color: #f4f7fb;
+  font-family: var(--font-primary), sans-serif;
+  font-size: clamp(23px, 3vw, 31px);
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+}
+
+/* CTA descriptions */
+
+.services-summary-cta p,
+.service-detail-cta p {
+  margin: 0 0 18px;
+  color: #c1ccda;
+  font-family: var(--font-secondary), var(--font-primary), sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+/* Center CTA button */
+
+.service-detail-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-detail-cta h2,
+.service-detail-cta p {
+  width: 100%;
+  text-align: center;
+}
+
+.service-detail-cta .service-detail-button {
+  align-self: center;
+}
+
+/* =========================
+   HERO POSITIONING
+========================= */
+
+/* Residential, Commercial, Renovation */
+.service-detail-page
+.service-detail-hero.residential-hero,
+.service-detail-page
+.service-detail-hero.commercial-hero,
+.service-detail-page
+.service-detail-hero.renovation-hero {
+  padding-top: 125px;
+  padding-bottom: 65px;
+}
+
+/* Industrial positioning preserved */
+.service-detail-page
+.service-detail-hero.industrial-hero {
+  padding-top: 110px !important;
+  padding-bottom: 65px !important;
+}
+
+.service-detail-page
+.service-detail-hero.industrial-hero
+.service-detail-image {
+  transform: translateY(25px);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 760px) {
+  .services-main-hero,
+  .service-detail-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 55px 6%;
+    gap: 28px;
   }
 
-  .services-page {
-    padding-right: 5%;
-    padding-left: 5%;
+  .service-detail-page
+  .service-detail-hero.residential-hero,
+  .service-detail-page
+  .service-detail-hero.commercial-hero,
+  .service-detail-page
+  .service-detail-hero.renovation-hero {
+    padding-top: 90px;
+    padding-bottom: 45px;
   }
+
+  /* Industrial mobile positioning preserved */
+  .service-detail-page
+  .service-detail-hero.industrial-hero {
+    padding-top: 80px !important;
+    padding-bottom: 45px !important;
+  }
+
+  .service-detail-page
+  .service-detail-hero.industrial-hero
+  .service-detail-image {
+    transform: translateY(0);
+  }
+
+  .services-main-section,
+  .service-detail-section {
+    padding: 45px 6%;
+  }
+
+  .services-category-grid,
+  .service-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-section-heading,
+  .service-detail-heading {
+    margin-bottom: 28px;
+  }
+
+  .services-card-image-link {
+    height: 220px;
+  }
+
+  .service-detail-image {
+    width: 100%;
+    height: 260px;
+  }
+
+  .services-summary-cta,
+  .service-detail-cta {
+    margin: 20px 6% 25px;
+    padding: 28px 18px;
+  }
+
+  .services-main-hero h1,
+  .service-detail-hero h1 {
+    font-size: clamp(30px, 7vw, 42px);
+    line-height: 1.18;
+    letter-spacing: -0.6px;
+    font-weight: 650;
+  }
+
+  .services-main-hero p,
+  .service-detail-hero p {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .services-section-heading h2,
+  .service-detail-heading h2 {
+    font-size: 27px;
+  }
+
+  .services-category-card h3 {
+    font-size: 17px;
+  }
+
+  .services-category-card p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .services-card-body {
+    padding: 20px;
+  }
+}
+/* =========================
+   FIX: DETAIL PAGES NAVBAR OVERLAP
+========================= */
+
+.service-detail-page {
+  padding-top: 90px;
+}
+
+.service-detail-page .service-detail-hero {
+  padding-top: 65px !important;
+  padding-bottom: 65px !important;
+  scroll-margin-top: 100px;
+}
+
+/* Industrial image ka extra shift remove */
+.service-detail-page
+.service-detail-hero.industrial-hero
+.service-detail-image {
+  transform: none !important;
 }
 
 /* Mobile */
-@media (max-width: 600px) {
-  .services-page {
-    padding: 40px 5% 60px;
+@media (max-width: 760px) {
+  .service-detail-page {
+    padding-top: 75px;
   }
 
-  .services-header {
-    margin-bottom: 35px;
+  .service-detail-page .service-detail-hero {
+    padding-top: 35px !important;
+    padding-bottom: 40px !important;
   }
+}
+.service-detail-page .service-detail-hero.industrial-hero {
+  padding-top: 45px !important;
+  padding-bottom: 65px !important;
+}
 
-  .services-header h1 {
-    font-size: 34px;
-  }
-
-  .services-header p {
-    font-size: 15px;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .service-card {
-    padding: 25px 22px;
-  }
-
-  .services-cta {
-    margin-top: 40px;
-    padding: 35px 20px;
-  }
-
-  .services-cta h2 {
-    font-size: 25px;
+@media (max-width: 760px) {
+  .service-detail-page .service-detail-hero.industrial-hero {
+    padding-top: 25px !important;
+    padding-bottom: 40px !important;
   }
 }

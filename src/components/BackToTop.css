@@ -1,33 +1,76 @@
 .back-to-top {
   position: fixed;
+  left: 28px;
+  bottom: 28px;
+  z-index: 9999;
 
-  bottom: 25px;
-  left: 25px;
-
-  width: 50px;
-  height: 50px;
-
-  background: #1695f0;
-
-  color: white;
-
-  border-radius: 50%;
+  width: 48px;
+  height: 48px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
-  font-size: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
 
-  text-decoration: none;
+  background: #075db3;
+  color: #fff;
 
-  z-index: 1000;
+  cursor: pointer;
 
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 
-  transition: 0.3s;
+  transform: translateY(15px);
+
+  box-shadow: 0 6px 20px rgba(7, 93, 179, 0.25);
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .back-to-top:hover {
-  transform: scale(1.1);
+  background: #064b91;
+  transform: translateY(-4px);
+}
+
+.back-to-top:active {
+  transform: scale(0.94);
+}
+
+.back-to-top:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .back-to-top {
+    width: 43px;
+    height: 43px;
+    left: 17px;
+    bottom: 20px;
+  }
+}
+.back-to-top {
+  left: 28px !important;
+  right: auto !important;
+}
+
+@media (max-width: 600px) {
+  .back-to-top {
+    left: 17px !important;
+    right: auto !important;
+  }
 }

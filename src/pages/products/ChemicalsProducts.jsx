@@ -3,7 +3,7 @@ import "./ChemicalsProducts.css";
 import conchemImage from "../../assets/products/conchem-chem.jpeg";
 import drFixitImage from "../../assets/16191739476082a23b4efc6.webp";
 
-const chemicalProducts = [
+export const chemicalProducts = [
   {
     id: 1,
     name: "Conchem Construction Chemicals",

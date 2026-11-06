@@ -11,7 +11,7 @@ function Testimonials() {
     {
       name: "Amit Singh",
       role: "Contractor",
-      rating: "★★★★★",
+      rating: "★★★★",
       text: "The staff is helpful and the product range is good for regular construction requirements. I would recommend this store.",
     },
     {

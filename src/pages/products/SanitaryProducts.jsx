@@ -5,7 +5,7 @@ import parryware from "../../assets/parryware.jpg";
 import hindware from "../../assets/products/sanitary3.jpeg";
 import cera from "../../assets/products/sanitary2.jpeg";
 
-const sanitaryProducts = [
+export const sanitaryProducts = [
   {
     id: 1,
     name: "Glocera Sanitary",

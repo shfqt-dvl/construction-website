@@ -9,7 +9,7 @@ function Stats() {
   const facts = [
     {
       image: fact1,
-      number: "10+",
+      number: "7+",
       title: "Years of Experience",
       text: "Trusted experience in construction materials.",
     },

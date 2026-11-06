@@ -1,101 +1,147 @@
+
+import { Link } from "react-router-dom";
+import {
+  House,
+  Building2,
+  Factory,
+  Hammer,
+  ArrowRight,
+} from "lucide-react";
 import "./Services.css";
 
-function Services() {
-  const services = [
-    {
-      icon: "🏗️",
-      title: "Construction Materials",
-      description:
-        "Quality construction materials for residential and commercial projects.",
-    },
-    {
-      icon: "🧱",
-      title: "Cement & Steel",
-      description:
-        "Cement and TMT steel products from trusted and well-known brands.",
-    },
-    {
-      icon: "🎨",
-      title: "Paints",
-      description:
-        "Interior and exterior paints for residential and commercial buildings.",
-    },
-    {
-      icon: "🚰",
-      title: "Plumbing Products",
-      description:
-        "PVC, CPVC and UPVC pipes, fittings and other plumbing products.",
-    },
-    {
-      icon: "🚿",
-      title: "Sanitary Products",
-      description:
-        "Wash basins, bathroom fittings and sanitary accessories.",
-    },
-    {
-      icon: "🔧",
-      title: "Hardware Products",
-      description:
-        "Screws, nails, tools and other essential hardware products.",
-    },
-    {
-      icon: "💧",
-      title: "Water Tanks",
-      description:
-        "Durable water storage tanks for homes and commercial buildings.",
-    },
-    {
-      icon: "🧪",
-      title: "Construction Chemicals",
-      description:
-        "Construction chemicals and solutions for different building requirements.",
-    },
-  ];
+const services = [
+  {
+    title: "Residential Construction",
+    description:
+      "Thoughtful construction solutions for residential spaces, supporting every stage from foundational work to final finishes.",
+    image: "/rr.avif",
+    path: "/services/residential",
+    icon: House,
+  },
+  {
+    title: "Commercial Construction",
+    description:
+      "Practical building solutions for offices, retail spaces, showrooms and commercial developments.",
+    image: "/com.jpg",
+    path: "/services/commercial",
+    icon: Building2,
+  },
+  {
+    title: "Industrial Construction",
+    description:
+      "Construction solutions designed around the functional requirements of industrial buildings, facilities and warehouses.",
+    image: "/inds.jpg",
+    path: "/services/industrial",
+    icon: Factory,
+  },
+  {
+    title: "Renovation & Remodeling",
+    description:
+      "Renewing existing spaces through repair, renovation and improvement solutions that enhance functionality and appeal.",
+    image: "/hh.webp",
+    path: "/services/renovation",
+    icon: Hammer,
+  },
+];
 
+export default function Services() {
   return (
-    <section className="services-page">
-      {/* Page Header */}
-      <div className="services-header">
-        <span>WHAT WE OFFER</span>
-        <h1>
-          Our <strong>Services</strong>
-        </h1>
-        <p>
-          We provide a wide range of construction materials and
-          hardware solutions to meet your building requirements.
-        </p>
-      </div>
+    <main className="services-page">
+      {/* SERVICES HERO */}
+      <section className="services-main-hero">
+        <div className="services-main-content">
+          <span className="services-eyebrow">
+            MUSHAD CONSTRUCTION & HARDWARE
+          </span>
 
-      {/* Services Cards */}
-      <div className="services-grid">
-        {services.map((service) => (
-          <div className="service-card" key={service.title}>
-            <div className="service-icon">{service.icon}</div>
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
-          </div>
-        ))}
-      </div>
+          <h1>
+            Comprehensive Construction Solutions.
+            <br />
+            <span>Built Around Your Needs.</span>
+          </h1>
 
-      {/* Contact Section */}
-      <div className="services-cta">
-        <span>LET'S BUILD TOGETHER</span>
-        <h2>Need Construction Materials?</h2>
+          <p>
+            Bringing together dependable solutions for residential,
+            commercial and industrial construction, along with
+            renovation and remodeling requirements.
+          </p>
+
+          <Link to="/contact" className="services-main-button">
+            Discuss Your Requirements <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+
+      {/* SERVICES CATEGORY SECTION */}
+      <section className="services-main-section">
+        <div className="services-section-heading">
+          <span>OUR CAPABILITIES</span>
+
+          <h2>Solutions for Every Building Need</h2>
+
+          <p>
+            Explore our range of construction services and discover
+            solutions aligned with your project requirements.
+          </p>
+        </div>
+
+        <div className="services-category-grid">
+          {services.map((service) => {
+            const Icon = service.icon;
+
+            return (
+              <article
+                className="services-category-card"
+                key={service.path}
+              >
+                <Link
+                  to={service.path}
+                  className="services-card-image-link"
+                  aria-label={`Explore ${service.title}`}
+                >
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="services-card-image"
+                    loading="lazy"
+                  />
+                </Link>
+
+                <div className="services-card-body">
+                  <div className="services-category-icon">
+                    <Icon size={30} />
+                  </div>
+
+                  <h3>{service.title}</h3>
+
+                  <p>{service.description}</p>
+
+                  <Link
+                    to={service.path}
+                    className="services-category-link"
+                  >
+                    Discover More <ArrowRight size={17} />
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* BOTTOM CTA */}
+      <section className="services-summary-cta">
+        <h2>Let's Move Your Project Forward</h2>
+
         <p>
-          Contact Mushad Construction & Hardware Store for
-          product availability, pricing and enquiries.
+          Share your requirements with us and connect with our team
+          to explore the right solutions for your needs.
         </p>
-        <a
-          href="https://wa.me/919162512232"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="services-cta-button"
-        >
-          💬 Contact Us on WhatsApp
-        </a>
-      </div>
-    </section>
+
+        <Link to="/contact" className="services-main-button">
+          Connect With Our Team <ArrowRight size={18} />
+        </Link>
+      </section>
+    </main>
   );
 }
-
-export default Services;

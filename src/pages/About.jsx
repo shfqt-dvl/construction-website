@@ -1,156 +1,189 @@
 
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import "./About.css";
-import aboutImage from "../assets/about/parallax1.jpg";
 
-function About() {
+const features = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=180&q=80",
+    title: "Quality You Can Trust",
+    description:
+      "Construction and hardware products selected to meet your building requirements.",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=180&q=80",
+    title: "Established Brands",
+    description:
+      "Access products from recognised brands and explore available options.",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=180&q=80",
+    title: "Value-Driven Solutions",
+    description:
+      "Practical product choices and competitive pricing for your requirements.",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=180&q=80",
+    title: "Customer Commitment",
+    description:
+      "Helpful guidance and responsive assistance at every step.",
+  },
+];
+
+export default function About() {
+  const scrollToDetails = () => {
+    document.getElementById("about-details")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
-    <section className="about-page">
-      {/* Header */}
-      <div className="about-header">
-        <span>ABOUT OUR STORE</span>
+    <main className="about-page">
+      {/* FIRST SCREEN — MUSHAD INTRO */}
 
-        <h1>
-          About <strong>MUSHAD</strong>
-        </h1>
+      <section className="about-intro">
+        <div className="about-blueprint" />
 
-        <p>
-          Your trusted partner for quality construction materials
-          and hardware products in Khodaibagh, Chapra, Bihar.
-        </p>
-      </div>
-
-      {/* Main About */}
-      <div className="about-main">
-        {/* Image */}
-        <div className="about-image-box">
-          <img
-            src={aboutImage}
-            alt="Mushad Construction and Hardware Store"
-          />
-
-          <div className="about-image-label">
-            <strong>MUSHAD</strong>
-            <span>Construction & Hardware Store</span>
-          </div>
+        <div className="about-intro-top">
+          <span>ABOUT MUSHAD</span>
+          <div className="about-intro-line" />
+          <span>OUR COMMITMENT TO QUALITY</span>
         </div>
 
-        {/* Content */}
-        <div className="about-content">
-          <span className="about-small-title">
-            WHO WE ARE
-          </span>
+        <div className="about-intro-center">
+          <div className="about-intro-overline">
+            BUILDING CONFIDENCE. CREATING VALUE.
+          </div>
 
-          <h2>
-            Building Trust Through
-            <strong> Quality & Service</strong>
-          </h2>
+          <h1 className="about-image-word">MUSHAD</h1>
 
-          <p>
-            Mushad Construction & Hardware Store is a trusted
-            construction and hardware material store serving
-            customers in Khodaibagh, Chapra, Bihar.
+          <div className="about-intro-subtitle">
+            CONSTRUCTION & HARDWARE STORE
+          </div>
+
+          <p className="about-intro-description">
+            A dependable destination for construction materials,
+            hardware products and solutions that support your
+            building aspirations.
           </p>
+        </div>
+      </section>
 
-          <p>
-            We provide a wide range of construction materials
-            including cement, steel, TMT bars, paints, plumbing
-            products, sanitary items and hardware products.
-          </p>
+      {/* COMPLETE ABOUT DETAILS */}
 
-          <p>
-            Our goal is simple — provide quality products at
-            competitive prices while making construction material
-            purchasing convenient for our customers.
-          </p>
+      <section className="about-details" id="about-details">
 
-          {/* Features */}
-          <div className="about-features">
-            <div className="about-feature">
-              <span>✓</span>
-              <p>Quality Materials</p>
+        {/* WHO WE ARE */}
+
+        <section className="about-main">
+          <div className="about-content">
+            <span className="about-small-title">
+              WHO WE ARE
+            </span>
+
+            <h2>
+              Built on Trust.
+              <strong>Driven by Quality.</strong>
+            </h2>
+
+            <p>
+              MUSHAD Construction & Hardware Store, located in
+              Khodaibagh, Garkha, Saran, Bihar, is committed to
+              serving customers with dependable construction
+              materials and hardware solutions.
+            </p>
+
+            <p>
+              Our product portfolio includes cement, steel, TMT
+              bars, paints, plumbing products, sanitary items,
+              water tanks, construction chemicals and a wide
+              range of hardware essentials.
+            </p>
+
+            <p>
+              We believe that every building project deserves
+              the right materials and informed choices. Through
+              quality-focused product options, competitive
+              pricing and customer-oriented assistance, we aim
+              to make your purchasing experience convenient
+              and reliable.
+            </p>
+
+            <div className="about-features">
+              {features.map((feature) => (
+                <div className="about-feature" key={feature.title}>
+                  <div className="about-feature-image">
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <div className="about-feature-text">
+                    <h3>{feature.title}</h3>
+                    <p>{feature.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            <div className="about-feature">
-              <span>✓</span>
-              <p>Trusted Brands</p>
-            </div>
+            <Link to="/contact" className="about-contact-button">
+              Connect With Us
+              <ArrowRight size={18} />
+            </Link>
+          </div>
 
-            <div className="about-feature">
-              <span>✓</span>
-              <p>Competitive Prices</p>
-            </div>
+          <div className="about-main-visual">
+            <img
+              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1100&q=90"
+              alt="Construction workers at a building site"
+              loading="lazy"
+            />
 
-            <div className="about-feature">
-              <span>✓</span>
-              <p>Reliable Service</p>
+            <div className="about-image-caption">
+              <span>OUR COMMITMENT</span>
+              <strong>Supporting Every Stage of Construction</strong>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* Why Choose Us */}
-      <div className="why-us">
-        <div className="why-us-heading">
-          <span>WHY CHOOSE US</span>
+        {/* STORE LOCATION */}
 
-          <h2>
-            Everything You Need,
-            <strong> Under One Roof</strong>
-          </h2>
-        </div>
+        <section className="about-location">
+          <div className="about-location-image">
+            <img
+              src="/shop.jpg"
+              alt="Mushad Construction and Hardware Store"
+              loading="lazy"
+            />
+          </div>
 
-        <div className="why-us-grid">
-          <div className="why-card">
-            <div className="why-icon">🏗️</div>
-            <h3>Quality Materials</h3>
+          <div className="about-location-content">
+            <span>VISIT OUR STORE</span>
+            <h2>Mushad Construction & Hardware Store</h2>
             <p>
-              Reliable construction and hardware products
-              from trusted brands.
+              Khodaibagh, Garkha, Saran, Bihar 841415
             </p>
           </div>
 
-          <div className="why-card">
-            <div className="why-icon">💰</div>
-            <h3>Competitive Prices</h3>
-            <p>
-              Quality construction products at reasonable
-              and competitive prices.
-            </p>
-          </div>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Mushad+Construction+Hardware+Store+Khodaibagh+Garkha+Bihar+841415"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="about-location-button"
+          >
+            Get Directions
+            <ArrowRight size={18} />
+          </a>
+        </section>
 
-          <div className="why-card">
-            <div className="why-icon">🤝</div>
-            <h3>Trusted Service</h3>
-            <p>
-              Helpful and honest service focused on
-              customer satisfaction.
-            </p>
-          </div>
-
-          <div className="why-card">
-            <div className="why-icon">📦</div>
-            <h3>Wide Range</h3>
-            <p>
-              Multiple construction and hardware categories
-              available in one place.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Location */}
-      <div className="about-location">
-        <div>
-          <span>📍</span>
-        </div>
-
-        <div>
-          <h2>Visit Our Store</h2>
-          <p>Khodaibagh, Chapra, Bihar</p>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 }
-
-export default About;

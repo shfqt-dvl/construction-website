@@ -1,39 +1,46 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+/* =========================================
+   MUSHAD CONSTRUCTION & HARDWARE
+   Application-Level Styles
+========================================= */
+
+
+/* =========================================
+   ROOT CONTAINER
+========================================= */
+
+#root {
+  min-height: 100vh;
+  width: 100%;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
+/* =========================================
+   PREVENT HORIZONTAL OVERFLOW
+========================================= */
+
+html,
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #fff;
+  max-width: 100%;
 }
 
-h1 {
-  color: #229be7;
-  text-align: center;
-  margin-top: 0;
+
+/* =========================================
+   SHARED CONTAINER
+========================================= */
+
+.container {
+  width: min(90%, 1400px);
+  margin-inline: auto;
 }
 
-p {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 18px;
-}
 
-/* Space for fixed navbar */
-body {
-  padding-top: 76px;
-}
+/* =========================================
+   RESPONSIVE CONTAINER
+========================================= */
 
 @media (max-width: 768px) {
-  body {
-    padding-top: 65px;
+  .container {
+    width: 92%;
   }
 }

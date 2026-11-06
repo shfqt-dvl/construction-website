@@ -3,13 +3,12 @@
 ================================= */
 
 .testimonials-section {
-  width: 100%;
-
-  padding: 95px 20px;
-
-  background: #111827;
-
-  box-sizing: border-box;
+  position: relative;
+  padding: 90px 7%;
+  background: #171b25;
+  color: #f8fafc;
+  border-top: 1px solid rgba(249, 115, 22, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .testimonials-container {

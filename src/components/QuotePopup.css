@@ -1,0 +1,670 @@
+
+/* FLOATING QUOTE BUTTON — KEEP ORIGINAL */
+
+.quote-floating-btn {
+  position: fixed;
+  right: 25px;
+  bottom: 28px;
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 15px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+
+  color: #adb1e0;
+  background: #075db3;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(7, 93, 179, 0.3);
+  transition: 0.25s ease;
+}
+
+.quote-floating-btn:hover {
+  background: #064b91;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(7, 93, 179, 0.4);
+}
+
+/* TRANSPARENT OVERLAY */
+
+.quote-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
+
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* SMALL SILVER GLASS POPUP */
+
+.quote-modal {
+  position: relative;
+  width: min(420px, 100%);
+  max-height: 88vh;
+  overflow-y: auto;
+
+  border: 1px solid rgba(190, 225, 255, 0.85);
+  border-radius: 20px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.88),
+    rgba(220, 240, 255, 0.82)
+  );
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  box-shadow: 0 15px 45px rgba(65, 140, 210, 0.18);
+}
+
+/* CLOSE BUTTON */
+
+.quote-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 5;
+
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+
+  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.quote-modal-close:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: rotate(90deg);
+}
+
+/* QUOTE FORM INSIDE POPUP */
+
+.quote-page-popup {
+  min-height: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+}
+
+.quote-page-popup .quote-section {
+  display: block;
+  width: 100%;
+  max-width: none;
+  min-height: auto;
+
+  margin: 0;
+  padding: 24px;
+
+  background: transparent !important;
+}
+
+/* Hide the extra intro section to keep popup compact */
+
+.quote-page-popup .quote-intro {
+  display: none;
+}
+
+/* Form card becomes transparent */
+
+.quote-page-popup .quote-form-card {
+  width: 100%;
+  max-width: none;
+
+  padding: 0;
+  margin: 0;
+
+  border: none;
+  border-radius: 0;
+
+  background: transparent !important;
+  box-shadow: none;
+
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  color: #fff;
+}
+
+/* FORM HEADING */
+
+.quote-page-popup .quote-form-heading {
+  margin-bottom: 16px;
+  padding-right: 25px;
+}
+
+.quote-page-popup .quote-form-heading > span {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 10px;
+  letter-spacing: 1.8px;
+}
+
+.quote-page-popup .quote-form-heading h2 {
+  margin: 7px 0;
+  font-size: 23px;
+  color: #fff;
+}
+
+.quote-page-popup .quote-form-heading p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* FORM FIELDS */
+
+.quote-page-popup .quote-field {
+  margin-bottom: 12px;
+  gap: 6px;
+}
+
+.quote-page-popup .quote-field label {
+  color: #fff;
+  font-size: 12px;
+}
+
+.quote-page-popup .quote-field input,
+.quote-page-popup .quote-field select,
+.quote-page-popup .quote-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 9px;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  transition: 0.25s ease;
+}
+
+.quote-page-popup .quote-field input,
+.quote-page-popup .quote-field select {
+  min-height: 41px;
+  padding: 10px 12px;
+}
+
+.quote-page-popup .quote-field textarea {
+  min-height: 75px;
+  padding: 10px 12px;
+}
+
+.quote-page-popup .quote-field input::placeholder,
+.quote-page-popup .quote-field textarea::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.quote-page-popup .quote-field select option {
+  color: #333;
+  background: #fff;
+}
+
+.quote-page-popup .quote-field input:focus,
+.quote-page-popup .quote-field select:focus,
+.quote-page-popup .quote-field textarea:focus {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: #fff;
+  outline: none;
+}
+
+/* SUBMIT BUTTON */
+
+.quote-page-popup .quote-submit-btn {
+  width: 100%;
+  min-height: 43px;
+
+  color: #fff;
+  background: rgba(255, 255, 255, 0.22);
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 10px;
+
+  transition: 0.25s ease;
+}
+
+.quote-page-popup .quote-submit-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.quote-page-popup .quote-form-note {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 11px;
+}
+
+/* Hide any other close button inside the quote form */
+
+.quote-close-btn {
+  display: none;
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .quote-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 25px 35px;
+
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+  .quote-page-popup .quote-section {
+    padding: 20px;
+  }
+
+  .quote-page-popup .quote-form-heading h2 {
+    font-size: 21px;
+  }
+
+  .quote-modal-close {
+    top: 9px;
+    right: 9px;
+    width: 30px;
+    height: 30px;
+  }
+}
+.quote-page-popup .quote-form-heading h2,
+.quote-page-popup .quote-form-heading p,
+.quote-page-popup .quote-form-heading > span,
+.quote-page-popup .quote-field label,
+.quote-page-popup .quote-form-note {
+  color: #374151;
+}
+
+.quote-page-popup .quote-field input,
+.quote-page-popup .quote-field select,
+.quote-page-popup .quote-field textarea {
+  color: #374151;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(180, 190, 205, 0.65);
+}
+
+.quote-page-popup .quote-field input::placeholder,
+.quote-page-popup .quote-field textarea::placeholder {
+  color: #8b95a3;
+}
+
+.quote-page-popup .quote-submit-btn {
+  color: #374151;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #cbd5e1;
+}
+
+.quote-page-popup .quote-submit-btn:hover {
+  background: #fff;
+}/* WHITE + LIGHT BLUE GLASS THEME */
+
+.quote-page-popup .quote-form-heading h2 {
+  color: #174a78;
+}
+
+.quote-page-popup .quote-form-heading p,
+.quote-page-popup .quote-form-heading > span,
+.quote-page-popup .quote-field label,
+.quote-page-popup .quote-form-note {
+  color: #58758f;
+}
+
+.quote-page-popup .quote-field input,
+.quote-page-popup .quote-field select,
+.quote-page-popup .quote-field textarea {
+  color: #244761;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(170, 210, 240, 0.75);
+}
+
+.quote-page-popup .quote-field input::placeholder,
+.quote-page-popup .quote-field textarea::placeholder {
+  color: #91a9bc;
+}
+
+.quote-page-popup .quote-field input:focus,
+.quote-page-popup .quote-field select:focus,
+.quote-page-popup .quote-field textarea:focus {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: #8ac7f2;
+  box-shadow: 0 0 0 3px rgba(138, 199, 242, 0.16);
+}
+
+.quote-page-popup .quote-submit-btn {
+  color: #174a78;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(190, 225, 255, 0.8)
+  );
+  border: 1px solid rgba(145, 200, 240, 0.8);
+}
+
+.quote-page-popup .quote-submit-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #cce8ff
+  );
+}
+
+.quote-modal-close {
+  color: #3975a8;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(170, 210, 240, 0.8);
+}
+
+.quote-modal-close:hover {
+  background: #e0f2ff;
+}
+/* WHITE + LIGHT BLUE GLASS THEME */
+
+.quote-page-popup .quote-form-heading h2 {
+  color: #174a78;
+}
+
+.quote-page-popup .quote-form-heading p,
+.quote-page-popup .quote-form-heading > span,
+.quote-page-popup .quote-field label,
+.quote-page-popup .quote-form-note {
+  color: #58758f;
+}
+
+.quote-page-popup .quote-field input,
+.quote-page-popup .quote-field select,
+.quote-page-popup .quote-field textarea {
+  color: #244761;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(170, 210, 240, 0.75);
+}
+
+.quote-page-popup .quote-field input::placeholder,
+.quote-page-popup .quote-field textarea::placeholder {
+  color: #91a9bc;
+}
+
+.quote-page-popup .quote-field input:focus,
+.quote-page-popup .quote-field select:focus,
+.quote-page-popup .quote-field textarea:focus {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: #8ac7f2;
+  box-shadow: 0 0 0 3px rgba(138, 199, 242, 0.16);
+}
+
+.quote-page-popup .quote-submit-btn {
+  color: #174a78;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(190, 225, 255, 0.8)
+  );
+  border: 1px solid rgba(145, 200, 240, 0.8);
+}
+
+.quote-page-popup .quote-submit-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #cce8ff
+  );
+}
+
+.quote-modal-close {
+  color: #3975a8;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(170, 210, 240, 0.8);
+}
+
+.quote-modal-close:hover {
+  background: #e0f2ff;
+}
+.quote-modal .quote-page-popup .quote-form-card form .quote-submit-btn {
+  background: #075db3 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border: 1px solid #075db3 !important;
+  box-shadow: 0 5px 15px rgba(7, 93, 179, 0.25) !important;
+}
+
+.quote-modal .quote-page-popup .quote-form-card form .quote-submit-btn:hover {
+  background: #064b91 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+}
+/* =========================================
+   RIGHT-SIDE QUOTE DRAWER
+   Add this at the END of QuotePopup.css
+========================================= */
+
+.quote-modal-overlay {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  padding: 0;
+  background: rgba(10, 25, 45, 0.28);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.quote-modal {
+  width: min(460px, 100%);
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100vh;
+  max-height: 100dvh;
+  margin-left: auto;
+  overflow-y: auto;
+
+  border-radius: 22px 0 0 22px;
+  border: 1px solid rgba(190, 225, 255, 0.85);
+
+  animation: quoteDrawerIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes quoteDrawerIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0.7;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Close button stays visible while scrolling */
+.quote-modal-close {
+  position: sticky;
+  top: 12px;
+  float: right;
+  margin: 12px 12px 0 0;
+}
+
+/* Keep form spacing comfortable inside the drawer */
+.quote-page-popup .quote-section {
+  padding: 30px 24px 24px;
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .quote-modal {
+    width: 100%;
+    border-radius: 18px 0 0 18px;
+  }
+
+  .quote-page-popup .quote-section {
+    padding: 28px 18px 20px;
+  }
+}
+
+/* MOBILE — HALF SCREEN QUOTE POPUP */
+@media (max-width: 480px) {
+
+  .quote-modal-overlay {
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .quote-modal {
+    width: 100%;
+    height: auto;
+    max-height: 65dvh;
+    min-height: 0;
+
+    margin: 0;
+    overflow-y: auto;
+
+    border-radius: 20px 20px 0 0;
+  }
+
+  .quote-page-popup .quote-section {
+    padding: 12px 16px 16px;
+  }
+
+  .quote-page-popup .quote-form-card {
+    padding: 0;
+  }
+
+  .quote-page-popup .quote-form-heading {
+    margin-bottom: 10px;
+  }
+
+  .quote-page-popup .quote-form-heading h2 {
+    font-size: 19px;
+    margin: 5px 0;
+  }
+
+  .quote-page-popup .quote-form-heading p {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .quote-page-popup .quote-field {
+    gap: 4px;
+    margin-bottom: 7px;
+  }
+
+  .quote-page-popup .quote-field input,
+  .quote-page-popup .quote-field select {
+    min-height: 35px;
+    padding: 7px 10px;
+  }
+
+  .quote-page-popup .quote-field textarea {
+    height: 50px;
+    min-height: 50px;
+    padding: 7px 10px;
+  }
+
+  .quote-page-popup .quote-submit-btn {
+    min-height: 38px;
+  }
+
+  .quote-page-popup .quote-form-note {
+    margin-top: 6px;
+  }
+}
+
+/* MOBILE — SMALL CENTERED QUOTE POPUP */
+@media (max-width: 480px) {
+  .quote-modal-overlay {
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+  }
+
+  .quote-modal {
+    width: 100%;
+    max-width: 380px;
+
+    height: auto;
+    max-height: 75dvh;
+    min-height: 0;
+
+    margin: auto;
+    overflow-y: auto;
+
+    border-radius: 20px;
+  }
+
+  .quote-page-popup .quote-section {
+    padding: 12px 16px;
+  }
+
+  .quote-page-popup .quote-form-heading {
+    margin-bottom: 10px;
+  }
+
+  .quote-page-popup .quote-form-heading h2 {
+    font-size: 19px;
+    margin: 5px 0;
+  }
+
+  .quote-page-popup .quote-form-heading p {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .quote-page-popup .quote-field {
+    gap: 4px;
+    margin-bottom: 7px;
+  }
+
+  .quote-page-popup .quote-field input,
+  .quote-page-popup .quote-field select {
+    min-height: 35px;
+    padding: 7px 10px;
+  }
+
+  .quote-page-popup .quote-field textarea {
+    height: 50px;
+    min-height: 50px;
+    padding: 7px 10px;
+  }
+
+  .quote-page-popup .quote-submit-btn {
+    min-height: 38px;
+  }
+
+  .quote-page-popup .quote-form-note {
+    margin-top: 6px;
+  }
+}

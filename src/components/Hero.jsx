@@ -1,129 +1,122 @@
+
 import { useEffect, useState } from "react";
+import { ArrowRight, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-import MaskedHeading from "../components/MaskedHeading";
 import "./Hero.css";
 
-import bg1 from "../assets/projects/project1.jpg";
-import bg2 from "../assets/bg2.jpg";
-import bg3 from "../assets/projects/project4.jpg";
-import bg4 from "../assets/bg4.jpg";
-import bg5 from "../assets/bg5.jpg";
-import bg6 from "../assets/projects/project2.jpg";
+const slides = [
+  {
+    src: "/himg1.png",
+    alt: "Building foundation construction",
+    title: "STRENGTH ",
+    highlight: "IN EVERY STRUCTURE.",
+  },
+  {
+    src: "/himg2.png",
+    alt: "Building plaster and painting work",
+    title: "QUALITY ",
+    highlight: "IN EVERY DETAIL.",
+  },
+  {
+    src: "/himg3.png",
+    alt: "Completed building roof construction",
+    title: "STRENGTH",
+    highlight: "IN EVERY BRICK.",
+  },
+];
 
-function Hero() {
-  const backgrounds = [bg5, bg2, bg3, bg4, bg1, bg6];
-
+export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Automatic infinite image slider
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((current) =>
-        current === backgrounds.length - 1 ? 0 : current + 1
-      );
+    const timer = setInterval(() => {
+      setCurrentSlide((current) => (current + 1) % slides.length);
     }, 5000);
 
-    return () => clearInterval(interval);
-  }, [backgrounds.length]);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Manual image navigation
+  const showSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
+  const activeSlide = slides[currentSlide];
 
   return (
     <section
       className="hero"
-      style={{
-        backgroundImage: `
-          linear-gradient(
-            rgba(35, 45, 60, 0.70),
-            rgba(35, 45, 60, 0.76)
-          ),
-          url(${backgrounds[currentSlide]})
-        `,
-      }}
+      id="home"
+      aria-label="Mushad Construction and Hardware Store"
     >
-      <div className="hero-overlay">
-        <div className="hero-content hero-animation">
+      {/* BACKGROUND IMAGES */}
+      <div className="hero-background" aria-hidden="true">
+        {slides.map((slide, index) => (
+          <img
+            key={slide.src}
+            className={`hero-image ${
+              currentSlide === index ? "hero-image-active" : ""
+            }`}
+            src={slide.src}
+            alt=""
+            loading={index === 0 ? "eager" : "lazy"}
+          />
+        ))}
+      </div>
 
-          {/* BRAND NAME */}
+      {/* DARK OVERLAY */}
+      <div className="hero-overlay" aria-hidden="true" />
 
-          <div className="hero-brand">
-            <MaskedHeading
-              tag="div"
-              className="hero-brand-main"
-              text="MUSHAD"
-              duration={0.9}
-              stagger={0.08}
-              trigger="view"
-              align="center"
-              weight={900}
-              tracking={-0.02}
-              lineHeight={1.05}
-            />
+      {/* HERO CONTENT */}
+      <div className="hero-content" key={currentSlide}>
+       
 
-            <div className="hero-brand-sub">
-              Construction &amp; Hardware Store
-            </div>
-          </div>
-
-          {/* MAIN HEADING */}
-
+        <div className="hero-heading-wrap">
           <h1>
-            Your Trusted Partner for Premium
-            <br />
-            Construction &amp; Hardware Solutions
+            {activeSlide.title}
+            <span>{activeSlide.highlight}</span>
           </h1>
-
-          {/* DESCRIPTION */}
-
-          <p className="hero-description">
-            Mushad Construction &amp; Hardware Store provides quality
-            construction materials including cement, steel, paints,
-            sanitary items, plumbing products, hardware tools, and
-            more — all under one roof.
-          </p>
-
-          {/* HIGHLIGHTS */}
-
-          <div className="hero-points">
-            <span>✔ Quality Materials</span>
-            <span>✔ Trusted Service</span>
-            <span>✔ Complete Construction Solutions</span>
-          </div>
-
-          {/* BUTTONS */}
-
-          <div className="hero-buttons">
-            <Link to="/products" className="hero-btn">
-              Explore Products
-            </Link>
-
-            <Link to="/contact" className="hero-btn secondary">
-              Contact Us
-            </Link>
-          </div>
-
-          {/* BACKGROUND SLIDER DOTS */}
-
-          <div className="hero-dots">
-            {backgrounds.map((_, index) => (
-              <button
-                key={index}
-                type="button"
-                className={
-                  currentSlide === index
-                    ? "hero-dot active"
-                    : "hero-dot"
-                }
-                onClick={() => setCurrentSlide(index)}
-                aria-label={`Go to slide ${index + 1}`}
-                aria-current={
-                  currentSlide === index ? "true" : undefined
-                }
-              />
-            ))}
-          </div>
-
         </div>
+
+        {/* NAVIGATION BUTTONS */}
+        <div className="hero-buttons">
+          <Link to="/products" className="btn btn-primary">
+            Explore Products
+            <ArrowRight size={18} aria-hidden="true" />
+          </Link>
+
+          <Link
+            to="/contact#contact-form"
+            className="btn btn-secondary"
+          >
+            <Phone size={17} aria-hidden="true" />
+            CONTACT US
+          </Link>
+        </div>
+      </div>
+
+      {/* IMAGE SLIDER DOTS */}
+      <div
+        className="hero-slider-dots"
+        role="group"
+        aria-label="Choose construction image"
+      >
+        {slides.map((slide, index) => (
+          <button
+            key={slide.src}
+            type="button"
+            className={
+              index === currentSlide
+                ? "hero-slider-dot active"
+                : "hero-slider-dot"
+            }
+            onClick={() => showSlide(index)}
+            aria-label={`Show image ${index + 1}`}
+            aria-pressed={index === currentSlide}
+          />
+        ))}
       </div>
     </section>
   );
 }
-
-export default Hero;

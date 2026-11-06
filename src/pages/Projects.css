@@ -1,0 +1,362 @@
+
+/* =========================================
+   MUSHAD CONSTRUCTION
+   ALL PROJECTS PAGE
+========================================= */
+
+.services-page {
+  width: 100%;
+  color: #172b45;
+  background: #fff;
+  font-family: "Lato", sans-serif;
+}
+
+.services-page *,
+.services-page *::before,
+.services-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.services-main-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: 460px;
+  padding: 125px 8% 75px;
+  overflow: hidden;
+  color: #fff;
+  background: #08264a;
+}
+
+.services-main-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.services-main-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(5, 25, 52, 0.9) 0%,
+    rgba(5, 25, 52, 0.72) 48%,
+    rgba(5, 25, 52, 0.35) 100%
+  );
+}
+
+.services-main-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 760px;
+}
+
+.services-eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #80bdff;
+  font-family: "Archivo", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.services-main-content h1 {
+  margin: 0 0 20px;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+}
+
+.services-main-content h1 span {
+  color: #70b7ff;
+}
+
+.services-main-content > p {
+  max-width: 620px;
+  margin: 0 0 30px;
+  color: #e0eaf7;
+  font-family: "Myriad Pro", "Lato", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.services-main-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 13px 22px;
+  border-radius: 5px;
+  background: #0866c6;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.services-main-button:hover {
+  background: #0d7be8;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   PROJECT CATEGORIES SECTION
+========================================= */
+
+.services-main-section {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 70px 6%;
+}
+
+.services-section-heading {
+  max-width: 700px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.services-section-heading > span {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #0866c6;
+  font-family: "Archivo", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.services-section-heading h2 {
+  margin: 0 0 12px;
+  color: #092b50;
+  font-family: "Lato", sans-serif;
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.services-section-heading p {
+  margin: 0;
+  color: #68778b;
+  font-family: "Myriad Pro", "Lato", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   CATEGORY CARDS
+========================================= */
+
+.projects-category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.services-category-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e6ebf1;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(9, 43, 80, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.services-category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(9, 43, 80, 0.12);
+}
+
+/* Card image */
+
+.services-card-image-link {
+  display: block;
+  height: 170px;
+  overflow: hidden;
+  background: #e9eff6;
+}
+
+.services-card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.services-category-card:hover .services-card-image {
+  transform: scale(1.05);
+}
+
+/* Card content */
+
+.services-card-body {
+  padding: 18px;
+}
+
+.services-category-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 13px;
+  place-items: center;
+  border-radius: 10px;
+  background: #edf5ff;
+  color: #0866c6;
+}
+
+.services-card-body h3 {
+  margin: 0 0 9px;
+  color: #0a2d53;
+  font-family: "Lato", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.services-card-body > p {
+  margin: 0 0 16px;
+  color: #6b7889;
+  font-family: "Myriad Pro", "Lato", sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.services-category-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0866c6;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.services-category-link:hover {
+  color: #003c7d;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .services-main-hero {
+    min-height: 420px;
+    padding: 115px 6% 65px;
+  }
+
+  .projects-category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+  .services-main-hero {
+    min-height: 390px;
+    padding: 105px 6% 55px;
+  }
+
+  .services-main-hero-bg {
+    object-position: center;
+  }
+
+  .services-main-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(5, 25, 52, 0.88),
+      rgba(5, 25, 52, 0.62)
+    );
+  }
+
+  .services-eyebrow {
+    margin-bottom: 14px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .services-main-content h1 {
+    margin-bottom: 16px;
+    font-size: clamp(34px, 9vw, 46px);
+    letter-spacing: -0.8px;
+  }
+
+  .services-main-content > p {
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .services-main-button {
+    min-height: 45px;
+    padding: 12px 17px;
+    font-size: 13px;
+  }
+
+  .services-main-section {
+    padding: 50px 5%;
+  }
+
+  .services-section-heading {
+    margin-bottom: 28px;
+  }
+
+  .services-section-heading h2 {
+    font-size: 29px;
+  }
+
+  .services-section-heading p {
+    font-size: 14px;
+  }
+
+  .projects-category-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .services-card-image-link {
+    height: 200px;
+  }
+
+  .services-card-body {
+    padding: 18px;
+  }
+
+  .services-card-body h3 {
+    font-size: 17px;
+  }
+
+  .services-card-body > p {
+    font-size: 13px;
+  }
+}

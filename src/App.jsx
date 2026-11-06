@@ -1,3 +1,4 @@
+
 import { Routes, Route } from "react-router-dom";
 
 // MAIN COMPONENTS
@@ -5,19 +6,36 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Products from "./components/Products";
 import BackToTop from "./components/BackToTop";
-import WhatsAppButton from "./components/WhatsappButton.jsx";
-import CallButton from "./components/CallButton";
 import ScrollToTop from "./components/ScrollToTop";
+import QuotePopup from "./components/QuotePopup";
 
-// PAGES
+// MAIN PAGES
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Services from "./pages/Services.jsx";
 import Contact from "./components/Contact";
+import Quote from "./components/Quote";
 import NotFound from "./pages/NotFound";
 import Admin from "./pages/Admin";
 
-// PRODUCT PAGES
+// PROJECTS
+import Projects from "./pages/Projects";
+import ResidentialProjects from "./pages/ResidentialProjects";
+import CommercialProjects from "./pages/CommercialProjects";
+import IndustrialProjects from "./pages/IndustrialProjects";
+
+// BLOGS, GALLERY AND FAQS
+import Blogs from "./pages/Blogs";
+import Gallery from "./pages/Gallery";
+import Faqs from "./pages/Faqs";
+
+// SERVICES
+import Services from "./pages/Services";
+import Residential from "./pages/Residential";
+import Commercial from "./pages/Commercial";
+import Industrial from "./pages/Industrial";
+import Renovation from "./pages/Renovation";
+
+// PRODUCT CATEGORY PAGES
 import CementProducts from "./pages/products/CementProducts";
 import SteelProducts from "./pages/products/SteelProducts";
 import PaintProducts from "./pages/products/PaintProducts";
@@ -27,7 +45,7 @@ import SanitaryProducts from "./pages/products/SanitaryProducts";
 import ChemicalsProducts from "./pages/products/ChemicalsProducts";
 import HardwareProducts from "./pages/products/HardwareProducts";
 
-// GALLERY PAGES
+// PRODUCT GALLERY PAGES
 import CementGallery from "./pages/gallery/CementGallery.jsx";
 import ChemicalGallery from "./pages/gallery/ChemicalGallery.jsx";
 import PaintGallery from "./pages/gallery/PaintGallery.jsx";
@@ -40,31 +58,83 @@ import WatertankGallery from "./pages/gallery/WatertankGallery.jsx";
 function App() {
   return (
     <>
+      {/* AUTOMATIC SCROLL TO TOP ON ROUTE CHANGE */}
       <ScrollToTop />
 
+      {/* NAVBAR */}
       <Navbar />
 
+      {/* ALL ROUTES */}
       <Routes>
         {/* HOME */}
-
         <Route path="/" element={<Home />} />
 
-        {/* MAIN PAGES */}
-
+        {/* ABOUT */}
         <Route path="/about" element={<About />} />
 
+        {/* SERVICES */}
         <Route path="/services" element={<Services />} />
 
+        <Route
+          path="/services/residential"
+          element={<Residential />}
+        />
+
+        <Route
+          path="/services/commercial"
+          element={<Commercial />}
+        />
+
+        <Route
+          path="/services/industrial"
+          element={<Industrial />}
+        />
+
+        <Route
+          path="/services/renovation"
+          element={<Renovation />}
+        />
+
+        {/* PROJECTS */}
+        <Route path="/projects" element={<Projects />} />
+
+        <Route
+          path="/projects/residential"
+          element={<ResidentialProjects />}
+        />
+
+        <Route
+          path="/projects/commercial"
+          element={<CommercialProjects />}
+        />
+
+        <Route
+          path="/projects/industrial"
+          element={<IndustrialProjects />}
+        />
+
+        {/* CONTACT */}
         <Route path="/contact" element={<Contact />} />
 
-        {/* ADMIN */}
+        {/* GET A QUOTE PAGE */}
+        <Route path="/quote" element={<Quote />} />
 
+        {/* BLOGS */}
+        <Route path="/blogs" element={<Blogs />} />
+
+        {/* MAIN GALLERY */}
+        <Route path="/gallery" element={<Gallery />} />
+
+        {/* FAQS */}
+        <Route path="/faqs" element={<Faqs />} />
+
+        {/* ADMIN */}
         <Route path="/admin" element={<Admin />} />
 
-        {/* PRODUCTS */}
-
+        {/* MAIN PRODUCTS */}
         <Route path="/products" element={<Products />} />
 
+        {/* PRODUCT CATEGORY PAGES */}
         <Route
           path="/products/cement"
           element={<CementProducts />}
@@ -105,8 +175,7 @@ function App() {
           element={<HardwareProducts />}
         />
 
-        {/* GALLERIES */}
-
+        {/* PRODUCT GALLERY PAGES */}
         <Route
           path="/gallery/cement"
           element={<CementGallery />}
@@ -147,20 +216,16 @@ function App() {
           element={<WatertankGallery />}
         />
 
-        {/* 404 */}
-
+        {/* 404 — KEEP LAST */}
         <Route path="*" element={<NotFound />} />
       </Routes>
 
       {/* GLOBAL COMPONENTS */}
-
       <Footer />
-
       <BackToTop />
 
-      <WhatsAppButton />
-
-      <CallButton />
+      {/* GLOBAL QUOTE POPUP */}
+      <QuotePopup />
     </>
   );
 }

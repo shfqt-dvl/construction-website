@@ -6,7 +6,7 @@ import birlaOpus from "../../assets/products/birla-opus.jpeg";
 import paintRange from "../../assets/products/paints.jpeg";
 import opusPaint from "../../assets/opus.jpg";
 
-const paintProducts = [
+export const paintProducts = [
   {
     id: 1,
     name: "Nerolac Paints",
