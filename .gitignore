@@ -6,3 +6,4 @@ dist/
 build/
 
 src/assets/GitHubDesktopSetup-x64.exe
+public/*.mp4
