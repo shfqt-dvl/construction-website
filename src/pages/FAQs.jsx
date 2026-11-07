@@ -72,7 +72,7 @@ function Faqs() {
  {/* Hero Section */}
 <section className="faqs-hero">
   <img
-    src="/faqs1.jpg"
+    src="/faqs3.png"
     alt="Construction materials and building work"
     className="faqs-hero-image"
   />
