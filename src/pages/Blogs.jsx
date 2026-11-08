@@ -1,8 +1,8 @@
+
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
   BookOpen,
-  CalendarDays,
   HardHat,
   Layers3,
   Paintbrush,
@@ -15,6 +15,7 @@ import "./Blogs.css";
 
 const articles = [
   {
+    slug: "choosing-right-cement",
     category: "MATERIAL GUIDE",
     title: "How to Choose the Right Cement for Your Construction",
     description:
@@ -25,6 +26,7 @@ const articles = [
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=85",
   },
   {
+    slug: "construction-steel-guide",
     category: "BUILDING TIPS",
     title: "What to Consider When Selecting Construction Steel",
     description:
@@ -35,6 +37,7 @@ const articles = [
       "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=85",
   },
   {
+    slug: "home-renovation-checklist",
     category: "HOME IMPROVEMENT",
     title: "Planning a Home Renovation: Materials Checklist",
     description:
@@ -45,6 +48,7 @@ const articles = [
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85",
   },
   {
+    slug: "choosing-home-paint",
     category: "PAINT & FINISHES",
     title: "Things to Know Before Choosing Paint for Your Home",
     description:
@@ -55,6 +59,7 @@ const articles = [
       "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1000&q=85",
   },
   {
+    slug: "pipes-plumbing-guide",
     category: "PLUMBING",
     title: "Choosing Pipes and Plumbing Materials for Your Building",
     description:
@@ -65,6 +70,7 @@ const articles = [
       "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1000&q=85",
   },
   {
+    slug: "materials-budget-guide",
     category: "PROJECT PLANNING",
     title: "How to Prepare a Construction Materials Budget",
     description:
@@ -108,17 +114,6 @@ function Blogs() {
             Explore Articles
             <ArrowRight size={18} />
           </a>
-
-          <div className="blogs-hero-note">
-            <span className="blogs-note-icon">
-              <HardHat size={18} />
-            </span>
-            <span>Helpful guides for smarter building decisions</span>
-          </div>
-        </div>
-
-        <div className="blogs-hero-caption">
-          CONSTRUCTION · MATERIALS · IDEAS
         </div>
       </section>
 
@@ -149,19 +144,21 @@ function Blogs() {
         <div className="blogs-grid">
           {articles.map((article, index) => {
             const Icon = article.icon;
+            const articleLink = `/blogs/${article.slug}`;
 
             return (
               <article
                 className="blog-card"
-                key={article.title}
+                key={article.slug}
                 style={{
                   "--blog-delay": `${index * 90}ms`,
                 }}
               >
+                {/* Article image */}
                 <Link
-                  to="/contact"
+                  to={articleLink}
                   className="blog-image-link"
-                  aria-label={`Ask us about ${article.title}`}
+                  aria-label={`Read ${article.title}`}
                 >
                   <div className="blog-image">
                     <img
@@ -171,12 +168,10 @@ function Blogs() {
                     />
 
                     <div className="blog-image-overlay" />
-
-
-                    
                   </div>
                 </Link>
 
+                {/* Article content */}
                 <div className="blog-card-content">
                   <div className="blog-date">
                     <span className="blog-date-icon">
@@ -191,9 +186,9 @@ function Blogs() {
                   <p>{article.description}</p>
 
                   <Link
-                    to="/contact"
+                    to={articleLink}
                     className="blog-read-more"
-                    aria-label={`Ask us about ${article.title}`}
+                    aria-label={`Read more about ${article.title}`}
                   >
                     <span>Read More</span>
                     <ArrowRight size={17} />
@@ -212,7 +207,11 @@ function Blogs() {
 
           <div className="blogs-info-content">
             <span>PLANNING YOUR NEXT PROJECT?</span>
-            <h3>Good construction starts with the right information.</h3>
+
+            <h3>
+              Good construction starts with the right information.
+            </h3>
+
             <p>
               Understand your material requirements before making
               important decisions about your project.
@@ -235,7 +234,9 @@ function Blogs() {
 
           <div className="blogs-cta-text">
             <span>WE'RE HERE TO HELP</span>
+
             <h2>Need Help Choosing Building Materials?</h2>
+
             <p>
               Contact Mushad Construction &amp; Hardware Store to
               discuss your product requirements.

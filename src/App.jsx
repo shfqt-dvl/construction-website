@@ -25,6 +25,7 @@ import IndustrialProjects from "./pages/IndustrialProjects";
 
 // BLOGS, GALLERY AND FAQS
 import Blogs from "./pages/Blogs";
+import BlogDetail from "./pages/BlogDetail";
 import Gallery from "./pages/Gallery";
 import Faqs from "./pages/FAQs";
 
@@ -120,7 +121,10 @@ function App() {
         <Route path="/quote" element={<Quote />} />
 
         {/* BLOGS */}
-        <Route path="/blogs" element={<Blogs />} />
+<Route path="/blogs" element={<Blogs />} />
+
+{/* BLOG DETAILS */}
+<Route path="/blogs/:slug" element={<BlogDetail />} />
 
         {/* MAIN GALLERY */}
         <Route path="/gallery" element={<Gallery />} />

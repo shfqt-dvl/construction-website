@@ -133,12 +133,11 @@ export default function Navbar() {
 
   /* CLOSE MENUS AFTER NAVIGATION */
 
-  useEffect(() => {
-    setMenuOpen(false);
-    setOpenDropdown("");
-    setNavbarHovered(false);
-  }, [location.pathname, location.hash]);
-
+useEffect(() => {
+  setMenuOpen(false);
+  setOpenDropdown("");
+  setNavbarHovered(false);
+}, [location.pathname, location.hash, location.key]);
   /* CLOSE MOBILE MENU ON DESKTOP RESIZE */
 
   useEffect(() => {
@@ -158,10 +157,11 @@ export default function Navbar() {
 
   /* CLOSE NAVIGATION MENUS */
 
-  const closeMenu = () => {
-    setMenuOpen(false);
-    setOpenDropdown("");
-  };
+ const closeMenu = () => {
+  setMenuOpen(false);
+  setOpenDropdown("");
+  setNavbarHovered(false);
+};
 
   /* TOGGLE DROPDOWN */
 
@@ -321,7 +321,7 @@ const navbarClassName = [
                     type="button"
                     aria-expanded={isOpen}
                     aria-haspopup="true"
-                    onClick={() => toggleDropdown(label)}
+                   onClick={() => toggleDropdown(label)}
                   >
                     <span>{label}</span>
 
