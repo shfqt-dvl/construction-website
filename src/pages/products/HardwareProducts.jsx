@@ -1,16 +1,12 @@
-import "./HardwareProducts.css";
 
-import hardwareTools from "../../assets/13.png";
-import fasteners from "../../assets/fasteners.webp";
-import nails from "../../assets/mild-steel-coil-wire-nails-966.jpg";
-import hardwareBanner from "../../assets/hardware-banner.jpg";
+import "./HardwareProducts.css";
 
 export const hardwareProducts = [
   {
     id: 1,
     name: "Hardware Tools",
     brand: "Mushad Hardware",
-    image: hardwareTools,
+    image: "/13.png",
     price: "Contact for current price",
     description:
       "Essential hardware tools and accessories suitable for construction, repair and everyday building requirements.",
@@ -19,7 +15,7 @@ export const hardwareProducts = [
     id: 2,
     name: "Screws & Fasteners",
     brand: "Hardware",
-    image: fasteners,
+    image: "/screw1.png",
     price: "Contact for current price",
     description:
       "Reliable screws and fasteners for different construction, installation and repair applications.",
@@ -28,7 +24,7 @@ export const hardwareProducts = [
     id: 3,
     name: "Nails",
     brand: "Hardware",
-    image: nails,
+    image: "/mild-steel-coil-wire-nails-966.png",
     price: "Contact for current price",
     description:
       "Quality nails suitable for general construction, fixing and building requirements.",
@@ -37,7 +33,7 @@ export const hardwareProducts = [
     id: 4,
     name: "Construction Accessories",
     brand: "Mushad Hardware",
-    image: hardwareBanner,
+    image: "/hardware.png",
     price: "Contact for current price",
     description:
       "Useful construction accessories and hardware products for builders, contractors and homeowners.",
@@ -118,7 +114,7 @@ function HardwareProducts() {
 
         <p>
           Prices and availability may change. Contact
-          Mushad Construction & Hardware Store for the
+          Mushad Construction &amp; Hardware Store for the
           latest information.
         </p>
       </section>

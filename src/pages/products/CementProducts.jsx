@@ -1,19 +1,12 @@
 
 import "./CementProducts.css";
 
-import accCement from "../../assets/16829-10915_image_0.jpg";
-import ambujaCompocem from "../../assets/products/Ambuja_Compocem_Cement_471d746366.png";
-import ambujaKawach from "../../assets/products/ambuja-kawach-cement-2213802276-xf3pleht.avif";
-import birlaCement from "../../assets/products/birla-cem.jpeg";
-import jswCement from "../../assets/jsw-cement-2.jpg";
-import nuvocoCement from "../../assets/Nuvoco-PSC-Cement.jpg";
-
- export const cementProducts = [
+export const cementProducts = [
   {
     id: 1,
     name: "ACC Cement",
     brand: "Adani Cements",
-    image: accCement,
+    image: "/16829-10915_image_0.png",
     price: "Contact for price",
     description:
       "Quality cement suitable for residential and commercial construction, foundations, masonry and general concrete work.",
@@ -22,7 +15,7 @@ import nuvocoCement from "../../assets/Nuvoco-PSC-Cement.jpg";
     id: 2,
     name: "Ambuja Compocem",
     brand: "Adani Cements",
-    image: ambujaCompocem,
+    image: "/ambuja1.png",
     price: "Contact for price",
     description:
       "Reliable cement suitable for a wide range of residential and commercial construction applications.",
@@ -31,7 +24,7 @@ import nuvocoCement from "../../assets/Nuvoco-PSC-Cement.jpg";
     id: 3,
     name: "Ambuja Kawach",
     brand: "Adani Cements",
-    image: ambujaKawach,
+    image: "/kawach.png",
     price: "Contact for price",
     description:
       "Cement suitable for roof, foundation and other construction requirements.",
@@ -40,7 +33,7 @@ import nuvocoCement from "../../assets/Nuvoco-PSC-Cement.jpg";
     id: 4,
     name: "Birla Cement",
     brand: "Birla",
-    image: birlaCement,
+    image: "/birla-cem.png",
     price: "Contact for price",
     description:
       "Cement suitable for different building and construction requirements.",
@@ -49,7 +42,7 @@ import nuvocoCement from "../../assets/Nuvoco-PSC-Cement.jpg";
     id: 5,
     name: "JSW Cement",
     brand: "JSW",
-    image: jswCement,
+    image: "/jsw-cement-2.png",
     price: "Contact for price",
     description:
       "Quality cement solution for construction projects requiring dependable performance.",
@@ -58,7 +51,7 @@ import nuvocoCement from "../../assets/Nuvoco-PSC-Cement.jpg";
     id: 6,
     name: "Nuvoco Cement",
     brand: "Nuvoco",
-    image: nuvocoCement,
+    image: "/Nuvoco-PSC-Cement.png",
     price: "Contact for price",
     description:
       "Construction cement suitable for residential and commercial building applications.",
@@ -141,7 +134,7 @@ function CementProducts() {
       <section className="cement-products-note">
         <h2>Need Current Price or Stock Information?</h2>
 
-       <p>
+        <p>
           Prices and availability may change. Contact
           Mushad Construction &amp; Hardware Store for the
           latest information.

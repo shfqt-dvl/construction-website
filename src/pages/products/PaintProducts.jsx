@@ -1,17 +1,12 @@
-import "./PaintProducts.css";
 
-import nerolacPaint from "../../assets/products/nerolac.jpeg";
-import asianPaints from "../../assets/Asian-Paints-Shares-Fall-Post-Q3-Results-1-1200x720.jpg";
-import birlaOpus from "../../assets/products/birla-opus.jpeg";
-import paintRange from "../../assets/products/paints.jpeg";
-import opusPaint from "../../assets/opus.jpg";
+import "./PaintProducts.css";
 
 export const paintProducts = [
   {
     id: 1,
     name: "Nerolac Paints",
     brand: "Nerolac",
-    image: nerolacPaint,
+    image: "/nerolac2.png",
     price: "Contact for current price",
     description:
       "Quality paints and finishes for residential, commercial and general building applications.",
@@ -20,7 +15,7 @@ export const paintProducts = [
     id: 2,
     name: "Asian Paints",
     brand: "Asian Paints",
-    image: asianPaints,
+    image: "/asian1.png",
     price: "Contact for current price",
     description:
       "Paint solutions for interior walls, exterior walls and a variety of finishing requirements.",
@@ -29,7 +24,7 @@ export const paintProducts = [
     id: 3,
     name: "Birla Opus Paints",
     brand: "Birla Opus",
-    image: birlaOpus,
+    image: "/opus.png",
     price: "Contact for current price",
     description:
       "Decorative paints and finishes to help create attractive residential and commercial spaces.",
@@ -38,7 +33,7 @@ export const paintProducts = [
     id: 4,
     name: "Interior Wall Paints",
     brand: "Interior Paint Range",
-    image: paintRange,
+    image: "/interior.jpg",
     price: "Contact for current price",
     description:
       "Explore interior wall paint options for bedrooms, living rooms, offices and other indoor spaces.",
@@ -47,7 +42,7 @@ export const paintProducts = [
     id: 5,
     name: "Decorative Paint Range",
     brand: "Decorative Finishes",
-    image: opusPaint,
+    image: "/mica.webp",
     price: "Contact for current price",
     description:
       "Explore paint and finishing options for refreshing and decorating your home or commercial property.",
@@ -128,7 +123,7 @@ function PaintProducts() {
 
         <p>
           Prices and availability may change. Contact
-          Mushad Construction & Hardware Store for the
+          Mushad Construction &amp; Hardware Store for the
           latest information.
         </p>
       </section>

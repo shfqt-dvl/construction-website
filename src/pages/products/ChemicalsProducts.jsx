@@ -1,14 +1,12 @@
-import "./ChemicalsProducts.css";
 
-import conchemImage from "../../assets/products/conchem-chem.jpeg";
-import drFixitImage from "../../assets/16191739476082a23b4efc6.webp";
+import "./ChemicalsProducts.css";
 
 export const chemicalProducts = [
   {
     id: 1,
     name: "Conchem Construction Chemicals",
     brand: "Conchem",
-    image: conchemImage,
+    image: "/chemical2.png",
     price: "Contact for current price",
     description:
       "Construction chemical solutions suitable for different building, repair and construction applications.",
@@ -17,7 +15,7 @@ export const chemicalProducts = [
     id: 2,
     name: "Dr. Fixit",
     brand: "Dr. Fixit",
-    image: drFixitImage,
+    image: "/drfixit.png",
     price: "Contact for current price",
     description:
       "Construction chemical products for waterproofing, protection and maintenance requirements.",
@@ -98,7 +96,7 @@ function ChemicalsProducts() {
 
         <p>
           Prices and availability may change. Contact
-          Mushad Construction & Hardware Store for the
+          Mushad Construction &amp; Hardware Store for the
           latest information.
         </p>
       </section>

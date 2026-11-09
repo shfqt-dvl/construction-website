@@ -429,3 +429,57 @@
     font-size: 10px;
   }
 }
+/* MOBILE — REDUCE EMPTY SPACE IN QUOTE SECTION */
+@media (max-width: 760px) {
+  .quote-page:not(.quote-page-popup) {
+    min-height: auto;
+    height: auto;
+    padding: 85px 14px 25px;
+  }
+
+  .quote-page:not(.quote-page-popup) .quote-section {
+    min-height: auto;
+    height: auto;
+    align-items: start;
+    gap: 22px;
+  }
+
+  .quote-page:not(.quote-page-popup) .quote-intro {
+    margin-bottom: 0;
+  }
+
+  .quote-page:not(.quote-page-popup) .quote-info {
+    margin-top: 18px;
+  }
+
+  .quote-page:not(.quote-page-popup) .quote-form-card {
+    margin-bottom: 0;
+  }
+}
+/* TABLET & IPAD — QUOTE SECTION HEIGHT FIX */
+@media (min-width: 761px) and (max-width: 1024px) {
+  .quote-page:not(.quote-page-popup) {
+    min-height: auto;
+    height: auto;
+    padding: 90px 24px 35px;
+  }
+
+  .quote-page:not(.quote-page-popup) .quote-section {
+    min-height: auto;
+    height: auto;
+    align-items: start;
+    gap: 30px;
+  }
+
+  .quote-page:not(.quote-page-popup) .quote-intro {
+    margin-bottom: 0;
+  }
+
+  .quote-page:not(.quote-page-popup) .quote-info {
+    margin-top: 22px;
+  }
+
+  .quote-page:not(.quote-page-popup) .quote-form-card {
+    margin-bottom: 0;
+  }
+}

@@ -1,16 +1,12 @@
-import "./PipesProducts.css";
 
-import princePipes from "../../assets/Pvc-Prince-Pipe-Fitting (1).jpg";
-import astralPipes from "../../assets/astral-pipes-fittings-distributors.jpg";
-import filomaxPipes from "../../assets/flexible_pvc_transparent_tubes.jpg";
-import idolPipes from "../../assets/products/1754117518.webp";
+import "./PipesProducts.css";
 
 export const pipesProducts = [
   {
     id: 1,
     name: "Prince Pipes & Fittings",
     brand: "Prince",
-    image: princePipes,
+    image: "/Pvc-Prince-Pipe-Fitting (1).png",
     price: "Contact for current price",
     description:
       "Plumbing products designed for reliable water distribution and construction requirements.",
@@ -19,7 +15,7 @@ export const pipesProducts = [
     id: 2,
     name: "Astral Pipes & Fittings",
     brand: "Astral",
-    image: astralPipes,
+    image: "/astral-pipes-fittings-distributors.png",
     price: "Contact for current price",
     description:
       "Reliable plumbing pipes and fittings suitable for residential, commercial and construction plumbing systems.",
@@ -28,7 +24,7 @@ export const pipesProducts = [
     id: 3,
     name: "Filomax Pipes & Fittings",
     brand: "Filomax",
-    image: filomaxPipes,
+    image: "/flexible_pvc_transparent_tubes.png",
     price: "Contact for current price",
     description:
       "Quality plumbing solutions for dependable water supply and drainage requirements.",
@@ -37,7 +33,7 @@ export const pipesProducts = [
     id: 4,
     name: "Idol Pipes & Fittings",
     brand: "Idol",
-    image: idolPipes,
+    image: "/idol.png",
     price: "Contact for current price",
     description:
       "Pipes and fittings suitable for various plumbing and building applications.",
@@ -118,7 +114,7 @@ function PipesProducts() {
 
         <p>
           Prices and availability may change. Contact
-          Mushad Construction & Hardware Store for the
+          Mushad Construction &amp; Hardware Store for the
           latest information.
         </p>
       </section>
