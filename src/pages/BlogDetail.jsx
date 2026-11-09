@@ -1,3 +1,4 @@
+
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, BookOpen, HardHat } from "lucide-react";
 import "./BlogDetail.css";
@@ -7,325 +8,294 @@ const blogArticles = {
     category: "MATERIAL GUIDE",
     title: "How to Choose the Right Cement for Your Construction",
     intro:
-      "Cement plays an important role in the strength, durability and performance of a building. Choosing the right type depends on the construction stage, environmental conditions and project requirements.",
+      "The right cement improves the strength and durability of a building. Choose it according to your construction needs and project specifications.",
     image:
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=85",
     sections: [
       {
-        heading: "1. Understand the Different Types of Cement",
+        heading: "1. Understand Cement Types",
         paragraphs: [
-          "Ordinary Portland Cement (OPC) is commonly used for structural work such as columns, beams and slabs. Portland Pozzolana Cement (PPC) is often selected for general construction and masonry because of its workability and long-term performance.",
-          "Other cement varieties may be suitable for specific conditions. Always check the intended application and follow the recommendation of your engineer or contractor.",
+          "OPC is commonly used for structural work, while PPC is suitable for general construction and masonry. Select the type according to your project requirements.",
         ],
       },
       {
-        heading: "2. Check the Grade and Application",
+        heading: "2. Check the Grade",
         paragraphs: [
-          "Cement grades indicate strength characteristics. The grade and type should be selected according to the structural design and the construction work being carried out.",
-          "Avoid choosing cement only because it is popular or inexpensive. Different applications can have different requirements.",
+          "Cement grade should match the structural design. Always follow your engineer’s recommendation instead of choosing only by price.",
         ],
       },
       {
-        heading: "3. Inspect Quality Before Purchasing",
+        heading: "3. Check Cement Quality",
         bullets: [
-          "Check the manufacturing date and use fresh cement wherever possible.",
-          "Ensure the bags are sealed and free from tears or moisture damage.",
-          "Look for a consistent product appearance and avoid cement containing hard lumps.",
-          "Purchase from a reliable supplier and check the manufacturer’s product details.",
+          "Check the manufacturing date.",
+          "Avoid damaged or moisture-exposed bags.",
+          "Look for hard lumps.",
+          "Buy from a trusted supplier.",
         ],
       },
       {
         heading: "4. Store Cement Properly",
         paragraphs: [
-          "Cement should be stored in a dry, covered area away from direct moisture. Keep bags raised from the floor and avoid placing them directly against damp walls.",
-          "Use older stock first and keep storage conditions protected from rain and humidity.",
-        ],
-      },
-      {
-        heading: "5. Plan the Quantity",
-        paragraphs: [
-          "Estimate cement requirements using the project drawings and the quantities provided by your contractor. Buying too much can lead to storage problems, while buying too little can interrupt work.",
-          "For structural construction, cement selection and mix proportions should be determined by qualified professionals.",
+          "Keep cement in a dry, covered area, raised above the floor and away from moisture. Use older stock first.",
         ],
       },
     ],
     takeaway:
-      "Choose cement based on the application, product specifications, freshness and storage condition—not just price. For structural work, follow the engineer’s specifications.",
+      "Choose cement based on its type, grade, quality and freshness. Follow the specifications approved for your project.",
   },
 
   "construction-steel-guide": {
     category: "BUILDING TIPS",
     title: "What to Consider When Selecting Construction Steel",
     intro:
-      "Steel reinforcement helps concrete structures resist tensile forces. Selecting suitable steel and ensuring proper handling are important steps in building safe and durable structures.",
+      "Construction steel strengthens concrete structures. Choosing the right grade and maintaining proper quality are essential for safe construction.",
     image:
       "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1400&q=85",
     sections: [
       {
-        heading: "1. Select Steel According to the Structural Design",
+        heading: "1. Choose the Right Grade",
         paragraphs: [
-          "Reinforcement steel is available in different grades and sizes. The required grade, diameter and quantity should be specified by the structural engineer according to the design.",
-          "Do not substitute one grade or diameter for another without professional approval.",
+          "Steel grade, diameter and quantity should match the structural design. Do not replace specified steel without professional approval.",
         ],
       },
       {
-        heading: "2. Check Product Standards and Certification",
+        heading: "2. Check Quality Standards",
         paragraphs: [
-          "Ask the supplier for the relevant product specifications and quality documentation. In India, reinforcement bars should comply with the applicable BIS standards for the product.",
-          "Verify the manufacturer and product details before making a purchase.",
+          "Verify the manufacturer, product markings and applicable BIS standards before purchasing reinforcement steel.",
         ],
       },
       {
         heading: "3. Inspect the Steel",
         bullets: [
-          "Check for excessive rust, pitting, cracks or visible damage.",
-          "Confirm the diameter and length against the required specification.",
-          "Look for consistent rib patterns and product markings.",
-          "Ensure the steel is not mixed with unidentified or mismatched material.",
+          "Check for cracks and excessive rust.",
+          "Confirm diameter and length.",
+          "Look for proper product markings.",
+          "Avoid unidentified materials.",
         ],
       },
       {
-        heading: "4. Consider Storage and Handling",
+        heading: "4. Store Steel Properly",
         paragraphs: [
-          "Steel should be stored off the ground and arranged to avoid contamination with mud, oil or other materials. Keep it organized by size and grade to prevent mix-ups on site.",
-          "Surface rust and serious corrosion are not the same; if there is uncertainty about the condition of reinforcement, seek a qualified site professional’s assessment.",
+          "Keep steel above ground and away from mud, oil and other contaminants. Store different sizes and grades separately.",
         ],
       },
       {
-        heading: "5. Compare Suppliers Carefully",
+        heading: "5. Compare Suppliers",
         paragraphs: [
-          "Compare quotations based on grade, size, brand, documentation, delivery and final quantity. A lower price alone may not represent better value if specifications or supply reliability differ.",
+          "Compare brand, grade, price, quality documentation and delivery before finalizing your supplier.",
         ],
       },
     ],
     takeaway:
-      "Use the exact steel specification approved for the project, verify quality documentation and make sure the material is stored and handled properly.",
+      "Always use the specified steel grade and purchase quality-verified materials from a reliable supplier.",
   },
 
   "home-renovation-checklist": {
     category: "HOME IMPROVEMENT",
     title: "Planning a Home Renovation: Materials Checklist",
     intro:
-      "A well-organized materials checklist helps reduce delays, avoid unnecessary purchases and keep renovation work coordinated. Prepare the list after finalizing the scope and discussing it with your contractor.",
+      "A proper materials checklist helps organize renovation work, control expenses and reduce unnecessary purchases.",
     image:
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85",
     sections: [
       {
-        heading: "1. Start with the Scope of Work",
+        heading: "1. Plan Your Renovation",
         paragraphs: [
-          "Identify which rooms or areas will be renovated and whether the work includes structural changes, flooring, plumbing, electrical work, painting or fixtures.",
-          "Measurements and drawings help create more accurate material estimates.",
+          "Decide which areas need renovation and finalize the work with your contractor before purchasing materials.",
         ],
       },
       {
-        heading: "2. Structural and Masonry Materials",
+        heading: "2. Basic Construction Materials",
         bullets: [
-          "Cement and other specified binding materials",
-          "Sand and aggregates, where required",
-          "Bricks, blocks or other masonry units",
-          "Reinforcement steel if specified by the engineer",
-          "Waterproofing products for designated areas",
+          "Cement, sand and aggregates",
+          "Bricks or blocks",
+          "Steel, if required",
+          "Waterproofing materials",
         ],
       },
       {
-        heading: "3. Flooring and Wall Finishes",
+        heading: "3. Flooring and Paint",
         bullets: [
-          "Tiles, stone or selected flooring material",
-          "Tile adhesive and grout, where appropriate",
+          "Tiles or flooring materials",
+          "Tile adhesive and grout",
           "Wall putty and primer",
           "Interior or exterior paint",
-          "Skirting, trims and finishing accessories",
         ],
       },
       {
-        heading: "4. Plumbing and Electrical Requirements",
+        heading: "4. Plumbing and Electrical",
         paragraphs: [
-          "List pipes, fittings, valves, sanitary fixtures and accessories according to the plumbing plan. For electrical work, include approved wires, conduits, switches, sockets and other specified components.",
-          "Electrical and plumbing work should be planned and completed by qualified professionals.",
+          "Prepare a list of pipes, fittings, wires, switches and fixtures according to the approved layout.",
         ],
       },
       {
-        heading: "5. Doors, Windows and Hardware",
+        heading: "5. Doors and Hardware",
         bullets: [
-          "Door and window frames or replacement units",
-          "Locks, handles, hinges and other hardware",
-          "Sealants and installation accessories",
-          "Cabinet fittings and other selected fixtures",
+          "Doors and window fittings",
+          "Locks, handles and hinges",
+          "Cabinet accessories",
+          "Sealants and installation items",
         ],
       },
       {
-        heading: "6. Keep a Purchase and Delivery Plan",
+        heading: "6. Manage Purchases",
         paragraphs: [
-          "Divide purchases by work stage. Arrange bulky materials before the work begins and schedule finishing products closer to the time they will be used.",
-          "Keep a record of quantities, supplier quotations, delivery dates and remaining stock. Add a reasonable contingency for wastage or changes after discussing it with your contractor.",
+          "Buy materials in stages, track delivery dates and keep purchase records to avoid wastage and delays.",
         ],
       },
     ],
     takeaway:
-      "A room-wise and work-stage-wise checklist makes renovation easier to manage. Confirm quantities and specifications with your contractor before purchasing.",
+      "Plan materials according to each renovation stage and confirm quantities with your contractor.",
   },
 
   "choosing-home-paint": {
     category: "PAINT & FINISHES",
     title: "Things to Know Before Choosing Paint for Your Home",
     intro:
-      "The right paint can improve the appearance of a room and help protect its surfaces. Consider the room’s use, surface condition, finish and maintenance needs before selecting a product.",
+      "The right paint improves the appearance of your home and protects surfaces. Consider the room, surface and finish before choosing a product.",
     image:
       "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1400&q=85",
     sections: [
       {
-        heading: "1. Choose Paint for the Right Surface",
+        heading: "1. Choose Paint for the Surface",
         paragraphs: [
-          "Interior walls, exterior walls, metal and wood may require different paint systems. Check that the product is designed for the surface and environment where it will be applied.",
-          "Exterior paint should be selected for weather exposure, while interior paint should suit the room’s usage and cleaning requirements.",
+          "Interior walls, exterior walls, metal and wood require different paint products. Select paint according to the surface and environment.",
         ],
       },
       {
         heading: "2. Understand Paint Finishes",
         bullets: [
-          "Matte: a low-sheen appearance that can help reduce the visibility of minor surface imperfections.",
-          "Satin or soft sheen: a balanced finish that may be easier to clean than matte, depending on the product.",
-          "Gloss: a reflective finish often used for selected trim or detail surfaces.",
+          "Matte: Smooth, low-shine appearance.",
+          "Satin: Balanced finish with easier cleaning.",
+          "Gloss: Shiny finish for selected surfaces.",
         ],
       },
       {
-        heading: "3. Prepare the Surface Properly",
+        heading: "3. Prepare the Surface",
         paragraphs: [
-          "Good preparation is essential for a lasting finish. The surface should be clean, dry and free from loose paint, dust and other contaminants.",
-          "Cracks, dampness and peeling should be addressed before painting. Primer and putty should be selected according to the surface and paint system.",
+          "Clean the surface and repair cracks, peeling paint or dampness. Use suitable primer and putty before painting.",
         ],
       },
       {
-        heading: "4. Consider the Room",
+        heading: "4. Consider Room Conditions",
         paragraphs: [
-          "Kitchens, bathrooms and high-traffic areas may need products designed for easier cleaning or moisture resistance. For exterior walls, consider exposure to sun, rain and local conditions.",
-          "Ask the supplier about the product’s coverage, recommended coats, drying time and maintenance requirements.",
+          "Kitchens and bathrooms may require moisture-resistant paint, while exterior walls need protection against weather.",
         ],
       },
       {
         heading: "5. Estimate Paint Quantity",
         paragraphs: [
-          "Measure the wall area and check the coverage rate printed on the product. Actual consumption depends on surface condition, application method and the number of coats.",
-          "A small test patch can help you evaluate the shade and finish under the room’s lighting before painting the full area.",
+          "Measure the wall area and check the product coverage. Test the shade under your room’s lighting before applying it everywhere.",
         ],
       },
     ],
     takeaway:
-      "Select paint based on the surface, room conditions and finish you want. Proper preparation and following the manufacturer’s instructions are key to a good result.",
+      "Choose paint according to the surface, finish and room conditions. Proper preparation ensures a better result.",
   },
 
   "pipes-plumbing-guide": {
     category: "PLUMBING",
     title: "Choosing Pipes and Plumbing Materials for Your Building",
     intro:
-      "Plumbing systems carry water and manage drainage throughout a building. Pipe material, size and fittings should be selected according to the system’s purpose and installation conditions.",
+      "A reliable plumbing system depends on the right pipes, fittings and installation methods for water supply and drainage.",
     image:
       "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1400&q=85",
     sections: [
       {
-        heading: "1. Identify the Plumbing Application",
+        heading: "1. Identify the Application",
         paragraphs: [
-          "Water supply, hot water, drainage and rainwater systems may require different pipe materials. First identify the system and the operating conditions before choosing a product.",
+          "Water supply, drainage and hot water systems may require different pipe materials. Choose according to the system’s purpose.",
         ],
       },
       {
-        heading: "2. Understand Common Pipe Materials",
+        heading: "2. Common Pipe Materials",
         bullets: [
-          "PVC: commonly used in selected drainage and non-hot-water applications, depending on the product specification.",
-          "CPVC: used in many hot and cold water supply systems where the product is rated for the application.",
-          "HDPE: used in various water supply and underground applications with suitable fittings and installation methods.",
-          "Metal pipes: may be selected for specific systems based on design, durability and compatibility requirements.",
+          "PVC: Commonly used for drainage.",
+          "CPVC: Suitable for many hot and cold water systems.",
+          "HDPE: Used in water supply and underground applications.",
+          "Metal pipes: Selected for specific requirements.",
         ],
       },
       {
-        heading: "3. Check Pipe Size and Pressure Rating",
+        heading: "3. Check Pipe Size and Pressure",
         paragraphs: [
-          "The pipe diameter affects flow and system performance. Pressure rating and temperature limits should suit the intended use.",
-          "Pipe sizing should be planned by a qualified plumbing professional, especially for multi-storey buildings.",
+          "Pipe diameter, pressure rating and temperature limits should match the plumbing design.",
         ],
       },
       {
-        heading: "4. Select Compatible Fittings",
+        heading: "4. Choose Compatible Fittings",
         bullets: [
-          "Use fittings intended for the selected pipe material and size.",
-          "Check valves, elbows, tees, couplers and connectors required by the layout.",
-          "Use the recommended joining method and installation accessories.",
-          "Avoid mixing incompatible products or unverified components.",
+          "Use matching pipe fittings.",
+          "Check elbows, tees and connectors.",
+          "Follow the recommended joining method.",
+          "Avoid incompatible components.",
         ],
       },
       {
-        heading: "5. Consider Installation and Maintenance",
+        heading: "5. Plan Installation",
         paragraphs: [
-          "Think about access for repairs, protection from physical damage and whether the pipes will be concealed or exposed.",
-          "Follow the manufacturer’s installation instructions and conduct appropriate testing before covering pipes or putting the system into use.",
+          "Ensure proper pipe placement, maintenance access and testing before covering or using the plumbing system.",
         ],
       },
     ],
     takeaway:
-      "Choose plumbing materials according to the system, pressure, temperature and compatibility requirements. Confirm specifications with a qualified plumber.",
+      "Choose pipes according to application, pressure and compatibility. Consult a qualified plumber for installation.",
   },
 
   "materials-budget-guide": {
     category: "PROJECT PLANNING",
     title: "How to Prepare a Construction Materials Budget",
     intro:
-      "A construction materials budget helps you estimate costs, compare supplier quotations and track spending. A clear budget should include quantities, specifications, delivery and a plan for managing changes.",
+      "A clear materials budget helps estimate construction costs, compare suppliers and manage project spending.",
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=85",
     sections: [
       {
         heading: "1. Define the Project Scope",
         paragraphs: [
-          "Start with drawings, measurements and the agreed scope of work. A reliable estimate depends on knowing what is included and what is excluded.",
-          "For structural materials, use quantities and specifications prepared or approved by the project’s qualified professionals.",
+          "Finalize drawings, measurements and work requirements before estimating material costs.",
         ],
       },
       {
-        heading: "2. Prepare a Materials Quantity List",
+        heading: "2. Prepare a Materials List",
         bullets: [
           "Cement, sand and aggregates",
-          "Steel reinforcement and structural materials",
-          "Bricks, blocks and masonry products",
-          "Pipes, fittings and plumbing materials",
-          "Electrical materials",
+          "Steel and masonry materials",
+          "Pipes and electrical supplies",
           "Tiles, paint and finishing products",
-          "Hardware, fixtures and accessories",
+          "Hardware and fixtures",
         ],
       },
       {
         heading: "3. Compare Supplier Quotations",
         paragraphs: [
-          "Request quotations with product brand, grade, size, unit, quantity and price clearly mentioned. Compare like-for-like specifications rather than only comparing the total amount.",
-          "Also check transport charges, unloading, taxes, delivery schedule and payment terms.",
+          "Compare product specifications, quantity, brand, price, transport charges and delivery terms.",
         ],
       },
       {
-        heading: "4. Include Delivery and Wastage",
+        heading: "4. Plan Delivery and Wastage",
         paragraphs: [
-          "Some materials may require additional quantity because of cutting, handling or installation. Discuss realistic allowances with your contractor instead of adding an arbitrary amount.",
-          "Consider whether materials need to be delivered in stages to reduce storage issues and damage.",
+          "Estimate realistic material quantities and arrange deliveries according to the construction schedule.",
         ],
       },
       {
-        heading: "5. Track Spending During Construction",
+        heading: "5. Track Your Expenses",
         bullets: [
-          "Record every purchase and delivery.",
-          "Compare actual quantities with the estimate.",
-          "Keep invoices and supplier details.",
-          "Track unused or returned materials.",
-          "Review changes before approving additional purchases.",
+          "Record every purchase.",
+          "Keep invoices and quotations.",
+          "Track delivered quantities.",
+          "Monitor unused materials.",
         ],
       },
       {
-        heading: "6. Maintain a Contingency",
+        heading: "6. Keep a Contingency",
         paragraphs: [
-          "Construction projects can encounter price changes, design updates or unforeseen site conditions. A contingency amount can help manage these changes.",
-          "The suitable contingency depends on project size, scope certainty and risk. Discuss it with your project manager or contractor.",
+          "Set aside a reasonable amount for unexpected expenses or changes after discussing the project risks with your contractor.",
         ],
       },
     ],
     takeaway:
-      "A useful budget is based on accurate quantities, clear product specifications and regular tracking. Keep supplier quotations and purchase records organized throughout the project.",
+      "A good construction budget includes accurate quantities, clear specifications and regular expense tracking.",
   },
 };
 
@@ -339,6 +309,7 @@ function BlogDetail() {
         <div className="blog-not-found">
           <h1>Article Not Found</h1>
           <p>The blog article you are looking for may have moved.</p>
+
           <Link to="/blogs" className="blog-back-link">
             <ArrowLeft size={17} />
             Back to Blogs
@@ -375,25 +346,27 @@ function BlogDetail() {
         </div>
 
         <div className="blog-detail-body">
-          {article.sections.map((section, index) => (
-            <section className="blog-detail-section" key={section.heading}>
+          {article.sections.map((section) => (
+            <section
+              className="blog-detail-section"
+              key={section.heading}
+            >
               <h2>{section.heading}</h2>
 
-              {section.paragraphs?.map((paragraph, paragraphIndex) => (
-                <p key={paragraphIndex}>{paragraph}</p>
+              {section.paragraphs?.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
               ))}
 
               {section.bullets && (
                 <ul>
-                  {section.bullets.map((item, itemIndex) => (
-                    <li key={itemIndex}>{item}</li>
+                  {section.bullets.map((item, index) => (
+                    <li key={index}>{item}</li>
                   ))}
                 </ul>
               )}
             </section>
           ))}
 
-          
           <div className="blog-detail-contact">
             <div className="blog-detail-contact-icon">
               <HardHat size={22} />
@@ -408,7 +381,10 @@ function BlogDetail() {
               </p>
             </div>
 
-            <Link to="/contact" className="blog-detail-contact-button">
+            <Link
+              to="/contact"
+              className="blog-detail-contact-button"
+            >
               Contact Us
               <ArrowRight size={16} />
             </Link>
