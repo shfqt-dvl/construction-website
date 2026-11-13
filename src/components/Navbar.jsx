@@ -1,6 +1,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+
 import {
   Menu,
   X,
@@ -73,16 +74,8 @@ export default function Navbar() {
   const isHomePage = location.pathname === "/";
   const isTransparentHome = isHomePage && !scrolled;
 
-  /* =========================================
-     NAVBAR SCROLL BEHAVIOR
-
-     Home:
-     Transparent until hero section ends.
-
-     Other pages:
-     Always white navbar.
-  ========================================= */
-
+  // HOME PAGE: transparent over hero, solid after hero
+  // OTHER PAGES: solid navbar
   useEffect(() => {
     let animationFrame;
 
@@ -106,9 +99,9 @@ export default function Navbar() {
       const navbarHeight =
         navbarRef.current?.offsetHeight || 0;
 
-      const heroEndPoint = heroBottom - navbarHeight;
-
-      setScrolled(window.scrollY >= heroEndPoint);
+      setScrolled(
+        window.scrollY >= heroBottom - navbarHeight
+      );
     };
 
     const handleScroll = () => {
@@ -131,15 +124,14 @@ export default function Navbar() {
     };
   }, [isHomePage, location.pathname]);
 
-  /* CLOSE MENUS AFTER NAVIGATION */
+  // CLOSE MENUS AFTER NAVIGATION
+  useEffect(() => {
+    setMenuOpen(false);
+    setOpenDropdown("");
+    setNavbarHovered(false);
+  }, [location.pathname, location.hash, location.key]);
 
-useEffect(() => {
-  setMenuOpen(false);
-  setOpenDropdown("");
-  setNavbarHovered(false);
-}, [location.pathname, location.hash, location.key]);
-  /* CLOSE MOBILE MENU ON DESKTOP RESIZE */
-
+  // CLOSE MOBILE MENU ON DESKTOP RESIZE
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 760) {
@@ -155,15 +147,11 @@ useEffect(() => {
     };
   }, []);
 
-  /* CLOSE NAVIGATION MENUS */
-
- const closeMenu = () => {
-  setMenuOpen(false);
-  setOpenDropdown("");
-  setNavbarHovered(false);
-};
-
-  /* TOGGLE DROPDOWN */
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setOpenDropdown("");
+    setNavbarHovered(false);
+  };
 
   const toggleDropdown = (label) => {
     setOpenDropdown((current) =>
@@ -171,15 +159,9 @@ useEffect(() => {
     );
   };
 
-  /* HIGHLIGHT ACTIVE DROPDOWN */
-
   const isDropdownActive = (items) => {
     return items.some((item) => {
       const itemPath = item.to.split("#")[0];
-
-      if (itemPath === "/") {
-        return location.pathname === "/";
-      }
 
       return (
         location.pathname === itemPath ||
@@ -188,17 +170,15 @@ useEffect(() => {
     });
   };
 
-  /* NAVBAR CLASS NAMES */
-
-const navbarClassName = [
-  "navbar",
-  scrolled ? "scrolled" : "",
-  isTransparentHome ? "transparent-home" : "",
-  isTransparentHome && navbarHovered ? "navbar-hovered" : "",
-  menuOpen ? "menu-open" : "",
-]
-  .filter(Boolean)
-  .join(" ");
+  const navbarClassName = [
+    "navbar",
+    scrolled ? "scrolled" : "",
+    isTransparentHome ? "transparent-home" : "",
+    isTransparentHome && navbarHovered ? "navbar-hovered" : "",
+    menuOpen ? "menu-open" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <header
@@ -209,12 +189,9 @@ const navbarClassName = [
           setNavbarHovered(true);
         }
       }}
-      onMouseLeave={() => {
-        setNavbarHovered(false);
-      }}
+      onMouseLeave={() => setNavbarHovered(false)}
     >
       {/* TOP INFORMATION BAR */}
-
       <div className="nav-topbar">
         <div className="nav-topbar-inner">
           <div className="nav-topbar-left">
@@ -222,7 +199,7 @@ const navbarClassName = [
               href="tel:+919162512232"
               className="nav-info-item"
             >
-              <Phone size={14} aria-hidden="true" />
+              <Phone size={14} />
               <span>+91 91625 12232</span>
             </a>
 
@@ -230,24 +207,23 @@ const navbarClassName = [
               href="mailto:mushadconstruction@gmail.com"
               className="nav-info-item nav-email"
             >
-              <Mail size={15} aria-hidden="true" />
+              <Mail size={15} />
               <span>mushadconstruction@gmail.com</span>
             </a>
           </div>
 
           <div className="nav-topbar-right">
-            <Clock size={14} aria-hidden="true" />
+            <Clock size={14} />
             <span>Every Day: 7:00 AM – 7:00 PM</span>
           </div>
         </div>
       </div>
 
       {/* MAIN NAVIGATION */}
-
       <div className="nav-main">
         <div className="container nav-inner">
-          {/* BRAND LOGO */}
 
+          {/* LOGO LEFT */}
           <Link
             className="brand-logo"
             to="/"
@@ -266,8 +242,7 @@ const navbarClassName = [
             </span>
           </Link>
 
-          {/* NAVIGATION LINKS */}
-
+          {/* CENTER NAVIGATION */}
           <nav
             id="primary-navigation"
             className={`nav-links ${
@@ -275,8 +250,6 @@ const navbarClassName = [
             }`}
             aria-label="Main navigation"
           >
-            {/* HOME AND ABOUT */}
-
             {mainLinks.map(({ label, to }) => (
               <NavLink
                 key={label}
@@ -290,8 +263,6 @@ const navbarClassName = [
                 {label}
               </NavLink>
             ))}
-
-            {/* DROPDOWNS */}
 
             {dropdowns.map(({ label, items }) => {
               const isOpen = openDropdown === label;
@@ -321,14 +292,12 @@ const navbarClassName = [
                     type="button"
                     aria-expanded={isOpen}
                     aria-haspopup="true"
-                   onClick={() => toggleDropdown(label)}
+                    onClick={() => toggleDropdown(label)}
                   >
                     <span>{label}</span>
-
                     <ChevronDown
                       className="nav-chevron"
                       size={15}
-                      aria-hidden="true"
                     />
                   </button>
 
@@ -344,9 +313,9 @@ const navbarClassName = [
                           item.to === "/gallery"
                         }
                         onClick={closeMenu}
-                        className={({ isActive: itemActive }) =>
+                        className={({ isActive }) =>
                           `nav-dropdown-item ${
-                            itemActive ? "active" : ""
+                            isActive ? "active" : ""
                           }`
                         }
                       >
@@ -359,13 +328,9 @@ const navbarClassName = [
             })}
 
             {/* MOBILE CONTACT DETAILS */}
-
             <div className="nav-mobile-details">
-              <a
-                href="tel:+919162512232"
-                onClick={closeMenu}
-              >
-                <Phone size={16} aria-hidden="true" />
+              <a href="tel:+919162512232" onClick={closeMenu}>
+                <Phone size={16} />
                 Call Store
               </a>
 
@@ -373,35 +338,30 @@ const navbarClassName = [
                 href="mailto:mushadconstruction@gmail.com"
                 onClick={closeMenu}
               >
-                <Mail size={16} aria-hidden="true" />
+                <Mail size={16} />
                 Email Us
               </a>
             </div>
-
-            {/* MOBILE CONTACT BUTTON */}
 
             <Link
               className="nav-contact-mobile"
               to="/contact"
               onClick={closeMenu}
             >
-              Contact Us <span aria-hidden="true">↗</span>
+              Contact Us <span>↗</span>
             </Link>
           </nav>
 
-          {/* DESKTOP CONTACT BUTTON */}
-
+          {/* CONTACT RIGHT */}
           <Link
             className="nav-contact"
             to="/contact"
             onClick={closeMenu}
           >
-            Contact Us
-            <span aria-hidden="true">↗</span>
+            Contact Us <span>↗</span>
           </Link>
 
-          {/* MOBILE MENU BUTTON */}
-
+          {/* MOBILE MENU */}
           <button
             className="menu-toggle"
             type="button"
@@ -410,17 +370,15 @@ const navbarClassName = [
               setOpenDropdown("");
             }}
             aria-label={
-              menuOpen
-                ? "Close navigation menu"
-                : "Open navigation menu"
+              menuOpen ? "Close navigation menu" : "Open navigation menu"
             }
             aria-controls="primary-navigation"
             aria-expanded={menuOpen}
           >
             {menuOpen ? (
-              <X size={25} aria-hidden="true" />
+              <X size={25} />
             ) : (
-              <Menu size={25} aria-hidden="true" />
+              <Menu size={25} />
             )}
           </button>
         </div>
