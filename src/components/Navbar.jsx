@@ -204,7 +204,7 @@ export default function Navbar() {
             </a>
 
             <a
-              href="mailto:mushadconstruction@gmail.com"
+              href="mailto:mushadconstruction.web@gmail.com"
               className="nav-info-item nav-email"
             >
               <Mail size={15} />
@@ -335,7 +335,7 @@ export default function Navbar() {
               </a>
 
               <a
-                href="mailto:mushadconstruction@gmail.com"
+                href="mailto:mushadconstruction.web@gmail.com"
                 onClick={closeMenu}
               >
                 <Mail size={16} />
