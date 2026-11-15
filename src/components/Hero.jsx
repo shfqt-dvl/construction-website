@@ -92,12 +92,12 @@ export default function Hero() {
           </Link>
 
           <Link
-            to="/contact#contact-form"
-            className="btn btn-secondary"
-          >
-            <Phone size={17} aria-hidden="true" />
-            CONTACT US
-          </Link>
+  to="/contact#get-in-touch"
+  className="btn btn-secondary"
+>
+  <Phone size={17} aria-hidden="true" />
+  CONTACT US
+</Link>
         </div>
       </div>
 

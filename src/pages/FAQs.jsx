@@ -71,11 +71,21 @@ function Faqs() {
 
  {/* Hero Section */}
 <section className="faqs-hero">
-  <img
-    src="/faqs3.png"
-    alt="Construction materials and building work"
-    className="faqs-hero-image"
-  />
+
+  <picture className="faqs-hero-picture">
+    {/* Mobile Image */}
+    <source
+      media="(max-width: 760px)"
+      srcSet="/faqs2mobile.png"
+    />
+
+    {/* Desktop Image */}
+    <img
+      src="/faqs3.png"
+      alt="Frequently asked questions"
+      className="faqs-hero-image"
+    />
+  </picture>
 
   <div className="faqs-hero-overlay"></div>
 
