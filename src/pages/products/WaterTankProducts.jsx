@@ -45,7 +45,7 @@ export const waterTankProducts = [
 ];
 
 function WaterTankProducts() {
-  const whatsappNumber = "919161512232";
+  const whatsappNumber = "919162512232";
 
   const handleEnquiry = (product) => {
     const message = `Hello, I want to enquire about ${product.name}. What is the current price and is it available in stock?`;
