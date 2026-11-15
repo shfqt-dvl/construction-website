@@ -27,7 +27,7 @@ import IndustrialProjects from "./pages/IndustrialProjects";
 import Blogs from "./pages/Blogs";
 import BlogDetail from "./pages/BlogDetail";
 import Gallery from "./pages/Gallery";
-import Faqs from "./pages/FAQs";
+import Faqs from "./pages/Faqs";
 
 // SERVICES
 import Services from "./pages/Services";
