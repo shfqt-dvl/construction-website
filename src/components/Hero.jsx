@@ -7,22 +7,22 @@ import "./Hero.css";
 
 const slides = [
   {
-    desktopSrc: "\himg1.png",
-    mobileSrc: "\himg1-mobile.png",
+    desktopSrc: "/himg1.png",
+    mobileSrc: "/himg1-mobile.png",
     alt: "Building foundation construction",
     title: "STRENGTH",
     highlight: " IN EVERY STRUCTURE.",
   },
   {
-    desktopSrc: "\himg2.png",
-    mobileSrc: "himg2-mobile.png",
+    desktopSrc: "/himg2.png",
+    mobileSrc: "/himg2-mobile.png",
     alt: "Building plaster and painting work",
     title: "QUALITY",
     highlight: " IN EVERY DETAIL.",
   },
   {
-    desktopSrc: "\himg3.png",
-    mobileSrc: "himg3-mobile.png",
+    desktopSrc: "/himg3.png",
+    mobileSrc: "/himg3-mobile.png",
     alt: "Completed building roof construction",
     title: "STRENGTH",
     highlight: " IN EVERY BRICK.",
@@ -32,7 +32,6 @@ const slides = [
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // AUTOMATIC SLIDER
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((current) => (current + 1) % slides.length);
@@ -41,7 +40,6 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, []);
 
-  // MANUAL SLIDE NAVIGATION
   const showSlide = (index) => {
     setCurrentSlide(index);
   };
@@ -54,7 +52,6 @@ export default function Hero() {
       id="home"
       aria-label="Mushad Construction and Hardware Store"
     >
-      {/* FULL SCREEN BACKGROUND SLIDER */}
       <div className="hero-background" aria-hidden="true">
         {slides.map((slide, index) => (
           <picture
@@ -63,13 +60,11 @@ export default function Hero() {
               currentSlide === index ? "hero-image-active" : ""
             }`}
           >
-            {/* MOBILE IMAGE */}
             <source
               media="(max-width: 760px)"
               srcSet={slide.mobileSrc}
             />
 
-            {/* DESKTOP IMAGE */}
             <img
               className="hero-image"
               src={slide.desktopSrc}
@@ -80,10 +75,8 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* IMAGE OVERLAY */}
       <div className="hero-overlay" aria-hidden="true" />
 
-      {/* HERO CONTENT */}
       <div className="hero-content" key={currentSlide}>
         <div className="hero-heading-wrap">
           <h1>
@@ -108,7 +101,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* SLIDER DOTS */}
       <div
         className="hero-slider-dots"
         role="group"
