@@ -27,7 +27,7 @@ import IndustrialProjects from "./pages/IndustrialProjects";
 import Blogs from "./pages/Blogs";
 import BlogDetail from "./pages/BlogDetail";
 import Gallery from "./pages/Gallery";
-import Faqs from "./pages/Faqs";
+import Faqs from "./pages/FAQs";
 
 // SERVICES
 import Services from "./pages/Services";
@@ -57,181 +57,181 @@ import SteelGallery from "./pages/gallery/SteelGallery.jsx";
 import WatertankGallery from "./pages/gallery/WatertankGallery.jsx";
 
 function App() {
-  return (
-    <>
-      {/* AUTOMATIC SCROLL TO TOP ON ROUTE CHANGE */}
-      <ScrollToTop />
+    return (
+        <>
+            {/* AUTOMATIC SCROLL TO TOP ON ROUTE CHANGE */}
+            <ScrollToTop />
 
-      {/* NAVBAR */}
-      <Navbar />
+            {/* NAVBAR */}
+            <Navbar />
 
-      {/* ALL ROUTES */}
-      <Routes>
-        {/* HOME */}
-        <Route path="/" element={<Home />} />
+            {/* ALL ROUTES */}
+            <Routes>
+                {/* HOME */}
+                <Route path="/" element={<Home />} />
 
-        {/* ABOUT */}
-        <Route path="/about" element={<About />} />
+                {/* ABOUT */}
+                <Route path="/about" element={<About />} />
 
-        {/* SERVICES */}
-        <Route path="/services" element={<Services />} />
+                {/* SERVICES */}
+                <Route path="/services" element={<Services />} />
 
-        <Route
-          path="/services/residential"
-          element={<Residential />}
-        />
+                <Route
+                    path="/services/residential"
+                    element={<Residential />}
+                />
 
-        <Route
-          path="/services/commercial"
-          element={<Commercial />}
-        />
+                <Route
+                    path="/services/commercial"
+                    element={<Commercial />}
+                />
 
-        <Route
-          path="/services/industrial"
-          element={<Industrial />}
-        />
+                <Route
+                    path="/services/industrial"
+                    element={<Industrial />}
+                />
 
-        <Route
-          path="/services/renovation"
-          element={<Renovation />}
-        />
+                <Route
+                    path="/services/renovation"
+                    element={<Renovation />}
+                />
 
-        {/* PROJECTS */}
-        <Route path="/projects" element={<Projects />} />
+                {/* PROJECTS */}
+                <Route path="/projects" element={<Projects />} />
 
-        <Route
-          path="/projects/residential"
-          element={<ResidentialProjects />}
-        />
+                <Route
+                    path="/projects/residential"
+                    element={<ResidentialProjects />}
+                />
 
-        <Route
-          path="/projects/commercial"
-          element={<CommercialProjects />}
-        />
+                <Route
+                    path="/projects/commercial"
+                    element={<CommercialProjects />}
+                />
 
-        <Route
-          path="/projects/industrial"
-          element={<IndustrialProjects />}
-        />
+                <Route
+                    path="/projects/industrial"
+                    element={<IndustrialProjects />}
+                />
 
-        {/* CONTACT */}
-        <Route path="/contact" element={<Contact />} />
+                {/* CONTACT */}
+                <Route path="/contact" element={<Contact />} />
 
-        {/* GET A QUOTE PAGE */}
-        <Route path="/quote" element={<Quote />} />
+                {/* GET A QUOTE PAGE */}
+                <Route path="/quote" element={<Quote />} />
 
-        {/* BLOGS */}
-<Route path="/blogs" element={<Blogs />} />
+                {/* BLOGS */}
+                <Route path="/blogs" element={<Blogs />} />
 
-{/* BLOG DETAILS */}
-<Route path="/blogs/:slug" element={<BlogDetail />} />
+                {/* BLOG DETAILS */}
+                <Route path="/blogs/:slug" element={<BlogDetail />} />
 
-        {/* MAIN GALLERY */}
-        <Route path="/gallery" element={<Gallery />} />
+                {/* MAIN GALLERY */}
+                <Route path="/gallery" element={<Gallery />} />
 
-        {/* FAQS */}
-        <Route path="/faqs" element={<Faqs />} />
+                {/* FAQS */}
+                <Route path="/faqs" element={<Faqs />} />
 
-        {/* ADMIN */}
-        <Route path="/admin" element={<Admin />} />
+                {/* ADMIN */}
+                <Route path="/admin" element={<Admin />} />
 
-        {/* MAIN PRODUCTS */}
-        <Route path="/products" element={<Products />} />
+                {/* MAIN PRODUCTS */}
+                <Route path="/products" element={<Products />} />
 
-        {/* PRODUCT CATEGORY PAGES */}
-        <Route
-          path="/products/cement"
-          element={<CementProducts />}
-        />
+                {/* PRODUCT CATEGORY PAGES */}
+                <Route
+                    path="/products/cement"
+                    element={<CementProducts />}
+                />
 
-        <Route
-          path="/products/steel"
-          element={<SteelProducts />}
-        />
+                <Route
+                    path="/products/steel"
+                    element={<SteelProducts />}
+                />
 
-        <Route
-          path="/products/paints"
-          element={<PaintProducts />}
-        />
+                <Route
+                    path="/products/paints"
+                    element={<PaintProducts />}
+                />
 
-        <Route
-          path="/products/pipes"
-          element={<PipesProducts />}
-        />
+                <Route
+                    path="/products/pipes"
+                    element={<PipesProducts />}
+                />
 
-        <Route
-          path="/products/water-tanks"
-          element={<WaterTankProducts />}
-        />
+                <Route
+                    path="/products/water-tanks"
+                    element={<WaterTankProducts />}
+                />
 
-        <Route
-          path="/products/sanitary"
-          element={<SanitaryProducts />}
-        />
+                <Route
+                    path="/products/sanitary"
+                    element={<SanitaryProducts />}
+                />
 
-        <Route
-          path="/products/chemicals"
-          element={<ChemicalsProducts />}
-        />
+                <Route
+                    path="/products/chemicals"
+                    element={<ChemicalsProducts />}
+                />
 
-        <Route
-          path="/products/hardware"
-          element={<HardwareProducts />}
-        />
+                <Route
+                    path="/products/hardware"
+                    element={<HardwareProducts />}
+                />
 
-        {/* PRODUCT GALLERY PAGES */}
-        <Route
-          path="/gallery/cement"
-          element={<CementGallery />}
-        />
+                {/* PRODUCT GALLERY PAGES */}
+                <Route
+                    path="/gallery/cement"
+                    element={<CementGallery />}
+                />
 
-        <Route
-          path="/gallery/chemicals"
-          element={<ChemicalGallery />}
-        />
+                <Route
+                    path="/gallery/chemicals"
+                    element={<ChemicalGallery />}
+                />
 
-        <Route
-          path="/gallery/paints"
-          element={<PaintGallery />}
-        />
+                <Route
+                    path="/gallery/paints"
+                    element={<PaintGallery />}
+                />
 
-        <Route
-          path="/gallery/pipes"
-          element={<PipesGallery />}
-        />
+                <Route
+                    path="/gallery/pipes"
+                    element={<PipesGallery />}
+                />
 
-        <Route
-          path="/gallery/hardware"
-          element={<HardwareGallery />}
-        />
+                <Route
+                    path="/gallery/hardware"
+                    element={<HardwareGallery />}
+                />
 
-        <Route
-          path="/gallery/sanitary"
-          element={<SanitaryGallery />}
-        />
+                <Route
+                    path="/gallery/sanitary"
+                    element={<SanitaryGallery />}
+                />
 
-        <Route
-          path="/gallery/steel"
-          element={<SteelGallery />}
-        />
+                <Route
+                    path="/gallery/steel"
+                    element={<SteelGallery />}
+                />
 
-        <Route
-          path="/gallery/water-tank"
-          element={<WatertankGallery />}
-        />
+                <Route
+                    path="/gallery/water-tank"
+                    element={<WatertankGallery />}
+                />
 
-        {/* 404 — KEEP LAST */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+                {/* 404 — KEEP LAST */}
+                <Route path="*" element={<NotFound />} />
+            </Routes>
 
-      {/* GLOBAL COMPONENTS */}
-      <Footer />
-      <BackToTop />
+            {/* GLOBAL COMPONENTS */}
+            <Footer />
+            <BackToTop />
 
-      {/* GLOBAL QUOTE POPUP */}
-      <QuotePopup />
-    </>
-  );
+            {/* GLOBAL QUOTE POPUP */}
+            <QuotePopup />
+        </>
+    );
 }
 
 export default App;
