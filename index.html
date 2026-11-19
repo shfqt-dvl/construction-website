@@ -1,76 +1,83 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
 
     <!-- Google Search Console Verification -->
-    <meta
-      name="google-site-verification"
-      content="xSOS2BmbrDrX8vk9DCGM5xBS7zeDflnGSZ6i0-kTje0"
-    />
+    <meta name="google-site-verification" content="xSOS2BmbrDrX8vk9DCGM5xBS7zeDflnGSZ6i0-kTje0" />
 
     <!-- Bing Webmaster Verification -->
-    <meta
-      name="msvalidate.01"
-      content="0DD490D7B146A271ED607ED18E98EA6C"
-    />
+    <meta name="msvalidate.01" content="0DD490D7B146A271ED607ED18E98EA6C" />
+
+    <!-- Responsive Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Website Icon -->
     <link rel="icon" type="image/png" href="/company.png" />
+    <link rel="apple-touch-icon" href="/company.png" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO Branding -->
+    <title>MUSHAD HARDWARE | Construction & Hardware Store</title>
 
-    <!-- SEO Title -->
-    <title>MUSHAD CONSTRUCTION | Construction & Hardware Store</title>
+    <meta name="application-name" content="MUSHAD HARDWARE" />
 
-    <!-- SEO Description -->
-    <meta
-      name="description"
-      content="MUSHAD CONSTRUCTION offers quality construction materials, cement, steel, paints, pipes, hardware products and reliable construction solutions."
-    />
+    <meta name="description"
+        content="MUSHAD HARDWARE offers quality cement, steel, paints, pipes, hardware products, construction materials and reliable building solutions." />
 
     <meta name="robots" content="index, follow" />
-    <meta name="application-name" content="MUSHAD CONSTRUCTION" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mushadconstructionin.vercel.app/" />
 
     <!-- Open Graph -->
-    <meta
-      property="og:title"
-      content="MUSHAD CONSTRUCTION | Construction & Hardware Store"
-    />
+    <meta property="og:site_name" content="MUSHAD HARDWARE" />
 
-    <meta
-      property="og:description"
-      content="Your trusted destination for quality construction materials, hardware products and construction solutions."
-    />
+    <meta property="og:title" content="MUSHAD HARDWARE | Construction & Hardware Store" />
+
+    <meta property="og:description"
+        content="Your trusted destination for quality construction materials, hardware products and reliable building solutions." />
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="MUSHAD CONSTRUCTION" />
 
-    <meta
-      property="og:url"
-      content="https://mushadconstructionin.vercel.app/"
-    />
+    <meta property="og:url" content="https://mushadconstructionin.vercel.app/" />
 
-    <!-- Website Structured Data -->
+    <meta property="og:image" content="https://mushadconstructionin.vercel.app/company.png" />
+
+    <!-- Google Website & Organization Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "MUSHAD CONSTRUCTION",
-      "alternateName": [
-        "Mushad Construction",
-        "MUSHAD",
-        "mushadconstructionin.vercel.app"
-      ],
-      "url": "https://mushadconstructionin.vercel.app/"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://mushadconstructionin.vercel.app/#organization",
+          "name": "MUSHAD HARDWARE",
+          "url": "https://mushadconstructionin.vercel.app/"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://mushadconstructionin.vercel.app/#website",
+          "name": "MUSHAD HARDWARE",
+          "alternateName": [
+            "Mushad Hardware",
+            "MUSHAD HARDWARE STORE"
+          ],
+          "url": "https://mushadconstructionin.vercel.app/",
+          "publisher": {
+            "@id": "https://mushadconstructionin.vercel.app/#organization"
+          }
+        }
+      ]
     }
     </script>
-  </head>
 
-  <body>
+</head>
+
+<body>
     <div id="root"></div>
 
     <script type="module" src="/src/main.jsx"></script>
-  </body>
+</body>
+
 </html>
